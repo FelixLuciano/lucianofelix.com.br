@@ -1,12 +1,16 @@
 <template>
-  <Head>
-    <Title>Luciano Felix</Title>
-    <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </Head>
+  <Html lang="en">
+    <Head>
+      <Title>Luciano Felix</Title>
+      <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </Head>
 
-  <NuxtLayout>
-    <NuxtPage/>
-  </NuxtLayout>
+    <Body>
+      <NuxtLayout>
+        <NuxtPage/>
+      </NuxtLayout>
+    </Body>
+  </Html>
 </template>
 
 <script lang="ts" setup>
