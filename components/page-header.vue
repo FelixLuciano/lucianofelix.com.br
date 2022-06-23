@@ -134,7 +134,7 @@ onMounted(async () => {
     display: flex;
 
     @media (max-width: 42rem) {
-    &right, &--left {
+    &--right, &--left {
         flex: 1 1 1rem !important;
       }
     }
