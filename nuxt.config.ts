@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   modules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
+    // // https://image.nuxtjs.org/
+    // '@nuxt/image',
     // https://vueuse.org,/
     '@vueuse/nuxt'
   ],
@@ -20,5 +24,8 @@ export default defineNuxtConfig({
         order: 'concentric-css'
       }
     }
-  }
+  },
+
+  // // https://image.nuxtjs.org/api/options
+  // image: {}
 })
