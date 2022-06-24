@@ -1,0 +1,131 @@
+<template>
+  <form @submit.prevent="submit" class="form-frame">
+    <slot :body="body" :disabled="readOnly" />
+
+    <div class="form-frame__bottom">
+      <button
+        type="submit"
+        :disabled="readOnly"
+        class="form-frame__submit-button"
+        :class="{
+          'form-frame__submit-button--error': sendError,
+          'form-frame__submit-button--success': sendSuccess
+        }"
+      >
+        <template v-if="toSend">Send</template>
+        <template v-if="sending">Sending...</template>
+        <template v-if="sendError">Try again</template>
+        <template v-if="sendSuccess">Success!</template>
+      </button>
+    </div>
+  </form>
+</template>
+
+<script lang="ts" setup>
+const props = defineProps({
+  url: {
+    type: String,
+    required: true
+  },
+  data: {
+    type: Object,
+    default: {}
+  }
+})
+const body = reactive(props.data)
+const sending = ref(false)
+const done = ref(false)
+const success = ref(false)
+const readOnly = computed(() => sending.value)
+const toSend = computed(() => !sending.value && !done.value)
+const sendError = computed(() => !sending.value && done.value && !success.value)
+const sendSuccess = computed(() => !sending.value && done.value && success.value)
+
+function submit({target}) {
+  if (done.value) {
+    clear()
+    focus(target)
+  }
+  else send()
+}
+
+async function send() {
+  sending.value = true
+
+  try {
+    await fetch(props.url, {
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
+
+    success.value = true
+  }
+  catch {
+    success.value = false
+  }
+  finally {
+    sending.value = false
+    done.value = true
+  }
+}
+
+function clear () {
+  for (const key of Object.keys(body))
+    body[key] = ''
+
+  done.value = false
+}
+
+function focus (target) {
+  target.querySelector('input').focus()
+}
+</script>
+
+<style lang="postcss">
+.form-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__submit-button {
+    margin-left: auto;
+    padding: .5rem 0;
+    border: 1px solid #000;
+    min-width: 10rem;
+    transition: background-color 128ms, color 128ms;
+
+    &:focus {
+      outline: 2px solid rgba(0, 0, 0, .4);
+      outline-offset: 1px;
+      border-bottom-color: #000;
+    }
+
+    &:hover, &:disabled {
+      background-color: #000;
+      border-color: #000;
+      color: #FFF;
+    }
+
+    &:disabled {
+      opacity: .5;
+    }
+
+    &--error {
+      background-color: #922;
+      border-color: #922;
+      color: #FFF;
+    }
+
+    &--success {
+      background-color: #286;
+      border-color: #286;
+      color: #FFF;
+    }
+  }
+}
+</style>
