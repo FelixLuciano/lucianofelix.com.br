@@ -27,9 +27,13 @@ primaryColor.value = COLORS[Math.floor(Math.random() * COLORS.length)]
 
 <style>
 :root {
-  --background-color: #666;
+  --background-color: #FFF;
   --primary-color: #922;
   --margin-size: clamp(.5rem, 4vmin, 3rem);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
