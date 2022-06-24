@@ -7,7 +7,9 @@ export default defineNuxtConfig({
   buildAssetsDir: '_app',
 
   modules: [
+    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://vueuse.org,/
     '@vueuse/nuxt'
   ],
 
