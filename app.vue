@@ -3,6 +3,8 @@
     <Head>
       <Title>Luciano Felix</Title>
       <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <Link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet" />
     </Head>
 
     <Body>
@@ -39,6 +41,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 * {

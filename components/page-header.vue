@@ -100,7 +100,6 @@ onMounted(async () => {
 
 </script>
 
-
 <style lang="postcss">
 .page-header {
   flex: 1 0 100vh;
@@ -117,7 +116,7 @@ onMounted(async () => {
     max-width: 160rem;
     margin: 0 auto;
     background-color: #000;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     display: flex;
   }
 
@@ -164,7 +163,7 @@ onMounted(async () => {
     margin: 0;
     padding: 1.5rem 1rem 0.8rem 1rem;
     border-bottom: 1px dotted #333;
-    border-top-left-radius: 0.5rem;
+    border-top-left-radius: 0.25rem;
     background-color: var(--primary-color);
     writing-mode: vertical-rl;
     white-space: nowrap;
@@ -183,6 +182,10 @@ onMounted(async () => {
       margin: 0 1rem 0 -0.25rem;
       border-right: 1px dotted #333;
 
+      @media (max-width: 42rem) {
+        display: none;
+      }
+
       &--horizontal {
         flex: 1 0 auto;
         margin: 0 0 auto 0;
@@ -190,12 +193,10 @@ onMounted(async () => {
         border-right: none;
         border-bottom: 1px dotted #333;
         display: none;
+
         @media (max-width: 42rem) {
           display: flex;
         }
-      }
-      @media (max-width: 42rem) {
-        display: none;
       }
     }
   }

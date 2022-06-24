@@ -27,19 +27,12 @@
 </template>
 
 <style lang="postcss">
-#__nuxt {
-  font-family: "Fira Mono", monospace;
-  font-weight: 500;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card {
   background-color: #000;
   border-radius: 0.5rem;
   color: #fff;
+  font-family: monospace;
+  font-weight: 500;
   display: flex;
 
   &__wrap {
