@@ -1,20 +1,20 @@
 <template>
-  <header class="page-header">
+  <section class="page-header">
     <div class="page-header__wrap">
       <div class="page-header__slot page-header__slot--left">
         <div class="page-header__title-section">
-          <p class="page-header__title bg-primary">LUCIANO FELIX</p>
+          <h1 class="page-header__title bg-primary">LUCIANO FELIX</h1>
         </div>
       </div>
 
       <div class="page-header__container">
         <div class="page-header__slot page-header__slot--top">
           <div class="page-header__title-section page-header__title-section--horizontal">
-            <p class="page-header__title page-header__title--horizontal bg-primary">LUCIANO FELIX</p>
+            <h1 class="page-header__title page-header__title--horizontal bg-primary">LUCIANO FELIX</h1>
           </div>
         </div>
 
-        <div class="page-header__logo-section">
+        <header class="page-header__logo-section">
           <div class="page-header__logo bg-primary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182 208" width="64" height="64">
               <path fill="#777" d="M85.5 137.5h-32v-34.1c0-3.5-2.2-6.6-5.5-7.8l-10.5-3.8V26.7h32v44.6c9.9 7.5 16 19.3 16 32.1v34.1z" />
@@ -23,15 +23,15 @@
               <polygon fill="#FFF" points="181.5,175.5 169.8,207.5 53.5,207.5 53.5,15.5 85.5,27.1 85.5,175.5" />
             </svg>
           </div>
-        </div>
+        </header>
 
         <div class="page-header__quote-section">
           <p class="page-header__quote">{{ greetings }}<span v-show="isTyping" class="page-header__quote-cursor">|</span></p>
         </div>
 
-        <div class="page-header__slot page-header__slot--bottom">
+        <footer class="page-header__slot page-header__slot--bottom">
           <div class="page-header__anchor-section">
-            <a class="page-header__anchor bg-primary" href="#" title="About me">
+            <a class="page-header__anchor bg-primary" href="#section__about-me" title="About me">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14" width="16" height="16" aria-hidden="true">
                 <polygon points="8 13.856 16 0 0 0 8 13.856" fill="currentcolor"/>
               </svg>
@@ -39,19 +39,19 @@
           </div>
 
           <div class="page-header__decorator"></div>
-        </div>
+        </footer>
       </div>
 
       <div class="page-header__slot page-header__slot--right"></div>
     </div>
-  </header>
+  </section>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 
 const isTyping = ref(false)
-const greetings = ref('')
+const greetings = ref('Hey 👋')
 
 function sleep (time) {
   return new Promise((resolve) => {
@@ -62,14 +62,14 @@ function sleep (time) {
 async function type (text) {
   for (let character of text) {
     greetings.value += character
-    await sleep(64 * (2 * Math.random())**2)
+    await sleep(32 * (2 * Math.random())**2)
   }
 }
 
 async function erase (text) {
   for (let character of text) {
     greetings.value = greetings.value.slice(0, greetings.value.length -1)
-    await sleep(64 * (2 * Math.random())**2)
+    await sleep(32 * (2 * Math.random())**2)
   }
 }
 
@@ -77,7 +77,7 @@ onMounted(async () => {
   await sleep(1000)
   isTyping.value = true
   await sleep(1000)
-  await erase('Hey')
+  await erase('Hey 👋👋')
   await sleep(800)
   await type('Hello')
   await sleep(750)
@@ -132,19 +132,9 @@ onMounted(async () => {
     flex: 1 1 3rem;
     display: flex;
 
-    @media (max-width: 42rem) {
-    &--right, &--left {
-        flex: 1 1 1rem !important;
-      }
-    }
     &--top {
       min-height: 8rem;
       border-bottom: 1px dotted #333;
-    }
-    &--right {
-      flex: 1 1 3rem;
-      min-width: 1rem;
-      border-left: 1px dotted #333;
     }
     &--bottom {
       min-height: 8rem;
@@ -152,12 +142,21 @@ onMounted(async () => {
       flex-direction: column;
     }
     &--left {
-      flex: 1 1 3.75rem;
       min-width: 1rem;
       border-right: 1px dotted #333;
     }
-  }
+    &--right {
+      min-width: 1rem;
+      border-left: 1px dotted #333;
+    }
+    &--right, &--left {
+      flex: 1 1 3.75rem;
 
+      @media (max-width: 42rem) {
+        flex: 1 1 1rem !important;
+      }
+    }
+  }
 
   &__title {
     margin: 0;
