@@ -26,7 +26,7 @@
   </main>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .card {
   background-color: #000;
   border-radius: 0.5rem;

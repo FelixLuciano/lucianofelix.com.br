@@ -49,14 +49,8 @@ body {
   align-items: center;
 }
 
-* {
-  box-sizing: border-box;
-}
 ::selection {
   background-color: var(--primary-color);
 }
 
-.bg-primary::selection {
-  background-color: #000;
-}
 </style>
