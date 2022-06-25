@@ -18,7 +18,7 @@ const mailer = createTransport(
   }
 )
 
-export default function handler(request, response) {
+export default async function handler(request, response) {
   try {
     const { contact, message, token } = request.body
     const { success } = await verify(secret, token)
