@@ -5,7 +5,6 @@ export default function handler(request, response) {
     success: true,
     message: 'Hello world!',
     username,
-    password,
-    request
+    password
   })
 }
