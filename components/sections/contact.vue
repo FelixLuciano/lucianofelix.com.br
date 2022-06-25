@@ -11,7 +11,7 @@
     <div class="grid md:grid-cols-2 gap-4">
       <div />
 
-      <form-frame url="#">
+      <form-frame url="/api/send-message">
         <template #="{ body, disabled }">
           <form-text-input
             name="contact"
