@@ -6,7 +6,9 @@ const { secret, username, password, inbox } = process.env
 
 const mailer = createTransport(
   {
-    service: "gmail",
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       username,
       password
