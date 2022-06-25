@@ -15,10 +15,7 @@ posts:
   feature: false
   url: 'https://google.com.br'
 - thumb: '/assets/image/code-thumb.webp'
-  feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
-  feature: false
+  feature: true
   url: 'https://google.com.br'
 - thumb: '/assets/image/code-thumb.webp'
   feature: false
