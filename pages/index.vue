@@ -102,7 +102,7 @@ function log(a, b, c) {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: calc(1.5 * var(--margin-size));
   counter-reset: dec uni;
 }
 
