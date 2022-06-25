@@ -9,13 +9,14 @@
     <img
       :src="thumb"
       alt="Post thumbnail"
+      class="card-post__thumb"
     />
   </a>  
 </template>
 
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   thumb: {
     type: String,
     required: true
@@ -37,10 +38,15 @@ const props = defineProps({
 .card-post {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 
   &--feature {
     grid-area: 2 span / 2 span;
+  }
+
+  &__thumb {
+    width: 100%;
+    height: 100%;
+  object-fit: cover;
   }
 }
 </style>
