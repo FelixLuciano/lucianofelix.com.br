@@ -28,7 +28,7 @@
     list-style-type: square;
 
     &::marker {
-      color: #666;
+      color: var(--primary-color);
     }
 
     &__title {
@@ -43,6 +43,11 @@
     border-bottom: 1px dotted #000;
     font-weight: 500;
     display: block;
+
+    &:hover {
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
+    }
   }
 }
 </style>
