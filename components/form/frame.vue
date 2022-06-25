@@ -61,8 +61,6 @@ function resetCaptcha() {
 function verifyCaptcha(token, ekey) {
   body.token = token
   body.ekey = ekey
-
-  console.log(body)
 }
 
 function submit({target}) {
@@ -103,7 +101,6 @@ function clear () {
 function focus (target) {
   target.querySelector('input').focus()
 }
-
 
 onMounted(() => resetCaptcha())
 
