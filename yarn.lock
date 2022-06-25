@@ -280,6 +280,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.1.tgz#b6b8d81780b9a9f6459f4bfe9226ac6aefaefe87"
   integrity sha512-aG20vknL4/YjQF9BSV7ts4EWm/yrjagAN7OWBNmlbEOUiu0llj4OGrFoOKK3g2vey4/p2omKCoHrWtPxSwV3HA==
 
+"@hcaptcha/vue3-hcaptcha@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hcaptcha/vue3-hcaptcha/-/vue3-hcaptcha-1.0.1.tgz#25711b976a9b37eb50061c479ab70a1204b5a923"
+  integrity sha512-WFA11dW9aXtMdbKSDTkwR3g5uEl2EU1J0sIbHWhWn53LJkqmvDnU/nZX02nOY8cZM/nOJ1+ZTqW0nkE+3baDRw==
+  dependencies:
+    vue "^3.2.19"
+
 "@ioredis/commands@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@ioredis/commands/-/commands-1.1.1.tgz#2ba4299ea624a6bfac15b35f6df90b0015691ec3"
@@ -6411,7 +6418,7 @@ vue-router@^4.0.16:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue@^3.2.37:
+vue@^3.2.19, vue@^3.2.37:
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.37.tgz#da220ccb618d78579d25b06c7c21498ca4e5452e"
   integrity sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ==

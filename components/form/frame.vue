@@ -2,10 +2,18 @@
   <form @submit.prevent="submit" class="form-frame">
     <slot :body="body" :disabled="readOnly" />
 
+    <vue-hcaptcha
+      sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
+      size="invisible"
+       @verify="verifyCaptcha"
+       @expired="resetCaptcha"
+       @challengeExpired="resetCaptcha"
+    />
+
     <div class="form-frame__bottom">
       <button
         type="submit"
-        :disabled="readOnly"
+        :disabled="readOnly || body.token === null"
         class="form-frame__submit-button"
         :class="{
           'form-frame__submit-button--error': sendError,
@@ -22,6 +30,8 @@
 </template>
 
 <script lang="ts" setup>
+import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
+
 const props = defineProps({
   url: {
     type: String,
@@ -41,6 +51,17 @@ const toSend = computed(() => !sending.value && !done.value)
 const sendError = computed(() => !sending.value && done.value && !success.value)
 const sendSuccess = computed(() => !sending.value && done.value && success.value)
 
+function verifyCaptcha(token, ekey) {
+  body.token = token
+  body.ekey = ekey
+  console.log(token, ekey)
+  console.log(body)
+}
+function resetCaptcha() {
+  body.token = null
+  body.ekey = null
+}
+
 function submit({target}) {
   if (done.value) {
     clear()
@@ -50,23 +71,24 @@ function submit({target}) {
 }
 
 async function send() {
-  sending.value = true
+  console.log(body)
+  // sending.value = true
 
-  try {
-    await fetch(props.url, {
-      method: 'POST',
-      body: JSON.stringify(body)
-    })
+  // try {
+  //   await fetch(props.url, {
+  //     method: 'POST',
+  //     body: JSON.stringify(body)
+  //   })
 
-    success.value = true
-  }
-  catch {
-    success.value = false
-  }
-  finally {
-    sending.value = false
-    done.value = true
-  }
+  //   success.value = true
+  // }
+  // catch {
+  //   success.value = false
+  // }
+  // finally {
+  //   sending.value = false
+  //   done.value = true
+  // }
 }
 
 function clear () {
@@ -79,6 +101,8 @@ function clear () {
 function focus (target) {
   target.querySelector('input').focus()
 }
+
+onMounted(() => resetCaptcha())
 </script>
 
 <style lang="postcss">
