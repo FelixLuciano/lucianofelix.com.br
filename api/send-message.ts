@@ -27,7 +27,7 @@ export default async function handler(request, response) {
     const { success } = await verify(secret, token)
 
     if (!success) {
-      response.code(400).json({
+      response.status(400).json({
         success: false,
         message: 'Invalid captcha!'
       })
@@ -53,14 +53,14 @@ export default async function handler(request, response) {
         }
       })
 
-      response.code(200).json({
+      response.status(200).json({
         success: true,
         message: 'Success!'
       })
     }
   }
   catch {
-    response.code(500).json({
+    response.status(500).json({
       success: false,
       message: 'Something went wrong :('
     })
