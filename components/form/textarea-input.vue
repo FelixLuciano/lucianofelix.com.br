@@ -1,7 +1,5 @@
 <template>
-  <div class="form-textarea-input">
-    <label :for="id" class="form-textarea-input__label"><slot name="label" /></label>
-
+  <div class="form-input">
     <textarea
       type="text"
       :value="value"
@@ -9,9 +7,11 @@
       :id="id"
       :required="required"
       :disabled="disabled"
-      class="form-textarea-input__input"
+      class="form-input__input form-input__input--textarea"
       @input="input"
     />
+
+    <label :for="id" class="form-input__label"><slot name="label" /></label>
   </div>
 </template>
 
@@ -58,33 +58,13 @@ function updateSize (target) {
 onMounted(() => value.value = value.value)
 </script>
 
-<style lang="postcss">
-.form-textarea-input {
-  display: flex;
-  flex-direction: column;
+<style lang="postcss" scoped>
+@import url(./form-input.postcss);
 
-  &__label {
-    padding-bottom: .3rem;
-    font-weight: 500;
-  }
-
-  &__input {
-    padding: .5rem 1rem;
-    border: 1px dotted #BBB;
-    border-bottom: 2px solid #999;
-    min-height: 8rem;
-    resize: none;
-    font-family: inherit;
-
-    &:focus {
-      outline: 2px solid rgba(0, 0, 0, .4);
-      outline-offset: 1px;
-      border-bottom-color: #000;
-    }
-
-    &:disabled {
-      opacity: .5;
-    }
-  }
+.form-input__input--textarea {
+  padding: .5rem 1rem;
+  min-height: 8rem;
+  overflow: hidden;
+  resize: none;
 }
 </style>

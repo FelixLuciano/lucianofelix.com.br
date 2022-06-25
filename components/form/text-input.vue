@@ -1,6 +1,5 @@
 <template>
-  <div class="form-text-input">
-    <label :for="id" class="form-text-input__label"><slot name="label" /></label>
+  <div class="form-input">
 
     <input
       type="text"
@@ -8,9 +7,11 @@
       :id="id"
       :required="required"
       :disabled="disabled"
-      class="form-text-input__input"
+      class="form-input__input"
       v-model="value"
     >
+
+    <label :for="id" class="form-input__label"><slot name="label" /></label>
   </div>
 </template>
 
@@ -46,31 +47,6 @@ const value = useVModel(props, 'modelValue', emits)
 onMounted(() => value.value = value.value)
 </script>
 
-<style lang="postcss">
-.form-text-input {
-  display: flex;
-  flex-direction: column;
-
-  &__label {
-    padding-bottom: .3rem;
-    font-weight: 500;
-  }
-
-  &__input {
-    padding: 0 1rem;
-    border: 1px dotted #BBB;
-    border-bottom: 2px solid #999;
-    height: 2.5rem;
-
-    &:focus {
-      outline: 2px solid rgba(0, 0, 0, .4);
-      outline-offset: 1px;
-      border-bottom-color: #000;
-    }
-
-    &:disabled {
-      opacity: .5;
-    }
-  }
-}
+<style lang="postcss" scoped>
+@import url(./form-input.postcss);
 </style>
