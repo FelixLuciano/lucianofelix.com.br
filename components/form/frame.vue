@@ -4,8 +4,6 @@
 
     <vue-hcaptcha
       sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
-      size="invisible"
-      ref="captcha"
       @verify="verifyCaptcha"
       @expired="resetCaptcha"
       @challengeExpired="resetCaptcha"
@@ -14,7 +12,7 @@
     <div class="form-frame__bottom">
       <button
         type="submit"
-        :disabled="readOnly || body.token === null"
+        :disabled="readOnly || !hasToken"
         class="form-frame__submit-button"
         :class="{
           'form-frame__submit-button--error': sendError,
@@ -29,6 +27,7 @@
     </div>
   </form>
 </template>
+
 
 <script lang="ts" setup>
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
@@ -45,19 +44,16 @@ const props = defineProps({
   }
 })
 const body = reactive(props.data)
-const captcha = ref()
 const sending = ref(false)
 const done = ref(false)
 const success = ref(false)
 const readOnly = computed(() => sending.value)
+const hasToken = computed(() => body.token !== null && body.ekey !== null)
 const toSend = computed(() => !sending.value && !done.value)
 const sendError = computed(() => !sending.value && done.value && !success.value)
 const sendSuccess = computed(() => !sending.value && done.value && success.value)
 
 
-function initCaptcha() {
-  captcha.value.execute()
-}
 function resetCaptcha() {
   body.token = null
   body.ekey = null
@@ -109,12 +105,10 @@ function focus (target) {
 }
 
 
-onMounted(() => {
-  resetCaptcha()
-  nextTick(() => initCaptcha())
-})
+onMounted(() => resetCaptcha())
 
 </script>
+
 
 <style lang="postcss">
 .form-frame {
