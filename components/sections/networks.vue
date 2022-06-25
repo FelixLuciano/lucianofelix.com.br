@@ -5,7 +5,7 @@
     </template>
 
     <ul class="network-list">
-      <ContentQuery path="/data/networks" :only="['networks']" find="one" #="{ data }">
+      <ContentQuery path="data/networks" :only="['networks']" find="one" #="{ data }">
         <ContentRenderer :value="data" #="{ value:{ networks } }">
           <li v-for="network in networks" :key="network.name" class="network-list__item">
             <div class="network-list__item__title">{{ network.name }}</div>

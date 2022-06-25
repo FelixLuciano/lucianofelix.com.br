@@ -9,7 +9,7 @@
     <template #bottom>
       <card-grid>
 
-        <ContentQuery path="/data/photography-posts" :only="['posts']" find="one" #="{ data }">
+        <ContentQuery path="data/photography-posts" :only="['posts']" find="one" #="{ data }">
           <ContentRenderer :value="data" #="{ value:{ posts } }">
 
             <template v-for="post in posts" :key="post.photo">

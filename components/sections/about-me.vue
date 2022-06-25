@@ -7,7 +7,7 @@
     <div class="grid md:grid-cols-2 gap-4">
       <img src="/assets/image/profile-photo.webp"/>
 
-      <ContentDoc path="/letters/about-me" class="prose" />
+      <ContentDoc path="letters/about-me" class="prose" />
     </div>
   </page-section>
 </template>
