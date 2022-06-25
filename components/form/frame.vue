@@ -4,9 +4,11 @@
 
     <vue-hcaptcha
       sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
-       @verify="verifyCaptcha"
-       @expired="resetCaptcha"
-       @challengeExpired="resetCaptcha"
+      size="invisible"
+      ref="captcha"
+      @verify="verifyCaptcha"
+      @expired="resetCaptcha"
+      @challengeExpired="resetCaptcha"
     />
 
     <div class="form-frame__bottom">
@@ -31,6 +33,7 @@
 <script lang="ts" setup>
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 
+
 const props = defineProps({
   url: {
     type: String,
@@ -42,6 +45,7 @@ const props = defineProps({
   }
 })
 const body = reactive(props.data)
+const captcha = ref()
 const sending = ref(false)
 const done = ref(false)
 const success = ref(false)
@@ -50,15 +54,19 @@ const toSend = computed(() => !sending.value && !done.value)
 const sendError = computed(() => !sending.value && done.value && !success.value)
 const sendSuccess = computed(() => !sending.value && done.value && success.value)
 
-function verifyCaptcha(token, ekey) {
-  body.token = token
-  body.ekey = ekey
-  console.log(token, ekey)
-  console.log(body)
+
+function initCaptcha() {
+  captcha.value.execute()
 }
 function resetCaptcha() {
   body.token = null
   body.ekey = null
+}
+function verifyCaptcha(token, ekey) {
+  body.token = token
+  body.ekey = ekey
+
+  console.log(body)
 }
 
 function submit({target}) {
@@ -70,24 +78,23 @@ function submit({target}) {
 }
 
 async function send() {
-  console.log(body)
-  // sending.value = true
+  sending.value = true
 
-  // try {
-  //   await fetch(props.url, {
-  //     method: 'POST',
-  //     body: JSON.stringify(body)
-  //   })
+  try {
+    await fetch(props.url, {
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
 
-  //   success.value = true
-  // }
-  // catch {
-  //   success.value = false
-  // }
-  // finally {
-  //   sending.value = false
-  //   done.value = true
-  // }
+    success.value = true
+  }
+  catch {
+    success.value = false
+  }
+  finally {
+    sending.value = false
+    done.value = true
+  }
 }
 
 function clear () {
@@ -101,7 +108,12 @@ function focus (target) {
   target.querySelector('input').focus()
 }
 
-onMounted(() => resetCaptcha())
+
+onMounted(() => {
+  resetCaptcha()
+  nextTick(() => initCaptcha())
+})
+
 </script>
 
 <style lang="postcss">
