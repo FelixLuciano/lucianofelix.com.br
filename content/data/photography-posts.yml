@@ -1,0 +1,37 @@
+posts:
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: true
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: true
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
+- thumb: '/assets/image/photo-thumb.webp'
+  feature: false
+  photo: '/assets/image/photo.webp'
+  alt: 'A testing photo'
