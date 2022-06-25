@@ -34,6 +34,10 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  maxLength: {
+    type: Number,
+    default: 256
   }
 })
 
