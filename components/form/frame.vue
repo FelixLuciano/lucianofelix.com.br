@@ -4,6 +4,7 @@
 
     <vue-hcaptcha
       sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
+      ref="captcha"
       @verify="verifyCaptcha"
       @expired="resetCaptcha"
       @challengeExpired="resetCaptcha"
@@ -44,6 +45,7 @@ const props = defineProps({
   }
 })
 const body = reactive(props.data)
+const captcha = ref()
 const sending = ref(false)
 const done = ref(false)
 const success = ref(false)
@@ -96,6 +98,8 @@ function clear () {
     body[key] = ''
 
   done.value = false
+
+  captcha.value.reset()
 }
 
 function focus (target) {
