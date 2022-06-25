@@ -4,7 +4,6 @@
 
     <vue-hcaptcha
       sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
-      size="invisible"
        @verify="verifyCaptcha"
        @expired="resetCaptcha"
        @challengeExpired="resetCaptcha"
