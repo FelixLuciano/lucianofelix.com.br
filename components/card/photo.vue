@@ -48,6 +48,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 3 / 2;
 
   &--feature {
     grid-area: 2 span / 2 span;

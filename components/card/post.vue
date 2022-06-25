@@ -46,7 +46,8 @@ defineProps({
   &__thumb {
     width: 100%;
     height: 100%;
-  object-fit: cover;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
   }
 }
 </style>
