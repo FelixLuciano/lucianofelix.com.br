@@ -9,13 +9,14 @@
     <sections-photography />
     <sections-contact />
   </main>
+
+  <page-footer />
 </template>
 
 
 <style lang="postcss">
 .main__container {
   padding: 0 var(--margin-size);
-  padding-bottom: 20vw;
   width: 100%;
   display: flex;
   flex-direction: column;
