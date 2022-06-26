@@ -2,12 +2,12 @@
   <page-header />
 
   <main class="main__container">
-    <sections-networks />
-    <sections-about-me />
-    <sections-graduation />
-    <sections-programming />
-    <sections-photography />
-    <sections-contact />
+    <section-networks />
+    <section-about-me />
+    <section-graduation />
+    <section-programming />
+    <section-photography />
+    <!-- <section-contact /> -->
   </main>
 
   <page-footer />
