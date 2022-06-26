@@ -17,6 +17,7 @@
                 :src="post.thumb"
                 :zoom-src="post.photo"
                 :alt="post.alt"
+                :orientation="post.orientation"
                 :feature="post.feature"
               />
             </template>
