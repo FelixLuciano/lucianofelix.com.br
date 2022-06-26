@@ -1,28 +1,32 @@
 posts:
-- thumb: '/assets/image/code-thumb.webp'
+- thumb: '/assets/image/programming/flame.jpg'
   feature: true
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://codepen.io/collection/XMOzxb'
+
+- thumb: '/assets/image/programming/diamond.jpg'
   feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://codepen.io/collection/nJOkMJ'
+
+- thumb: '/assets/image/programming/atomus.jpg'
   feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://codepen.io/collection/AVzZrx'
+
+- thumb: '/assets/image/programming/pynews.jpg'
   feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://github.com/FelixLuciano/PyNews'
+
+- thumb: '/assets/image/programming/xar.jpg'
   feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://felixluciano.github.io/XAR'
+
+- thumb: '/assets/image/programming/elementarium.jpg'
   feature: true
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
+  url: 'https://felixluciano.github.io/mini-elementarium'
+
+- thumb: '/assets/image/programming/tri.jpg'
   feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
-  feature: false
-  url: 'https://google.com.br'
-- thumb: '/assets/image/code-thumb.webp'
-  feature: false
-  url: 'https://google.com.br'
+  url: 'https://felixluciano.github.io/tri'
+
+- thumb: '/assets/image/programming/agroinsper.jpg'
+  feature: true
+  url: 'https://agroinsper.com.br'
