@@ -5,7 +5,11 @@
     :alt="alt"
     ref="img_node"
     class="card-photo"
-    :class="{'card-photo--feature': feature}"
+    :class="{
+      'card-photo--wide': orientation === 'wide',
+      'card-photo--portrait': orientation === 'portrait',
+      'card-photo--feature': feature
+    }"
   />
 </template>
 
@@ -24,6 +28,10 @@ const props = defineProps({
   alt: {
     type: String,
     required: true
+  },
+  orientation: {
+    type: String,
+    default: 'landscape'
   },
   feature: {
     type: Boolean,
@@ -52,6 +60,20 @@ onMounted(() => {
 
   &--feature {
     grid-area: 2 span / 2 span;
+  }
+
+  &--portrait {
+    grid-area: 2 span / 1 span;
+    aspect-ratio: 2 / 3;
+
+    &.card-photo--feature {
+      grid-area: 2 span / 1 span;
+    }
+  }
+
+  &--wide {
+    grid-area: 1 span / 2 span;
+    aspect-ratio: 3 / 1;
   }
 }
 </style>

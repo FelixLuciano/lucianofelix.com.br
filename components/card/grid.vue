@@ -13,6 +13,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: dense;
   gap: .5rem;
+  place-items: center;
 
   @media (min-width: 48rem) {
     grid-template-columns: repeat(3, 1fr);

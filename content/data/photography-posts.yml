@@ -1,37 +1,63 @@
 posts:
-- thumb: '/assets/image/photo-thumb.webp'
+- thumb: '/assets/image/photography/conchas-thumb.jpg'
+  photo: '/assets/image/photography/conchas.jpg'
+  alt: 'A testing photo'
   feature: true
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/parque-thumb.jpg'
+  photo: '/assets/image/photography/parque.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
+  orientation: 'wide'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/estilhaco-thumb.jpg'
+  photo: '/assets/image/photography/estilhaco.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/trem-thumb.jpg'
+  photo: '/assets/image/photography/trem.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/flor-thumb.jpg'
+  photo: '/assets/image/photography/flor.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
-  feature: false
-  photo: '/assets/image/photo.webp'
-  alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
+  orientation: 'portrait'
   feature: true
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/fogo-thumb.jpg'
+  photo: '/assets/image/photography/fogo.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/chipe-thumb.jpg'
+  photo: '/assets/image/photography/chipe.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/boneca-thumb.jpg'
+  photo: '/assets/image/photography/boneca.jpg'
   alt: 'A testing photo'
-- thumb: '/assets/image/photo-thumb.webp'
+  orientation: 'portrait'
   feature: false
-  photo: '/assets/image/photo.webp'
+
+- thumb: '/assets/image/photography/cobre-thumb.jpg'
+  photo: '/assets/image/photography/cobre.jpg'
   alt: 'A testing photo'
+  feature: false
+
+- thumb: '/assets/image/photography/conchas-thumb.jpg'
+  photo: '/assets/image/photography/conchas.jpg'
+  alt: 'A testing photo'
+  feature: false
+
+- thumb: '/assets/image/photography/lodo-thumb.jpg'
+  photo: '/assets/image/photography/lodo.jpg'
+  alt: 'A testing photo'
+  feature: false
+
+- thumb: '/assets/image/photography/ramo-thumb.jpg'
+  photo: '/assets/image/photography/ramo.jpg'
+  alt: 'A testing photo'
+  feature: false
