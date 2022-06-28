@@ -15,8 +15,11 @@
         </div>
 
         <header class="logo-section">
-          <div class="logo">
-            <svgLogo />
+          <div class="logo" v-show="!showDataMatrix" @click="() => toggleDataMatrix(true)">
+            <svg-logo />
+          </div>
+          <div class="data-matrix" v-show="showDataMatrix" @click="() => toggleDataMatrix(false)">
+            <svg-data-matrix />
           </div>
         </header>
 
@@ -44,7 +47,9 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
+import { useToggle } from '@vueuse/core'
 
+const [showDataMatrix, toggleDataMatrix] = useToggle(false)
 const isTyping = ref(false)
 const greetings = ref('Hey 👋')
 
@@ -200,7 +205,7 @@ onMounted(async () => {
   }
 }
 
-.logo {
+.logo, .data-matrix {
   width: 8rem;
   height: 8rem;
   border-right: 1px dotted #333;
@@ -219,6 +224,15 @@ onMounted(async () => {
 
   &-section {
     border-bottom: 1px dotted #333;
+  }
+}
+
+.data-matrix {
+  padding: 1rem;
+  background-color: #FFF;
+
+  &:hover > svg {
+    filter: none;
   }
 }
 
