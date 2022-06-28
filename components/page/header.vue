@@ -109,6 +109,10 @@ onMounted(async () => {
   color: #FFF;
   display: flex;
   flex-direction: column;
+
+  & ::selection {
+    color: #FFF;
+  }
 }
 
 .wrap {
