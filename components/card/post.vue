@@ -7,9 +7,9 @@
     :class="{'card-post--feature': feature}"
   >
     <img
-      :src="thumb"
+      :src="thumbnail"
       alt="Post thumbnail"
-      class="card-post__thumb"
+      class="thumbnail"
     />
   </a>  
 </template>
@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 defineProps({
-  thumb: {
+  thumbnail: {
     type: String,
     required: true
   },
@@ -38,16 +38,18 @@ defineProps({
 .card-post {
   width: 100%;
   height: 100%;
+  position: relative;
+  outline-offset: .4rem;
 
   &--feature {
     grid-area: 2 span / 2 span;
   }
+}
 
-  &__thumb {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-  }
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 </style>

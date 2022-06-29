@@ -14,8 +14,8 @@
 
             <template v-for="post in posts" :key="post.photo">
               <card-photo
-                :src="post.thumb"
-                :zoom-src="post.photo"
+                :src="post.photo"
+                :thumbnail="post.thumbnail"
                 :alt="post.alt"
                 :orientation="post.orientation"
                 :feature="post.feature"

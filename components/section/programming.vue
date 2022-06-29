@@ -12,7 +12,7 @@
 
             <template v-for="post in posts" :key="post.photo">
               <card-post
-                :thumb="post.thumb"
+                :thumbnail="post.thumbnail"
                 :feature="post.feature"
                 :url="post.url"
               />

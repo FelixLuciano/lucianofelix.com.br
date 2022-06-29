@@ -1,32 +1,32 @@
 posts:
-- thumb: '/assets/image/programming/flame.jpg'
+- thumbnail: '/assets/image/programming/flame.jpg'
   feature: true
   url: 'https://codepen.io/collection/XMOzxb'
 
-- thumb: '/assets/image/programming/diamond.jpg'
+- thumbnail: '/assets/image/programming/diamond.jpg'
   feature: false
   url: 'https://codepen.io/collection/nJOkMJ'
 
-- thumb: '/assets/image/programming/atomus.jpg'
+- thumbnail: '/assets/image/programming/atomus.jpg'
   feature: false
   url: 'https://codepen.io/collection/AVzZrx'
 
-- thumb: '/assets/image/programming/pynews.jpg'
+- thumbnail: '/assets/image/programming/pynews.jpg'
   feature: false
   url: 'https://github.com/FelixLuciano/PyNews'
 
-- thumb: '/assets/image/programming/xar.jpg'
+- thumbnail: '/assets/image/programming/xar.jpg'
   feature: false
   url: 'https://felixluciano.github.io/XAR?code=0S8889V0'
 
-- thumb: '/assets/image/programming/elementarium.jpg'
+- thumbnail: '/assets/image/programming/elementarium.jpg'
   feature: true
   url: 'https://felixluciano.github.io/mini-elementarium'
 
-- thumb: '/assets/image/programming/tri.jpg'
+- thumbnail: '/assets/image/programming/tri.jpg'
   feature: false
   url: 'https://felixluciano.github.io/tri'
 
-- thumb: '/assets/image/programming/agroinsper.jpg'
+- thumbnail: '/assets/image/programming/agroinsper.jpg'
   feature: true
   url: 'https://agroinsper.com.br'

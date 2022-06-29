@@ -1,10 +1,12 @@
 <template>
   <img
-    :src="src"
+    :src="thumbnail"
     :data-zoom-src="zoomSrc"
     :alt="alt"
+    tabindex="0"
     ref="img_node"
     class="card-photo"
+    @keypress.enter="zoom.open()"
     :class="{
       'card-photo--wide': orientation === 'wide',
       'card-photo--portrait': orientation === 'portrait',
@@ -19,11 +21,11 @@ import mediumZoom from 'medium-zoom'
 
 const props = defineProps({
   src: {
+    type: String
+  },
+  thumbnail: {
     type: String,
     required: true
-  },
-  zoomSrc: {
-    type: String
   },
   alt: {
     type: String,
@@ -40,14 +42,13 @@ const props = defineProps({
 })
 
 const img_node = ref(null)
-
+const zoom = ref(null)
 
 onMounted(() => {
-  mediumZoom(img_node.value, {
+  zoom.value = mediumZoom(img_node.value, {
     background: 'var(--background-color)'
   })
 })
-
 </script>
 
 
@@ -57,6 +58,7 @@ onMounted(() => {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 3 / 2;
+  outline-offset: .4rem;
 
   &--feature {
     grid-area: 2 span / 2 span;
