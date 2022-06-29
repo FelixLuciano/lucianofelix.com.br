@@ -1,7 +1,7 @@
 <template>
   <img
     :src="thumbnail"
-    :data-zoom-src="zoomSrc"
+    :data-zoom-src="src"
     :alt="alt"
     tabindex="0"
     ref="img_node"
