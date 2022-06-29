@@ -14,6 +14,7 @@
   width: 100%;
   max-width: 160rem;
   margin: calc(3 * var(--margin-size)) auto 0 auto;
+  padding: 0 var(--margin-size);
 }
 
 .container {
