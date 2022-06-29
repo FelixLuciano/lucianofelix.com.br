@@ -1,19 +1,19 @@
 <template>
   <section class="page-section" :id="`section__${id}`">
-    <div class="page-section__divider" />
+    <div class="divider" />
 
-    <div v-if="$slots.top" class="page-section__slot page-section__slot--top">
+    <div v-if="$slots.top" class="slot slot--top">
       <slot name="top" />
     </div>
 
-    <div class="page-section__wrap">
-      <div class="page-section__slot page-section__slot--left">
-        <div class="page-section__counter" />
+    <div class="wrap">
+      <div class="slot slot--left">
+        <div class="counter" />
       </div>
 
-      <div class="page-section__container">
-        <header class="page-section__header">
-          <h2 class="page-section__header__title">
+      <div class="container">
+        <header class="header">
+          <h2 class="header__title">
             <a :href="`#section__${id}`"><slot name="title" /></a>
           </h2>
 
@@ -23,10 +23,10 @@
         <slot/>
       </div>
 
-      <div class="page-section__slot page-section__slot--right"></div>
+      <div class="slot slot--right"></div>
     </div>
 
-    <div v-if="$slots.bottom" class="page-section__slot page-section__slot--bottom">
+    <div v-if="$slots.bottom" class="slot slot--bottom">
       <slot name="bottom" />
     </div>
   </section>
@@ -42,7 +42,7 @@ defineProps({
 </script>
 
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .page-section {
   width: 100%;
   max-width: 160rem;
@@ -60,64 +60,68 @@ defineProps({
     counter-increment: dec uni;
     counter-set: uni 0;
   }
+}
 
-  &__divider {
-    width: 100%;
-    max-width: 80rem;
-    margin: 0 auto 1rem auto;
-    border-top: 1px dotted #777;
+.divider {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto 1rem auto;
+  border-top: 1px dotted #777;
+}
+
+.slot {
+  flex: 1 1 0;
+  display: flex;
+
+  &--top, &--bottom {
+    flex: 1 0 100%;
   }
+}
 
-  &__slot {
-    flex: 1 1 0;
-    display: flex;
+.wrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
-    &--top, &--bottom {
-      flex: 1 0 100%;
-    }
+.counter {
+  width: 100%;
+  padding-top: .75rem;
+  padding-right: calc(var(--margin-size) / 2);
+  color: #666;
+  font-size: 1rem;
+  font-family: monospace;
+  line-height: 1em;
+  text-align: right;
+
+  &:before {
+    content: counter(dec) counter(uni) "/";
+    position: sticky;
+    top: 1rem;
   }
+}
 
-  &__wrap {
-    display: flex;
-    flex-wrap: nowrap;
-  }
+.container {
+  flex: 1 1 auto;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem;
+}
 
-  &__counter {
-    width: 100%;
-    padding-top: .75rem;
-    padding-right: calc(var(--margin-size) / 2);
-    color: #666;
-    font-size: 1rem;
-    font-family: monospace;
+.header {
+  max-width: 40rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1em;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 500;
     line-height: 1em;
-    text-align: right;
+    letter-spacing: -.15rem;
+    padding-bottom:.5rem;
 
-    &:before {
-      content: counter(dec) counter(uni) "/";
-      position: sticky;
-      top: 1rem;
-    }
-  }
-
-  &__container {
-    flex: 1 1 auto;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80rem;
-  }
-
-  &__header {
-    max-width: 40rem;
-    padding-bottom: 1.5rem;
-    font-size: 1.25rem;
-    line-height: 1em;
-
-    &__title {
-      font-size: 3rem;
-      font-weight: 500;
-      line-height: 1em;
-      letter-spacing: -.15rem;
-      padding-bottom:.5rem;
+    @media (max-width: 42rem) {
+      font-size: 2.25rem;
     }
   }
 }
