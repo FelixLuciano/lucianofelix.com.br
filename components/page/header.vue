@@ -24,7 +24,7 @@
         </header>
 
         <div class="quote-section">
-          <p class="quote">{{ greetings }}<span v-show="isTyping" class="quote_cursor">|</span></p>
+          <p class="quote">{{ greetings }}<span v-show="showCursor" class="quote-cursor">|</span></p>
         </div>
 
         <footer class="slot slot--bottom">
@@ -49,8 +49,9 @@
 import { ref, onMounted } from 'vue'
 import { useToggle } from '@vueuse/core'
 
-const [showDataMatrix, toggleDataMatrix] = useToggle(false)
+const showDataMatrix = ref(false)
 const isTyping = ref(false)
+const showCursor = ref(true)
 const greetings = ref('Hey 👋')
 
 function sleep (time) {
@@ -59,23 +60,52 @@ function sleep (time) {
   })
 }
 
-async function type (text) {
+async function type (text, speed=32) {
   for (let character of text) {
     greetings.value += character
-    await sleep(32 * (2 * Math.random())**2)
+    await sleep(speed * (2 * Math.random())**2)
   }
 }
 
-async function erase (text) {
+async function erase (text, speed=32) {
   for (let character of text) {
     greetings.value = greetings.value.slice(0, greetings.value.length -1)
-    await sleep(32 * (2 * Math.random())**2)
+    await sleep(speed * (2 * Math.random())**2)
   }
+}
+
+async function toggleDataMatrix () {
+  if (isTyping.value) return
+
+  isTyping.value = true
+  showCursor.value = true
+
+  if (!showDataMatrix.value) {
+    await erase('Hello, I am Luciano and on this page you can know more about me and my creations..', 6)
+
+    showDataMatrix.value = true
+
+    await type('Humm...', 8)
+
+    isTyping.value = false
+  } else {
+    await erase('Humm...', 8)
+
+    showDataMatrix.value = false
+
+    await type('Hello, I am Luciano and on this page you can know more about me and my creations.', 6)
+    await sleep(1000)
+
+    showCursor.value = false
+    isTyping.value = false
+  }
+
 }
 
 onMounted(async () => {
-  await sleep(1000)
   isTyping.value = true
+  await sleep(1000)
+  showCursor.value = true
   await sleep(1000)
   await erase('Hey 👋👋')
   await sleep(800)
@@ -95,6 +125,7 @@ onMounted(async () => {
   await sleep(500)
   await type('.')
   await sleep(2000)
+  showCursor.value = false
   isTyping.value = false
 })
 
@@ -218,6 +249,7 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 
   & > svg {
     transition: filter 256ms;
