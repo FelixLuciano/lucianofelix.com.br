@@ -155,6 +155,7 @@ onMounted(async () => {
   background-color: #000;
   border-radius: 0.25rem;
   display: flex;
+  color-scheme: only light;
 
   @media (prefers-color-scheme: dark) {
     background-color: #DDD;
