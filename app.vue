@@ -16,7 +16,7 @@
 </template>
 
 
-<style>
+<style lang="postcss">
 :root {
   --background-color: #FFF;
   --primary-color: #922;
@@ -48,6 +48,6 @@ body {
 ::selection {
   background-color: var(--primary-color);
   color: #000;
-}
+} 
 
 </style>

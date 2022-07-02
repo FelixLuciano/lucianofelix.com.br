@@ -7,7 +7,7 @@
     <div class="pb-8 grid md:grid-cols-2 gap-8">
       <div />
 
-      <div class="prose dark:prose-invert text-lg md:text-2xl">
+      <div class="prose prose-neutral dark:prose-invert text-lg md:text-2xl">
         <p>
           Ea ipsum ut. Dolores rebum magna eirmod dolor soluta dolor accusam dolor minim dolor kasd nisl justo esse et ex. Adipiscing at dignissim nisl at et magna est zzril nonumy suscipit autem sea adipiscing.
         </p>

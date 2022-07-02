@@ -7,7 +7,7 @@
     <div class="grid md:grid-cols-2 gap-8">
       <div />
 
-      <ContentDoc path="/letters/graduation" class="prose dark:prose-invert" />
+      <ContentDoc path="/letters/graduation" class="prose prose-neutral dark:prose-invert" />
     </div>
   </page-section>
 </template>
