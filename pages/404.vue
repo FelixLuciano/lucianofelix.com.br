@@ -35,6 +35,11 @@
   font-weight: 500;
   display: flex;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: #DDD;
+    color: #111;
+  }
+
   &__wrap {
     margin: 0 1rem;
     border: 1px dotted #333;
@@ -42,10 +47,18 @@
     border-bottom-width: 0;
     display: flex;
     flex-direction: column;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #888;
+    }
   }
 
   &__decorator {
     border: 0.5rem solid #000;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #DDD;
+    }
 
     &--left {
       margin-top: 40%;
@@ -65,17 +78,29 @@
   &__header {
     padding: 1rem;
     border-bottom: 1px dotted #333;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #888;
+    }
   }
 
   &__body {
     padding: min(5vmin, 3rem) min(15vmin, 7rem);
     background-color: #111;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #AAA;
+    }
   }
 
   &__footer {
     padding: 1rem;
     border-top: 1px dotted #333;
     text-align: right;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #888;
+    }
 
     &__link {
       text-decoration: underline;
