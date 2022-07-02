@@ -4,10 +4,10 @@
       Graduation
     </template>
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-2 gap-8">
       <div />
 
-      <ContentDoc path="/letters/graduation" class="prose" />
+      <ContentDoc path="/letters/graduation" class="prose dark:prose-invert" />
     </div>
   </page-section>
 </template>

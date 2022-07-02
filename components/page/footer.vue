@@ -28,5 +28,9 @@
   color: #444;
   font-size: .9rem;
   font-weight: 550;
+
+  @media (prefers-color-scheme: dark) {
+    color: #AAA;
+  }
 }
 </style>

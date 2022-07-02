@@ -12,8 +12,8 @@
       </div>
 
       <div class="container">
-        <header class="header">
-          <h2 class="header__title">
+        <header class="header" :class="{'header--large': large}">
+          <h2 class="header__title" :class="{'header__title--large': large}">
             <a :href="`#section__${id}`"><slot name="title" /></a>
           </h2>
 
@@ -37,6 +37,10 @@ defineProps({
   id: {
     type: String,
     required: true
+  },
+  large: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
@@ -67,6 +71,10 @@ defineProps({
   max-width: 80rem;
   margin: 0 auto 1rem auto;
   border-top: 1px dotted #777;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #555;
+  }
 }
 
 .slot {
@@ -97,6 +105,10 @@ defineProps({
     content: counter(dec) counter(uni) "/";
     position: sticky;
     top: 1rem;
+
+    &:not(:stuck) {
+      color: red;
+    }
   }
 }
 
@@ -113,15 +125,27 @@ defineProps({
   font-size: 1.25rem;
   line-height: 1em;
 
+  @media (max-width: 42rem) {
+    padding-bottom: 1rem;
+  }
+
+  &--large {
+    max-width: 60rem;
+  }
+
   &__title {
-    font-size: 3rem;
+    font-size: clamp(2.25rem, 5vw, 3rem);
     font-weight: 500;
     line-height: 1em;
     letter-spacing: -.15rem;
     padding-bottom:.5rem;
 
-    @media (max-width: 42rem) {
-      font-size: 2.25rem;
+    @media (prefers-color-scheme: dark) {
+      color: #FFF;
+    }
+
+    &--large {
+      font-size: clamp(2.75rem, 6vw, 3.75rem);
     }
   }
 }

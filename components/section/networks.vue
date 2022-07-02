@@ -44,6 +44,10 @@
     font-weight: 500;
     display: block;
 
+    @media (prefers-color-scheme: dark) {
+      border-bottom-color: #666;
+    }
+
     &:hover {
       color: var(--primary-color);
       border-bottom: 1px solid var(--primary-color);

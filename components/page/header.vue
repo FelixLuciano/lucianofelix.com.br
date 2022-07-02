@@ -15,10 +15,11 @@
         </div>
 
         <header class="logo-section">
-          <div class="logo" v-show="!showDataMatrix" @click="() => toggleDataMatrix(true)">
+          <div class="logo" v-show="!showDataMatrix" @click="() => toggleDataMatrix()">
             <svg-logo />
+            <svg-logo-dark />
           </div>
-          <div class="data-matrix" v-show="showDataMatrix" @click="() => toggleDataMatrix(false)">
+          <div class="data-matrix" v-show="showDataMatrix" @click="() => toggleDataMatrix()">
             <svg-data-matrix />
           </div>
         </header>
@@ -154,6 +155,10 @@ onMounted(async () => {
   background-color: #000;
   border-radius: 0.25rem;
   display: flex;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #DDD;
+  }
 }
 
 .container {
@@ -167,6 +172,10 @@ onMounted(async () => {
 .slot {
   flex: 1 1 3rem;
   display: flex;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #888 !important;
+  }
 
   &--top {
     min-height: 8rem;
@@ -205,6 +214,10 @@ onMounted(async () => {
   font-weight: bold;
   letter-spacing: min(1vh, 2rem);
 
+  @media (prefers-color-scheme: dark) {
+    border-color: #666;
+  }
+
   &--horizontal {
     margin-bottom: auto;
     padding: 1rem;
@@ -223,6 +236,10 @@ onMounted(async () => {
 
     @media (max-width: 42rem) {
       display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #888;
     }
 
     &--horizontal {
@@ -251,15 +268,46 @@ onMounted(async () => {
   align-items: center;
   user-select: none;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: #999;
+    border-color: #777;
+  }
+
   & > svg {
     transition: filter 256ms;
   }
   &:hover > svg {
-    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, .8))
+    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, .8));
+
+    @media (prefers-color-scheme: dark) {
+      filter: drop-shadow(0 0 1rem rgba(0, 0, 0, .8));
+    }
   }
 
   &-section {
-    border-bottom: 1px dotted #333;
+    border-bottom: 1px dotted #222;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #777;
+    }
+  }
+}
+
+.logo > svg {
+  &:nth-child(1) {
+    display: block;
+  }
+  &:nth-child(2) {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:nth-child(1) {
+      display: none;
+    }
+    &:nth-child(2) {
+      display: block;
+    }
   }
 }
 
@@ -277,6 +325,12 @@ onMounted(async () => {
   border-right: 1px dotted #333;
   background-color: #111;
   font-size: clamp(1.25rem, 3vmin, 1.5rem);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #BBB;
+    border-color: #888;
+    color: #111;
+  }
 
   &::before {
     content: open-quote;
@@ -312,8 +366,17 @@ onMounted(async () => {
   text-decoration: none;
   transition: background-color 64ms;
 
+  @media (prefers-color-scheme: dark) {
+    border-color: #888;
+    color: #222;
+  }
+
   &:hover {
     background-color: #222;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #AAA;
+    }
   }
 
   &-section {
@@ -322,6 +385,10 @@ onMounted(async () => {
     border-top: 1px dotted #333;
     display: flex;
     justify-content: center;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #888;
+    }
   }
 }
 
@@ -332,5 +399,10 @@ onMounted(async () => {
   border: .25rem solid #000;
   border-top-width: 0;
   border-bottom-color: var(--background-color);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #DDD;
+    border-bottom-color: var(--background-color);
+  }
 }
 </style>

@@ -1,19 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [],
-  theme: {
-    extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              color: 'var(--primary-color)',
-            },
-          },
-        },
-      },
-    },
-  },
+  theme: {},
   plugins: [
     require('@tailwindcss/typography')
   ],

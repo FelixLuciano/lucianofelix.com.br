@@ -21,6 +21,11 @@
   --background-color: #FFF;
   --primary-color: #922;
   --margin-size: clamp(.5rem, 4vmin, 3rem);
+
+  @media (prefers-color-scheme: dark) {
+    --background-color: #111;
+    color: #DDD;
+  }
 }
 
 html {

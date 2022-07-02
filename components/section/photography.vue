@@ -4,12 +4,12 @@
       Photography
     </template>
 
-    <div class="pb-8 grid md:grid-cols-2 gap-4">
+    <div class="pb-8 grid md:grid-cols-2 gap-8">
       <div />
 
-      <div class="prose">
+      <div class="prose dark:prose-invert text-lg md:text-2xl">
         <p>
-          Ea ipsum ut. Dolores rebum magna eirmod dolor soluta dolor accusam dolor minim dolor kasd nisl justo esse et ex. Adipiscing at dignissim nisl at et magna est zzril nonumy suscipit autem sea adipiscing. Dolor et at nonumy te et et lorem laoreet nonumy vero. Vero ut augue consetetur iusto in zzril vulputate at elitr et nonumy sea sanctus dolor ipsum.
+          Ea ipsum ut. Dolores rebum magna eirmod dolor soluta dolor accusam dolor minim dolor kasd nisl justo esse et ex. Adipiscing at dignissim nisl at et magna est zzril nonumy suscipit autem sea adipiscing.
         </p>
         <p>
           Click to magnify

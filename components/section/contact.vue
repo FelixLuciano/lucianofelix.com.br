@@ -8,7 +8,7 @@
       Send me a message
     </template>
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-2 gap-8">
       <div />
 
       <form-frame url="/api/send-message">
