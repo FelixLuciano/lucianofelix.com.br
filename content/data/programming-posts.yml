@@ -11,9 +11,9 @@ posts:
   feature: false
   url: 'https://codepen.io/collection/AVzZrx'
 
-- thumbnail: '/assets/image/programming/pynews.jpg'
+- thumbnail: '/assets/image/programming/pypers.jpg'
   feature: false
-  url: 'https://github.com/FelixLuciano/PyNews'
+  url: 'https://github.com/FelixLuciano/pypers'
 
 - thumbnail: '/assets/image/programming/xar.jpg'
   feature: false
@@ -26,7 +26,3 @@ posts:
 - thumbnail: '/assets/image/programming/tri.jpg'
   feature: false
   url: 'https://felixluciano.github.io/tri'
-
-- thumbnail: '/assets/image/programming/agroinsper.jpg'
-  feature: true
-  url: 'https://agroinsper.com.br'
