@@ -1,6 +1,6 @@
 # LucianoFelix.com.br
 
-Next major release of my personal website made with [Nuxt 3](https://v3.nuxtjs.org).
+Next major release of my personal website made with [Nuxt 3](https://nuxt.com).
 
 ## Setup
 
@@ -39,4 +39,4 @@ Locally preview production build:
 npm run preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
