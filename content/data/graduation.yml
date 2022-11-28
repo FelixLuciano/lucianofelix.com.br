@@ -1,0 +1,33 @@
+projects:
+- title: Bacara
+  url: https://github.com/FelixLuciano/Bacara-Game
+
+- title: Samurai Andrew
+  url: https://github.com/FelixLuciano/Samurai-Andrew
+
+- title: Fake JobPosting Prediction
+  url: https://github.com/FelixLuciano/Fake-JobPosting-Prediction
+
+- title: Elements of Software Design
+  url: https://github.com/FelixLuciano/Elements-of-Software-Design
+
+- title: Elements of Computing Systems
+  url: https://github.com/FelixLuciano/Elements-of-Computing-Systems
+
+- title: Elements of Computer Vision
+  url: https://github.com/FelixLuciano/Elements-of-Computer-Vision
+
+- title: P2P UART Serialization
+  url: https://github.com/FelixLuciano/P2P-UART-Serialization
+
+- title: Insper Mileage REST API case
+  url: https://github.com/FelixLuciano/Insper-Mileage-REST-API-case
+
+- title: Insper Agenda
+  url: https://github.com/FelixLuciano/Insper_agenda
+
+photos:
+- thumbnail: '/assets/image/photography/chipe-thumbnail.jpg'
+  photo: '/assets/image/photography/chipe.jpg'
+  alt: 'A testing photo'
+  feature: false
