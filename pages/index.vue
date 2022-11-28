@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>Luciano Felix</Title>
+  </Head>
+
   <page-header />
 
   <main class="main__container">
