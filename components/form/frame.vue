@@ -79,6 +79,9 @@ async function send() {
   try {
     await fetch(props.url, {
       method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body)
     })
 
