@@ -133,6 +133,7 @@ onMounted(() => resetCaptcha())
     padding: .5rem 0;
     border: 1px solid #000;
     min-width: 10rem;
+    background-color: var(--background-color);
     transition: background-color 128ms, color 128ms;
 
     &:focus {
@@ -149,6 +150,20 @@ onMounted(() => resetCaptcha())
 
     &:disabled {
       opacity: .5;
+    }
+
+    :root.dark & {
+      border-color: #FFF;
+
+      &:hover, &:disabled {
+        background-color: #FFF;
+        border-color: #FFF;
+        color: #000;
+      }
+
+      &--success {
+        border-color: #286;
+      }
     }
 
     &--error {
