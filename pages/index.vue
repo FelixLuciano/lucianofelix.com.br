@@ -11,7 +11,7 @@
     <section-graduation />
     <section-programming />
     <section-photography />
-    <!-- <section-contact /> -->
+    <section-contact />
   </main>
 
   <page-footer />
