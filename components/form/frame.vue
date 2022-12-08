@@ -5,6 +5,7 @@
     <vue-hcaptcha
       sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
       ref="captcha"
+      :theme="captchaTheme"
       @verify="verifyCaptcha"
       @expired="resetCaptcha"
       @challengeExpired="resetCaptcha"
@@ -46,6 +47,8 @@ const props = defineProps({
 })
 const body = reactive(props.data)
 const captcha = ref()
+const colorMode = useColorMode()
+const captchaTheme = computed(() => colorMode.value === 'dark' ? 'dark': 'light')
 const sending = ref(false)
 const done = ref(false)
 const success = ref(false)
@@ -79,6 +82,9 @@ async function send() {
   try {
     await fetch(props.url, {
       method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body)
     })
 

@@ -7,7 +7,7 @@ const sheetId = '1oWWT-Fw0FQJdGO3VbtDFh3x_Uvid7bNuptGNWQkxZXM'
 const range = 'Messages'
 const { secret, google_credentials } = process.env
 
-async function authenticate () {
+async function authenticate() {
   const auth = new google.auth.GoogleAuth({
     scopes: [
       'https://www.googleapis.com/auth/drive',
