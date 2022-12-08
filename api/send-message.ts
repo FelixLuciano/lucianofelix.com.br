@@ -26,6 +26,8 @@ export default async function handler(request, response) {
     const { contact, message, token } = request.body
     const { success } = await verify(secret, token)
 
+    console.log(secret, token, success)
+
     if (!success) {
       response.status(400).json({
         success: false,
