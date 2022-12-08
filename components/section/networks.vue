@@ -44,7 +44,7 @@
     font-weight: 500;
     display: block;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       border-bottom-color: #666;
     }
 

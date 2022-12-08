@@ -11,7 +11,9 @@ export default defineNuxtConfig({
     // // https://image.nuxtjs.org/
     // '@nuxt/image',
     // https://vueuse.org,/
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    // https://color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode',
   ],
 
   postcss: {
@@ -24,5 +26,15 @@ export default defineNuxtConfig({
   },
 
   // // https://image.nuxtjs.org/api/options
-  // image: {}
+  // image: {},
+
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    hid: 'nuxt-color-mode-script',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'color-mode'
+  }
 })

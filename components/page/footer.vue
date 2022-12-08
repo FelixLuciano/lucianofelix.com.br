@@ -29,7 +29,7 @@
   font-size: .9rem;
   font-weight: 550;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     color: #AAA;
   }
 }

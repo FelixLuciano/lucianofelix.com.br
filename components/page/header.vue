@@ -41,15 +41,27 @@
         </footer>
       </div>
 
-      <div class="slot slot--right"></div>
+      <div class="slot slot--right">
+        <ul class="options--section">
+          <li class="options--item">
+            <a href="#" @click.prevent="colorMode.preference='dark'">Dark</a>
+          </li>
+          <li class="options--item">
+            <a href="#" @click.prevent="colorMode.preference='light'">Light</a>
+          </li>
+          <li class="options--item">
+            <a href="#" @click.prevent="colorMode.preference='system'">System</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
-import { useToggle } from '@vueuse/core'
 
+const colorMode = useColorMode()
 const showDataMatrix = ref(false)
 const isTyping = ref(false)
 const showCursor = ref(true)
@@ -157,7 +169,7 @@ onMounted(async () => {
   display: flex;
   color-scheme: only light;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     background-color: #DDD;
   }
 }
@@ -174,7 +186,7 @@ onMounted(async () => {
   flex: 1 1 3rem;
   display: flex;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     border-color: #888 !important;
   }
 
@@ -196,7 +208,7 @@ onMounted(async () => {
     border-left: 1px dotted #333;
   }
   &--right, &--left {
-    flex: 1 1 3.75rem;
+    flex: 1 1 5rem;
 
     @media (max-width: 42rem) {
       flex: 1 1 1rem !important;
@@ -215,7 +227,7 @@ onMounted(async () => {
   font-weight: bold;
   letter-spacing: min(1vh, 2rem);
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     border-color: #666;
   }
 
@@ -239,7 +251,7 @@ onMounted(async () => {
       display: none;
     }
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       border-color: #888;
     }
 
@@ -258,6 +270,43 @@ onMounted(async () => {
   }
 }
 
+.options {
+  &--section {
+    margin: 0 0 0 auto;
+    padding: 1.5rem 1rem;
+    border-left: 1px dotted #333;
+    justify-self: end;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    @media (max-width: 42rem) {
+      display: none;
+    }
+
+    :root.dark & {
+      border-color: #666;
+    }
+  }
+
+  &--item {
+    opacity: .5;
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: dotted underline var(--primary-color);
+      cursor: pointer;
+    }
+
+    :root.dark & {
+      opacity: .75;
+      color: #111;
+    }
+  }
+}
+
 .logo, .data-matrix {
   width: 8rem;
   height: 8rem;
@@ -269,7 +318,7 @@ onMounted(async () => {
   align-items: center;
   user-select: none;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     background-color: #999;
     border-color: #777;
   }
@@ -280,7 +329,7 @@ onMounted(async () => {
   &:hover > svg {
     filter: drop-shadow(0 0 1rem rgba(255, 255, 255, .8));
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       filter: drop-shadow(0 0 1rem rgba(0, 0, 0, .8));
     }
   }
@@ -288,7 +337,7 @@ onMounted(async () => {
   &-section {
     border-bottom: 1px dotted #222;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       border-color: #777;
     }
   }
@@ -302,7 +351,7 @@ onMounted(async () => {
     display: none;
   }
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     &:nth-child(1) {
       display: none;
     }
@@ -327,7 +376,7 @@ onMounted(async () => {
   background-color: #111;
   font-size: clamp(1.25rem, 3vmin, 1.5rem);
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     background-color: #BBB;
     border-color: #888;
     color: #111;
@@ -367,7 +416,7 @@ onMounted(async () => {
   text-decoration: none;
   transition: background-color 64ms;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     border-color: #888;
     color: #222;
   }
@@ -375,7 +424,7 @@ onMounted(async () => {
   &:hover {
     background-color: #222;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       background-color: #AAA;
     }
   }
@@ -387,7 +436,7 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       border-color: #888;
     }
   }
@@ -401,7 +450,7 @@ onMounted(async () => {
   border-top-width: 0;
   border-bottom-color: var(--background-color);
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     border-color: #DDD;
     border-bottom-color: var(--background-color);
   }

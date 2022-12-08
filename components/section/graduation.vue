@@ -76,7 +76,7 @@
     line-height: 1em;
     display: block;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       border-bottom-color: #666;
     }
 

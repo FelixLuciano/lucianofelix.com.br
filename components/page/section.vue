@@ -72,7 +72,7 @@ defineProps({
   margin: 0 auto 1rem auto;
   border-top: 1px dotted #777;
 
-  @media (prefers-color-scheme: dark) {
+  :root.dark & {
     border-color: #555;
   }
 }
@@ -140,7 +140,7 @@ defineProps({
     letter-spacing: -.15rem;
     padding-bottom:.5rem;
 
-    @media (prefers-color-scheme: dark) {
+    :root.dark & {
       color: #FFF;
     }
 

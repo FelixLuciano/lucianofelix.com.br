@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@hcaptcha/vue3-hcaptcha": "^1.0.1",
+    "@nuxtjs/color-mode": "^3.2.0",
     "@vueuse/core": "^8.7.5",
     "googleapis": "^104.0.0",
     "hcaptcha": "^0.1.1",
