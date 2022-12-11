@@ -45,7 +45,9 @@ export default async function handler(request, response) {
           majorDimension: 'ROWS',
           values: [
             [
-              new Date().toLocaleString('pt-BR'),
+              new Date().toLocaleString('pt-BR', {
+                timeZone: 'America/Sao_Paulo'
+            }),
               contact,
               message
             ]
