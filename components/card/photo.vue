@@ -1,22 +1,15 @@
 <template>
-  <img
-    :src="thumbnail"
-    :data-zoom-src="src"
-    :alt="alt"
-    tabindex="0"
-    ref="img_node"
-    class="card-photo"
-    @keypress.enter="zoom.open()"
-    :class="{
+  <img :src="thumbnail" :data-zoom-src="src" :alt="alt" tabindex="0" ref="img_node" class="card-photo"
+    @keypress.enter="zoom.open()" :class="{
       'card-photo--wide': orientation === 'wide',
       'card-photo--portrait': orientation === 'portrait',
       'card-photo--feature': feature
-    }"
-  />
+    }" />
 </template>
 
 
 <script lang="ts" setup>
+import { ref, onMounted } from "vue"
 import mediumZoom from 'medium-zoom'
 
 const props = defineProps({

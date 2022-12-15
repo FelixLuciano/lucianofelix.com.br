@@ -1,4 +1,5 @@
 <template>
+
   <Head>
     <Title>Not Found</Title>
   </Head>
@@ -130,10 +131,12 @@
       animation: glitch 2s infinite;
       animation-direction: reverse;
     }
+
     &:nth-child(2) {
       clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
     }
+
     &:nth-child(3) {
       clip-path: polygon(0 100%, 100% 100%, 100% 60%, 0 60%);
       -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 60%, 0 60%);
@@ -148,40 +151,49 @@
     --y: 3px;
     --c: #111;
   }
+
   10% {
     --x: 3px;
     --y: -2px;
   }
+
   20% {
     --x: 3px;
     --y: 2px;
   }
+
   30% {
     --x: -2px;
     --y: 0;
   }
+
   40% {
     --x: 3px;
     --y: 1px;
   }
+
   50% {
     --x: -3px;
     --y: -4px;
   }
+
   60% {
     --x: 1px;
     --y: -4px;
   }
+
   70% {
     --x: -4px;
     --y: -3px;
     --c: #111;
   }
+
   80% {
     --x: 2px;
     --y: -1px;
     --c: #fff;
   }
+
   90% {
     --x: 4px;
     --y: -2px;
@@ -192,13 +204,16 @@
   2% {
     transform: translate(0.4rem, -0.2rem) skew(4deg);
   }
+
   4%,
   70% {
     transform: translate(0.1rem, 0) skew(0deg);
   }
+
   68% {
     transform: translate(0, 0) skew(0deg);
   }
+
   69% {
     transform: translate(-0.2rem, 0) skew(-2deg);
   }
@@ -208,13 +223,16 @@
   2% {
     transform: translate(0.8rem, -0.2rem) skew(16deg);
   }
+
   4%,
   70% {
     transform: translate(0.2rem, 0) skew(0deg);
   }
+
   68% {
     transform: translate(0, 0);
   }
+
   69% {
     transform: translate(-0.2rem, 0) skew(-8deg);
   }

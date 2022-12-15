@@ -2,25 +2,14 @@
   <form @submit.prevent="submit" class="form-frame">
     <slot :body="body" :disabled="readOnly" />
 
-    <vue-hcaptcha
-      sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"
-      ref="captcha"
-      :theme="captchaTheme"
-      @verify="verifyCaptcha"
-      @expired="resetCaptcha"
-      @challengeExpired="resetCaptcha"
-    />
+    <vue-hcaptcha sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7" ref="captcha" :theme="captchaTheme"
+      @verify="verifyCaptcha" @expired="resetCaptcha" @challengeExpired="resetCaptcha" />
 
     <div class="form-frame__bottom">
-      <button
-        type="submit"
-        :disabled="readOnly || !hasToken"
-        class="form-frame__submit-button"
-        :class="{
-          'form-frame__submit-button--error': sendError,
-          'form-frame__submit-button--success': sendSuccess
-        }"
-      >
+      <button type="submit" :disabled="readOnly || !hasToken" class="form-frame__submit-button" :class="{
+        'form-frame__submit-button--error': sendError,
+        'form-frame__submit-button--success': sendSuccess
+      }">
         <template v-if="toSend">Send</template>
         <template v-if="sending">Sending...</template>
         <template v-if="sendError">Try again</template>
@@ -32,6 +21,7 @@
 
 
 <script lang="ts" setup>
+import { ref, reactive, computed, onMounted } from "vue"
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha'
 
 
@@ -48,7 +38,7 @@ const props = defineProps({
 const body = reactive(props.data)
 const captcha = ref()
 const colorMode = useColorMode()
-const captchaTheme = computed(() => colorMode.value === 'dark' ? 'dark': 'light')
+const captchaTheme = computed(() => colorMode.value === 'dark' ? 'dark' : 'light')
 const sending = ref(false)
 const done = ref(false)
 const success = ref(false)
@@ -68,7 +58,7 @@ function verifyCaptcha(token, ekey) {
   body.ekey = ekey
 }
 
-function submit({target}) {
+function submit({ target }) {
   if (done.value) {
     clear()
     focus(target)
@@ -99,7 +89,7 @@ async function send() {
   }
 }
 
-function clear () {
+function clear() {
   for (const key of Object.keys(body))
     body[key] = ''
 
@@ -108,7 +98,7 @@ function clear () {
   captcha.value.reset()
 }
 
-function focus (target) {
+function focus(target) {
   target.querySelector('input').focus()
 }
 
@@ -142,7 +132,8 @@ onMounted(() => resetCaptcha())
       border-bottom-color: #000;
     }
 
-    &:hover, &:disabled {
+    &:hover,
+    &:disabled {
       background-color: #000;
       border-color: #000;
       color: #FFF;
@@ -155,7 +146,8 @@ onMounted(() => resetCaptcha())
     :root.dark & {
       border-color: #FFF;
 
-      &:hover, &:disabled {
+      &:hover,
+      &:disabled {
         background-color: #FFF;
         border-color: #FFF;
         color: #000;

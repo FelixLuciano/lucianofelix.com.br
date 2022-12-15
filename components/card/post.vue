@@ -1,17 +1,7 @@
 <template>
-  <a
-    :href="url"
-    target="_blank"
-    rel="norefer noopener"
-    class="card-post"
-    :class="{'card-post--feature': feature}"
-  >
-    <img
-      :src="thumbnail"
-      alt="Post thumbnail"
-      class="thumbnail"
-    />
-  </a>  
+  <a :href="url" target="_blank" rel="norefer noopener" class="card-post" :class="{ 'card-post--feature': feature }">
+    <img :src="thumbnail" alt="Post thumbnail" class="thumbnail" />
+  </a>
 </template>
 
 

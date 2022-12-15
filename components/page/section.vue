@@ -12,15 +12,17 @@
       </div>
 
       <div class="container">
-        <header class="header" :class="{'header--large': large}">
-          <h2 class="header__title" :class="{'header__title--large': large}">
-            <a :href="`#section__${id}`"><slot name="title" /></a>
+        <header class="header" :class="{ 'header--large': large }">
+          <h2 class="header__title" :class="{ 'header__title--large': large }">
+            <a :href="`#section__${id}`">
+              <slot name="title" />
+            </a>
           </h2>
 
           <slot name="header" v-if="$slots.header" />
         </header>
 
-        <slot/>
+        <slot />
       </div>
 
       <div class="slot slot--right"></div>
@@ -60,6 +62,7 @@ defineProps({
   &:first-of-type {
     counter-set: dec 0;
   }
+
   &:nth-of-type(10n) {
     counter-increment: dec uni;
     counter-set: uni 0;
@@ -81,7 +84,8 @@ defineProps({
   flex: 1 1 0;
   display: flex;
 
-  &--top, &--bottom {
+  &--top,
+  &--bottom {
     flex: 1 0 100%;
   }
 }
@@ -138,7 +142,7 @@ defineProps({
     font-weight: 500;
     line-height: 1em;
     letter-spacing: -.15rem;
-    padding-bottom:.5rem;
+    padding-bottom: .5rem;
 
     :root.dark & {
       color: #FFF;

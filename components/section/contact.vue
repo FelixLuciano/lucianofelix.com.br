@@ -13,21 +13,11 @@
 
       <form-frame url="/api/send-message">
         <template #="{ body, disabled }">
-          <form-text-input
-            name="contact"
-            :required="true"
-            :disabled="disabled"
-            v-model="body.contact"
-          >
+          <form-text-input name="contact" :required="true" :disabled="disabled" v-model="body.contact">
             <template #label>Contact</template>
           </form-text-input>
 
-          <form-textarea-input
-            name="message"
-            :required="true"
-            :disabled="disabled"
-            v-model="body.message"
-          >
+          <form-textarea-input name="message" :required="true" :disabled="disabled" v-model="body.message">
             <template #label>Message</template>
           </form-textarea-input>
         </template>

@@ -32,7 +32,7 @@
           <div class="anchor-section">
             <a class="anchor" href="#section__networks" title="About me">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14" width="16" height="16" aria-hidden="true">
-                <polygon points="8 13.856 16 0 0 0 8 13.856" fill="currentcolor"/>
+                <polygon points="8 13.856 16 0 0 0 8 13.856" fill="currentcolor" />
               </svg>
             </a>
           </div>
@@ -44,13 +44,13 @@
       <div class="slot slot--right">
         <ul class="options--section">
           <li class="options--item">
-            <a href="#" @click.prevent="colorMode.preference='dark'">Dark</a>
+            <a href="#" @click.prevent="$colorMode.preference = 'dark'">Dark</a>
           </li>
           <li class="options--item">
-            <a href="#" @click.prevent="colorMode.preference='light'">Light</a>
+            <a href="#" @click.prevent="$colorMode.preference = 'light'">Light</a>
           </li>
           <li class="options--item">
-            <a href="#" @click.prevent="colorMode.preference='system'">System</a>
+            <a href="#" @click.prevent="$colorMode.preference = 'system'">System</a>
           </li>
         </ul>
       </div>
@@ -61,33 +61,32 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 
-const colorMode = useColorMode()
 const showDataMatrix = ref(false)
 const isTyping = ref(false)
 const showCursor = ref(true)
 const greetings = ref('Hey 👋')
 
-function sleep (time) {
+function sleep(time) {
   return new Promise((resolve) => {
     setTimeout(resolve, time)
   })
 }
 
-async function type (text, speed=32) {
+async function type(text, speed = 32) {
   for (let character of text) {
     greetings.value += character
-    await sleep(speed * (2 * Math.random())**2)
+    await sleep(speed * (2 * Math.random()) ** 2)
   }
 }
 
-async function erase (text, speed=32) {
+async function erase(text, speed = 32) {
   for (let character of text) {
-    greetings.value = greetings.value.slice(0, greetings.value.length -1)
-    await sleep(speed * (2 * Math.random())**2)
+    greetings.value = greetings.value.slice(0, greetings.value.length - 1)
+    await sleep(speed * (2 * Math.random()) ** 2)
   }
 }
 
-async function toggleDataMatrix () {
+async function toggleDataMatrix() {
   if (isTyping.value) return
 
   isTyping.value = true
@@ -194,20 +193,25 @@ onMounted(async () => {
     min-height: 8rem;
     border-bottom: 1px dotted #333;
   }
+
   &--bottom {
     min-height: 8rem;
     border-top: 1px dotted #333;
     flex-direction: column;
   }
+
   &--left {
     min-width: 1rem;
     border-right: 1px dotted #333;
   }
+
   &--right {
     min-width: 1rem;
     border-left: 1px dotted #333;
   }
-  &--right, &--left {
+
+  &--right,
+  &--left {
     flex: 1 1 5rem;
 
     @media (max-width: 42rem) {
@@ -307,7 +311,8 @@ onMounted(async () => {
   }
 }
 
-.logo, .data-matrix {
+.logo,
+.data-matrix {
   width: 8rem;
   height: 8rem;
   border-right: 1px dotted #333;
@@ -323,10 +328,11 @@ onMounted(async () => {
     border-color: #777;
   }
 
-  & > svg {
+  &>svg {
     transition: filter 256ms;
   }
-  &:hover > svg {
+
+  &:hover>svg {
     filter: drop-shadow(0 0 1rem rgba(255, 255, 255, .8));
 
     :root.dark & {
@@ -343,10 +349,11 @@ onMounted(async () => {
   }
 }
 
-.logo > svg {
+.logo>svg {
   &:nth-child(1) {
     display: block;
   }
+
   &:nth-child(2) {
     display: none;
   }
@@ -355,6 +362,7 @@ onMounted(async () => {
     &:nth-child(1) {
       display: none;
     }
+
     &:nth-child(2) {
       display: block;
     }
@@ -365,7 +373,7 @@ onMounted(async () => {
   padding: 1rem;
   background-color: #FFF;
 
-  &:hover > svg {
+  &:hover>svg {
     filter: none;
   }
 }
@@ -385,6 +393,7 @@ onMounted(async () => {
   &::before {
     content: open-quote;
   }
+
   &::after {
     content: close-quote;
   }
@@ -399,6 +408,7 @@ onMounted(async () => {
     user-select: none;
     animation: blink 1s steps(2, start) infinite;
   }
+
   @keyframes blink {
     to {
       visibility: hidden;

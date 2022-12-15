@@ -1,21 +1,17 @@
 <template>
   <div class="form-input">
 
-    <input
-      type="text"
-      :name="name"
-      :id="id"
-      :required="required"
-      :disabled="disabled"
-      class="form-input__input"
-      v-model="value"
-    >
+    <input type="text" :name="name" :id="id" :required="required" :disabled="disabled" class="form-input__input"
+      v-model="value">
 
-    <label :for="id" class="form-input__label"><slot name="label" /></label>
+    <label :for="id" class="form-input__label">
+      <slot name="label" />
+    </label>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { computed, onMounted } from "vue"
 import { useVModel } from "@vueuse/core"
 
 const props = defineProps({
