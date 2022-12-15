@@ -4,28 +4,52 @@
     <Title>Not Found</Title>
   </Head>
 
-  <main class="card">
-    <div class="card__decorator card__decorator--left"></div>
+  <main>
+    <div class="card">
+      <div class="card__decorator card__decorator--left"></div>
 
-    <div class="card__wrap">
-      <header class="card__header">Not Found</header>
+      <div class="card__wrap">
+        <header class="card__header">{{ props.error.message }}</header>
 
-      <div class="card__body">
-        <p class="status-code">
-          <span class="status-code__code">404</span>
-          <span class="status-code__code" aria-hidden="true">404</span>
-          <span class="status-code__code" aria-hidden="true">404</span>
-        </p>
+        <div class="card__body">
+          <p class="status-code">
+            <span class="status-code__code">{{ props.error.statusCode }}</span>
+            <span class="status-code__code" aria-hidden="true">{{ props.error.statusCode }}</span>
+            <span class="status-code__code" aria-hidden="true">{{ props.error.statusCode }}</span>
+          </p>
+        </div>
+
+        <footer class="card__footer">
+          <NuxtLink to="/" class="card__footer__link">Back to home</NuxtLink>
+        </footer>
       </div>
 
-      <footer class="card__footer">
-        <NuxtLink to="/" class="card__footer__link">Back to home</NuxtLink>
-      </footer>
+      <div class="card__decorator card__decorator--right"></div>
     </div>
-
-    <div class="card__decorator card__decorator--right"></div>
+    
+    <p class="message">
+      Try
+      <a :href="githubURL.href" class="message__link">GitHub.LucianoFelix.com.br</a>
+    </p>
   </main>
 </template>
+
+<script lang="ts" setup>
+import { defineProps, computed } from 'vue'
+
+const props = defineProps({
+  error: {
+    type: Object,
+    required: true,
+  }
+})
+
+console.log(props.error)
+
+const githubURL = computed(() => {
+  return new URL('https://github.lucianofelix.com.br' + props.error.url)
+})
+</script>
 
 <style lang="postcss" scoped>
 .card {
@@ -42,6 +66,7 @@
   }
 
   &__wrap {
+    flex: 1 1 auto;
     margin: 0 1rem;
     border: 1px dotted #333;
     border-top-width: 0;
@@ -65,13 +90,13 @@
       margin-top: 40%;
       border-bottom-width: 0;
       border-right-width: 0;
-      border-left-color: var(--background-color);
+      border-left-color: var(--background-color) !important;
     }
 
     &--right {
       margin-bottom: 40%;
       border-top-width: 0;
-      border-right-color: var(--background-color);
+      border-right-color: var(--background-color) !important;
       border-left-width: 0;
     }
   }
@@ -86,11 +111,12 @@
   }
 
   &__body {
+    --background-color: #111;
     padding: min(5vmin, 3rem) min(15vmin, 7rem);
-    background-color: #111;
+    background-color: var(--background-color);
 
     :root.dark & {
-      background-color: #AAA;
+      --background-color: #AAA;
     }
   }
 
@@ -110,6 +136,7 @@
 }
 
 .status-code {
+  --shadow-color: #FFF;
   margin: 0;
   padding: 0;
   color: var(--primary-color);
@@ -118,6 +145,10 @@
   line-height: 1em;
   position: relative;
   animation: noise 2s step-end infinite;
+
+  :root.dark & {
+    --shadow-color: #000;
+  }
 
   &__code {
     animation: shift 2s infinite;
@@ -149,7 +180,7 @@
   0% {
     --x: 0;
     --y: 3px;
-    --c: #111;
+    --c: var(--background-color);
   }
 
   10% {
@@ -185,13 +216,13 @@
   70% {
     --x: -4px;
     --y: -3px;
-    --c: #111;
+    --c: var(--background-color);
   }
 
   80% {
     --x: 2px;
     --y: -1px;
-    --c: #fff;
+    --c: var(--shadow-color);
   }
 
   90% {
@@ -235,6 +266,17 @@
 
   69% {
     transform: translate(-0.2rem, 0) skew(-8deg);
+  }
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: bold;
+
+  &__link {
+    text-decoration: underline dotted var(--primary-color);
   }
 }
 </style>
