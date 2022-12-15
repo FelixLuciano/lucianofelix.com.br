@@ -16,13 +16,18 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
+  // https://tailwindcss.nuxt.dev/getting-started/options
+  tailwindcss: {
+    viewer: false,
+  },
+
   postcss: {
     plugins: {
       'tailwindcss/nesting': {},
       'css-declaration-sorter': {
-        order: 'concentric-css'
-      }
-    }
+        order: 'concentric-css',
+      },
+    },
   },
 
   // // https://image.nuxtjs.org/api/options
@@ -35,6 +40,6 @@ export default defineNuxtConfig({
     componentName: 'ColorScheme',
     classPrefix: '',
     classSuffix: '',
-    storageKey: 'color-mode'
-  }
+    storageKey: 'color-mode',
+  },
 })
