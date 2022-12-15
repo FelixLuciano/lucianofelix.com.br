@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed } from 'vue'
+import { defineProps } from 'vue'
 
 const props = defineProps({
   error: {
@@ -44,11 +44,7 @@ const props = defineProps({
   }
 })
 
-console.log(props.error)
-
-const githubURL = computed(() => {
-  return new URL('https://github.lucianofelix.com.br' + props.error.url)
-})
+const githubURL = new URL('https://github.lucianofelix.com.br' + props.error.url)
 </script>
 
 <style lang="postcss" scoped>
