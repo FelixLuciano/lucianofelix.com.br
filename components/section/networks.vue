@@ -1,24 +1,31 @@
 <template>
   <page-section id="networks">
+
     <template #title>
       Connect with me
     </template>
 
     <ul class="network-list">
+
       <ContentQuery path="data/networks" :only="['networks']" find="one" #="{ data }">
-        <ContentRenderer :value="data" #="{ value:{ networks } }">
+        <ContentRenderer :value="data" #="{ value: { networks } }">
+
           <li v-for="network in networks" :key="network.name" class="network-list__item">
             <div class="network-list__item__title">{{ network.name }}</div>
-            <a :href="network.url" target="_blank" rel="noopener noreferer" class="network-list__link">{{ network.username }}</a>
+            <a :href="network.url" target="_blank" rel="noopener noreferer" class="network-list__link">{{
+                network.username
+            }}</a>
           </li>
+
         </ContentRenderer>
       </ContentQuery>
-      
+
       <li class="network-list__item">
         <div class="network-list__item__title">email</div>
         <a href="#section__contact" class="network-list__link">Get in Touch</a>
       </li>
     </ul>
+
   </page-section>
 </template>
 

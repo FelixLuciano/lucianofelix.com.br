@@ -1,5 +1,6 @@
 <template>
   <page-section id="graduation">
+
     <template #title>
       Graduation
     </template>
@@ -7,33 +8,33 @@
     <div class="pb-8 grid md:grid-cols-2 gap-8">
       <div />
 
-      <ContentDoc path="/letters/graduation" class="prose prose-neutral dark:prose-invert" />
+      <ContentDoc path="/letters/graduation" :head="false" class="prose prose-neutral dark:prose-invert" />
     </div>
 
     <ul class="projects-list">
+
       <ContentQuery path="data/graduation" :only="['projects']" find="one" #="{ data }">
-        <ContentRenderer :value="data" #="{ value:{ projects } }">
+        <ContentRenderer :value="data" #="{ value: { projects } }">
+
           <li v-for="post in projects" :key="post.url" class="projects-list__item">
-            <a :href="post.url" target="_blank" rel="noopener noreferer" class="projects-list__link">{{ post.title }}</a>
+            <a :href="post.url" target="_blank" rel="noopener noreferer" class="projects-list__link">{{ post.title
+            }}</a>
           </li>
+
         </ContentRenderer>
       </ContentQuery>
+
     </ul>
 
     <template #bottom>
       <card-grid>
 
         <ContentQuery path="data/graduation" :only="['photos']" find="one" #="{ data }">
-          <ContentRenderer :value="data" #="{ value:{ photos } }">
+          <ContentRenderer :value="data" #="{ value: { photos } }">
 
             <template v-for="post in photos" :key="post.photo">
-              <card-photo
-                :src="post.photo"
-                :thumbnail="post.thumbnail"
-                :alt="post.alt"
-                :orientation="post.orientation"
-                :feature="post.feature"
-              />
+              <card-photo :src="post.photo" :thumbnail="post.thumbnail" :alt="post.alt" :orientation="post.orientation"
+                :feature="post.feature" />
             </template>
 
           </ContentRenderer>
@@ -41,6 +42,7 @@
 
       </card-grid>
     </template>
+
   </page-section>
 </template>
 
@@ -59,6 +61,7 @@
     @media (max-width: 80rem) {
       flex-basis: 50%;
     }
+
     @media (max-width: 50rem) {
       flex-basis: 100%;
     }
