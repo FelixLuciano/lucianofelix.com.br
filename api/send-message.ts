@@ -49,7 +49,6 @@ export default async function handler(request, response) {
                 timeZone: 'America/Sao_Paulo'
               }),
               request.ip,
-              `${request.geo.city}, ${request.geo.country}, ${request.geo.region}`,
               contact,
               message
             ]
