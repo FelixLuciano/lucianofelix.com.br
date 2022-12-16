@@ -6,7 +6,7 @@
       @verify="verifyCaptcha" @expired="resetCaptcha" @challengeExpired="resetCaptcha" />
 
     <div class="form-frame__bottom">
-      <button type="submit" :disabled="false" class="form-frame__submit-button" :class="{
+      <button type="submit" :disabled="readOnly || !hasToken" class="form-frame__submit-button" :class="{
         'form-frame__submit-button--error': sendError,
         'form-frame__submit-button--success': sendSuccess
       }">
