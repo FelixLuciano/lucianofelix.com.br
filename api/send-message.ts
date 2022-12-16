@@ -48,7 +48,6 @@ export default async function handler(request, response) {
               new Date().toLocaleString('pt-BR', {
                 timeZone: 'America/Sao_Paulo'
               }),
-              request.ip,
               contact,
               message
             ]
