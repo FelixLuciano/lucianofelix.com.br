@@ -6,7 +6,7 @@
       @verify="verifyCaptcha" @expired="resetCaptcha" @challengeExpired="resetCaptcha" />
 
     <div class="form-frame__bottom">
-      <button type="submit" :disabled="readOnly || !hasToken" class="form-frame__submit-button" :class="{
+      <button type="submit" :disabled="false" class="form-frame__submit-button" :class="{
         'form-frame__submit-button--error': sendError,
         'form-frame__submit-button--success': sendSuccess
       }">
@@ -70,7 +70,7 @@ async function send() {
   sending.value = true
 
   try {
-    await fetch(props.url, {
+    const response = await fetch(props.url, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -78,9 +78,13 @@ async function send() {
       body: JSON.stringify(body)
     })
 
+    if (!response.ok) {
+      throw new Error()
+    }
+
     success.value = true
   }
-  catch {
+  catch (err) {
     success.value = false
   }
   finally {
