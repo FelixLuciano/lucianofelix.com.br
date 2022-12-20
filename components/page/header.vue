@@ -66,20 +66,20 @@ const isTyping = ref(false)
 const showCursor = ref(true)
 const greetings = ref('Hey 👋')
 
-function sleep(time) {
+function sleep(time: number) {
   return new Promise((resolve) => {
     setTimeout(resolve, time)
   })
 }
 
-async function type(text, speed = 32) {
+async function type(text: string, speed = 32) {
   for (let character of text) {
     greetings.value += character
     await sleep(speed * (2 * Math.random()) ** 2)
   }
 }
 
-async function erase(text, speed = 32) {
+async function erase(text: string, speed = 32) {
   for (let character of text) {
     greetings.value = greetings.value.slice(0, greetings.value.length - 1)
     await sleep(speed * (2 * Math.random()) ** 2)
@@ -201,31 +201,30 @@ onMounted(async () => {
   }
 
   &--left {
-    min-width: 1rem;
     border-right: 1px dotted #333;
   }
 
   &--right {
-    min-width: 1rem;
     border-left: 1px dotted #333;
   }
 
   &--right,
   &--left {
-    flex: 1 1 5rem;
+    flex: 1 1 3.5rem;
 
     @media (max-width: 42rem) {
-      flex: 1 1 1rem !important;
+      flex: 1 0 1rem !important;
     }
   }
 }
 
 .title {
-  margin: 0;
-  padding: 1.5rem 1rem 0.8rem 1rem;
+  margin-left: -0.25rem;
+  padding: 1.5rem 0 0.8rem 0;
   border-bottom: 1px dotted #333;
   border-top-left-radius: 0.25rem;
   background-color: var(--primary-color);
+  line-height: 3.75rem;
   writing-mode: vertical-rl;
   white-space: nowrap;
   font-weight: bold;
@@ -236,9 +235,10 @@ onMounted(async () => {
   }
 
   &--horizontal {
-    margin-bottom: auto;
-    padding: 1rem;
-    border: none;
+    margin-left: 0;
+    padding: 0 1rem;
+    border-bottom: none;
+    border-right: 1px dotted #333;
     border-radius: 0;
     writing-mode: initial;
   }
@@ -248,7 +248,6 @@ onMounted(async () => {
   }
 
   &-section {
-    margin: 0 1rem 0 -0.25rem;
     border-right: 1px dotted #333;
 
     @media (max-width: 42rem) {
@@ -277,7 +276,7 @@ onMounted(async () => {
 .options {
   &--section {
     margin: 0 0 0 auto;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
     border-left: 1px dotted #333;
     justify-self: end;
     display: flex;
@@ -295,6 +294,7 @@ onMounted(async () => {
 
   &--item {
     opacity: .5;
+    line-height: 3.5rem;
     writing-mode: vertical-rl !important;
     text-orientation: mixed;
 
@@ -341,7 +341,7 @@ onMounted(async () => {
   }
 
   &-section {
-    border-bottom: 1px dotted #222;
+    border-bottom: 1px dotted #333;
 
     :root.dark & {
       border-color: #777;
