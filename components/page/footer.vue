@@ -3,11 +3,18 @@
     <div class="container">
 
       <div class="copyright-section">
-        &copy; 2022 Luciano Felix. All rights reserved.
+        &copy; {{ year }} Luciano Felix. All rights reserved.
       </div>
+
     </div>
   </footer>
 </template>
+
+<script lang="ts" setup>
+import { computed } from 'vue'
+
+const year = computed(() => (new Date()).getFullYear())
+</script>
 
 <style lang="postcss" scoped>
 .page-footer {
