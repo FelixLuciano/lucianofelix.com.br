@@ -22,7 +22,7 @@
 
       <li class="network-list__item">
         <div class="network-list__item__title">email</div>
-        <a href="#section__contact" class="network-list__link">Get in Touch</a>
+        <a href="#contact" class="network-list__link">Get in Touch</a>
       </li>
     </ul>
 

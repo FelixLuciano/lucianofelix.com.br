@@ -1,5 +1,5 @@
 <template>
-  <section class="page-section" :id="`section__${id}`">
+  <section class="page-section" :id="id">
     <div class="divider" />
 
     <div v-if="$slots.top" class="slot slot--top">
@@ -14,7 +14,7 @@
       <div class="container">
         <header class="header" :class="{ 'header--large': large }">
           <h2 class="header__title" :class="{ 'header__title--large': large }">
-            <a :href="`#section__${id}`">
+            <a :href="`#${id}`">
               <slot name="title" />
             </a>
           </h2>

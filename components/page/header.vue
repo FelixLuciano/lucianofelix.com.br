@@ -30,7 +30,7 @@
 
         <footer class="slot slot--bottom">
           <div class="anchor-section">
-            <a class="anchor" href="#section__networks" title="About me">
+            <a class="anchor" href="#networks" title="About me">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14" width="16" height="16" aria-hidden="true">
                 <polygon points="8 13.856 16 0 0 0 8 13.856" fill="currentcolor" />
               </svg>
