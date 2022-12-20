@@ -70,11 +70,10 @@
   }
 
   &__link {
-    padding: 1rem 0;
     border-bottom: 1px dotted #000;
     font-size: 1.2rem;
     font-weight: 500;
-    line-height: 1em;
+    line-height: 2.5em;
     display: block;
 
     :root.dark & {

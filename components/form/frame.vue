@@ -124,10 +124,10 @@ onMounted(() => resetCaptcha())
 
   &__submit-button {
     margin-left: auto;
-    padding: .5rem 0;
     border: 1px solid #000;
     min-width: 10rem;
     background-color: var(--background-color);
+    line-height: 2.75rem;
     transition: background-color 128ms, color 128ms;
 
     &:focus {

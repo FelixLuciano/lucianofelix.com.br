@@ -51,9 +51,9 @@
   }
 
   &__link {
-    padding: .5rem 0;
     border-bottom: 1px dotted #000;
     font-weight: 500;
+    line-height: 2.5rem;
     display: block;
 
     :root.dark & {
