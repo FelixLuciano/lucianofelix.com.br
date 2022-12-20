@@ -49,22 +49,20 @@
 <style lang="postcss" scoped>
 .projects-list {
   margin-bottom: 2rem;
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  /* gap: 1rem; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 3rem;
+
+  @media (max-width: 70rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 60rem) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   &__item {
-    flex: 1 1 33%;
     list-style-type: square;
-
-    @media (max-width: 80rem) {
-      flex-basis: 50%;
-    }
-
-    @media (max-width: 50rem) {
-      flex-basis: 100%;
-    }
 
     &::marker {
       color: var(--primary-color);
