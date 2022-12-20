@@ -19,7 +19,7 @@
 <style lang="postcss">
 :root {
   --background-color: #FFF;
-  --primary-color: #922;
+  --primary-color: #333;
   --margin-size: clamp(.5rem, 4vmin, 3rem);
 
   &.dark {
