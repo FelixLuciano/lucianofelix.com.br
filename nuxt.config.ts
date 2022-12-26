@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     // https://color-mode.nuxtjs.org/
     '@nuxtjs/color-mode',
-    // https://github.com/nuxt-community/robots-module
+    // https://nuxt.com/modules/robots
     '@nuxtjs/robots',
   ],
 
@@ -43,5 +43,14 @@ export default defineNuxtConfig({
     classPrefix: '',
     classSuffix: '',
     storageKey: 'color-mode',
+  },
+
+  // https://nuxt.com/modules/robots#options
+  robots: {
+    rules: {
+      UserAgent: '*',
+      Allow: '/$',
+      Disallow: '/',
+    },
   },
 })
