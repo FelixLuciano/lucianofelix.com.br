@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     // https://color-mode.nuxtjs.org/
     '@nuxtjs/color-mode',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
   ],
 
   // https://tailwindcss.nuxt.dev/getting-started/options
