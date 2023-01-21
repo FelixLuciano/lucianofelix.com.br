@@ -28,5 +28,5 @@ posts:
   url: 'https://color.lucianofelix.com.br'
 
 - thumbnail: '/assets/image/programming/clicks.jpg'
-  feature: true
+  feature: false
   url: 'https://github.lucianofelix.com.br/clicks'
