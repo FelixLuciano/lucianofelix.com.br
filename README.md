@@ -7,22 +7,15 @@ Next major release of my personal website made with [Nuxt 3](https://nuxt.com).
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
 pnpm install --shamefully-hoist
 ```
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on [localhost:3000](http://localhost:3000)
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Production
@@ -30,20 +23,20 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 ## License
 
-This project is licensed under the MIT license - see the [LICENSE](LICENSE) file for more details.
+This project is MIT licensed! [see the LICENSE file](LICENSE) for more details.
 
 <br />
 
