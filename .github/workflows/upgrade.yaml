@@ -1,7 +1,7 @@
 name: To upgrade Nuxt 3 to the latest release
 
 on:
-  workflow_dispatch: true
+  workflow_dispatch:
   schedule:
     - cron: '* 8 * * 1'
 
