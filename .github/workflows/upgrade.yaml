@@ -1,4 +1,4 @@
-name: To upgrade Nuxt 3 to the latest release
+name: Nuxt upgrade
 
 on:
   workflow_dispatch:
