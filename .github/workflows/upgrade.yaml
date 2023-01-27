@@ -1,0 +1,32 @@
+name: To upgrade Nuxt 3 to the latest release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '* 8 * * 1'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Upgrade
+        run: npx nuxt upgrade --force
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: 'ci/weekly nuxt upgrade'
+          commit-message: 'ci: nuxt upgrade'
+          branch: 'ci/nuxt-upgrade'
