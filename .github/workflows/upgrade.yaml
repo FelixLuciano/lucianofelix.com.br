@@ -30,6 +30,6 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
-        title: ci/Weekly nuxt upgrade
-        commit-message: ci: nuxt upgrade
-        branch: ci/nuxt-upgrade
+        title: 'ci/Weekly nuxt upgrade'
+        commit-message: 'ci: nuxt upgrade'
+        branch: 'ci/nuxt-upgrade'
