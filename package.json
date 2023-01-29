@@ -8,21 +8,21 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@hcaptcha/vue3-hcaptcha": "^1.0.1",
     "@nuxt/content": "^2.4.2",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.3.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.11.18",
+    "@vueuse/core": "^8.9.4",
     "@vueuse/nuxt": "^9.11.1",
     "css-declaration-sorter": "^6.3.1",
+    "medium-zoom": "^1.0.8",
     "nuxt": "^3.1.1"
   },
   "dependencies": {
-    "@hcaptcha/vue3-hcaptcha": "^1.0.1",
-    "@vueuse/core": "^8.9.4",
     "googleapis": "^104.0.0",
-    "hcaptcha": "^0.1.1",
-    "medium-zoom": "^1.0.8"
+    "hcaptcha": "^0.1.1"
   }
 }
