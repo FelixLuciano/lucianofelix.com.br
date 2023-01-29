@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@hcaptcha/vue3-hcaptcha': ^1.0.1
@@ -349,18 +349,18 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@csstools/cascade-layer-name-parser/1.0.1_ggzcsjlodsz5bpm3wuzdizqs5y:
+  /@csstools/cascade-layer-name-parser/1.0.1_31b229256e1cb3d0bd9bb532346612ee:
     resolution: {integrity: sha512-SAAi5DpgJJWkfTvWSaqkgyIsTawa83hMwKrktkj6ra2h+q6ZN57vOGZ6ySHq6RSo+CbP64fA3aPChPBRDDUgtw==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       '@csstools/css-parser-algorithms': ^2.0.0
       '@csstools/css-tokenizer': ^2.0.0
     dependencies:
-      '@csstools/css-parser-algorithms': 2.0.1_jcyrkspfsqbg4tr2sa6u4jvygy
+      '@csstools/css-parser-algorithms': 2.0.1_@csstools+css-tokenizer@2.0.1
       '@csstools/css-tokenizer': 2.0.1
     dev: true
 
-  /@csstools/css-parser-algorithms/2.0.1_jcyrkspfsqbg4tr2sa6u4jvygy:
+  /@csstools/css-parser-algorithms/2.0.1_@csstools+css-tokenizer@2.0.1:
     resolution: {integrity: sha512-B9/8PmOtU6nBiibJg0glnNktQDZ3rZnGn/7UmDfrm2vMtrdlXO3p7ErE95N0up80IRk9YEtB5jyj/TmQ1WH3dw==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
@@ -374,7 +374,7 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     dev: true
 
-  /@csstools/selector-specificity/2.1.1_wajs5nedgkikc5pcuwett7legi:
+  /@csstools/selector-specificity/2.1.1_b0132eb4833290a175e2a58939fd6432:
     resolution: {integrity: sha512-jwx+WCqszn53YHOfvFMJJRd/B2GqkCBt+1MJSG6o5/s8+ytHMvDZXsJgUEWLk12UnLd7HYKac4BYU5i/Ron1Cw==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
@@ -1091,7 +1091,7 @@ packages:
     resolution: {integrity: sha512-KffiTNdVaZlkx0tgwopmy627WQclWO0kqFD1R646wawDbNlWkpmwj5qI5qoh2Rx13/O+KkYdc28H3JsQdQmXJw==}
     dev: true
 
-  /@nuxt/vite-builder/3.1.1_xnv336gtwq7fa5bwzh3jyeiife:
+  /@nuxt/vite-builder/3.1.1_@types+node@18.11.18+vue@3.2.45:
     resolution: {integrity: sha512-tTV369sIURut6z+t36ib3J2GbgiazMc4VO9wB372A5hnd+faLtapknswMvzF23M+4z1/5tGaV/kkU/ZrO3V1Ag==}
     engines: {node: ^14.16.0 || ^16.10.0 || ^17.0.0 || ^18.0.0 || ^19.0.0}
     peerDependencies:
@@ -4840,7 +4840,7 @@ packages:
       '@nuxt/schema': 3.1.1
       '@nuxt/telemetry': 2.1.9
       '@nuxt/ui-templates': 1.1.0
-      '@nuxt/vite-builder': 3.1.1_xnv336gtwq7fa5bwzh3jyeiife
+      '@nuxt/vite-builder': 3.1.1_@types+node@18.11.18+vue@3.2.45
       '@unhead/ssr': 1.0.18
       '@vue/reactivity': 3.2.45
       '@vue/shared': 3.2.45
@@ -5160,8 +5160,8 @@ packages:
     peerDependencies:
       postcss: ^8.4
     dependencies:
-      '@csstools/cascade-layer-name-parser': 1.0.1_ggzcsjlodsz5bpm3wuzdizqs5y
-      '@csstools/css-parser-algorithms': 2.0.1_jcyrkspfsqbg4tr2sa6u4jvygy
+      '@csstools/cascade-layer-name-parser': 1.0.1_31b229256e1cb3d0bd9bb532346612ee
+      '@csstools/css-parser-algorithms': 2.0.1_@csstools+css-tokenizer@2.0.1
       '@csstools/css-tokenizer': 2.0.1
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
@@ -5412,7 +5412,7 @@ packages:
     peerDependencies:
       postcss: ^8.4
     dependencies:
-      '@csstools/selector-specificity': 2.1.1_wajs5nedgkikc5pcuwett7legi
+      '@csstools/selector-specificity': 2.1.1_b0132eb4833290a175e2a58939fd6432
       postcss: 8.4.21
       postcss-selector-parser: 6.0.11
     dev: true
