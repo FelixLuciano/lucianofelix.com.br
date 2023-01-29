@@ -14,7 +14,7 @@ async function authenticate() {
       'https://www.googleapis.com/auth/drive.file',
       'https://www.googleapis.com/auth/spreadsheets'
     ],
-    credentials: JSON.parse(google_credentials),
+    credentials: JSON.parse(google_credentials as string),
   })
   const authClient = await auth.getClient()
 
@@ -24,7 +24,7 @@ async function authenticate() {
 export default async function handler(request, response) {
   try {
     const { contact, message, token } = request.body
-    const { success } = await verify(secret, token)
+    const { success } = await verify(secret as string, token)
 
     if (!success) {
       response.status(400).json({
