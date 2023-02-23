@@ -14,12 +14,11 @@
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.3.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18.11.18",
     "@vueuse/core": "^8.9.4",
     "@vueuse/nuxt": "^9.11.1",
     "css-declaration-sorter": "^6.3.1",
     "medium-zoom": "^1.0.8",
-    "nuxt": "^3.1.1"
+    "nuxt": "^3.2.2"
   },
   "dependencies": {
     "googleapis": "^104.0.0",
