@@ -18,7 +18,7 @@
     "@vueuse/nuxt": "^9.11.1",
     "css-declaration-sorter": "^6.3.1",
     "medium-zoom": "^1.0.8",
-    "nuxt": "^3.3.2"
+    "nuxt": "^3.3.3"
   },
   "dependencies": {
     "googleapis": "^104.0.0",
