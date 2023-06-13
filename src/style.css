@@ -50,7 +50,7 @@ section.page-header {
 section.page-header > header {
     flex: 1 0 auto;
     /* height: 50vh; */
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 3rem 4rem;
     font-size: 8rem;
 }
 section.page-header > header > img {
@@ -69,7 +69,7 @@ section.page-header > h1 {
 }
 section.page-header > blockquote {
     flex: 1 0 100%;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 3rem;
     padding-right: 36%;
     font-size: 3rem;
     letter-spacing: -.03em;
@@ -98,6 +98,7 @@ section.page-content {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    gap: 5rem 0;
 }
 section.page-content:before {
     flex: 0 0 auto;
@@ -114,7 +115,7 @@ section.page-content:before {
 }
 section.page-content > h2 {
     flex: 0 1 50%;
-    padding: 0 2rem 5rem 1rem;
+    padding: 0 2rem 0 1rem;
     font-size: 4rem;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -.05em;
@@ -124,17 +125,28 @@ section.page-content > div.page-content__container {
     flex: 1 1 100%;
     padding: 0 1rem 0 4rem;
 }
-section.page-content > div.content__container--prose {
+section.page-content > div.page-content__container--prose {
     font-size: 1.1rem;
 }
 @media (min-width: 650px) {
-    section.page-content > div.content__container--prose {
+    section.page-content > div.page-content__container--prose {
         column-count: 2;
         column-gap: 2rem;
     }
 }
 section.page-content > div.page-content__container img {
     border-radius: .3rem;
+}
+ul.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+ul.grid.grid--small {
+    grid-template-columns: repeat(4, 1fr);
+}
+ul.grid > li img {
+    width: 100%;
 }
 
 ul.h-list {
@@ -143,17 +155,15 @@ ul.h-list {
 }
 ul.h-list > li {
     display: flex;
-    padding: 1.25rem 0;
+    padding: .75rem 0;
     border-bottom: 2px dotted #222;
-    line-height: 1em;
+    line-height: 2em;
 }
 ul.h-list > li > * {
     flex: 1 1 100%;
 }
 ul.h-list > li > h3 {
     font-size: 2rem;
-    transform: rotate(-6deg);
-    transform-origin: left top;
 }
 ul.h-list > li > a {
     color: var(--t-primary);
