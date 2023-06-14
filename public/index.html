@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="/style/preflight.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap" rel="stylesheet">
 
-        <script src="/script/entry.js"></script>
+        <script src="/script/entry.js" defer></script>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     </head>
     <body>
         <nav class="page-nav">
@@ -164,42 +165,42 @@
             <div class="page-content__container">
                 <ul class="grid grid--small">
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" target="_blank" rel="noopener noreferer">
                             <img src="image/flame.jpg" alt="Image">
                         </a>
                     </li>
@@ -257,7 +258,18 @@
             </h2>
 
             <div class="page-content__container">
-                Hello World!
+                <form id="contact-form" action="/api/send-message" method="POST">
+                    <div>
+                        <label>Contact</label>
+                        <input name="contact">
+                    </div>
+                    <div>
+                        <label>Message</label>
+                        <textarea name="message"></textarea>
+                    </div>
+                    <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
+                    <input type="submit" value="Send">
+                </form>
             </div>
         </section>
 

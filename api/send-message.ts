@@ -54,7 +54,8 @@ export const runtime = 'edge'
 
 export async function POST(request: Request) {
   try {
-    const { contact, message, token } = await request.json()
+    const data = await request.json()
+    const token = data['h-captcha-response']
     const { success } = await verify(process.env.hcaptcha_secret, token)
 
     if (!success)
@@ -63,7 +64,7 @@ export async function POST(request: Request) {
       })
 
     await authenticate()
-    await pushMessage(contact, message)
+    await pushMessage(data.contact, data.message)
   }
   catch {
     return createResponse(500, false, {
