@@ -13,11 +13,9 @@
 }
 
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 10rem;
-    counter-reset: heading-counter;
+    gap: 6rem;
 }
 
 nav.page-nav {
@@ -42,24 +40,33 @@ nav.page-nav > ul > li > a.nav-anchor--active {
     text-decoration: solid underline var(--t-primary);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    counter-reset: heading-counter;
+}
+
 section.page-header {
     /* min-height: 100vh; */
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
 }
 section.page-header > header {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     /* height: 50vh; */
-    padding: 3rem 2rem 3rem 4rem;
+    padding-left: 4rem;
     font-size: 8rem;
+    position: relative;
 }
 section.page-header > header > img {
     height: 16rem;
 }
 section.page-header > h1 {
-    flex: 1 0 auto;
-    padding: 2rem;
-    max-width: 32rem;
+    flex: 0 0 auto;
+    padding-right: 2rem;
+    width: 32rem;
     font-family: 'Open Sans', sans-serif;
     font-size: 4rem;
     font-weight: 700;
@@ -69,7 +76,7 @@ section.page-header > h1 {
 }
 section.page-header > blockquote {
     flex: 1 0 100%;
-    padding: 2rem 2rem 2rem 3rem;
+    padding: 0 2rem 0 3rem;
     padding-right: 36%;
     font-size: 3rem;
     letter-spacing: -.03em;
@@ -101,14 +108,15 @@ section.page-content {
     gap: 5rem 0;
 }
 section.page-content:before {
+    width: 3rem;
     flex: 0 0 auto;
     margin-top: auto;
-    padding-top: 1rem;
+    padding: .5rem 0 0 .75rem;
     counter-increment: heading-counter;
     content: counter(heading-counter, decimal-leading-zero) ".";
     color: var(--t-primary);
+    font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
-    writing-mode: vertical-rl;
     letter-spacing: -.1em;
     position: sticky;
     top: 0;
