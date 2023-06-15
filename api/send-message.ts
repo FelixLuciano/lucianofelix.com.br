@@ -12,25 +12,27 @@ export default async function handler(request: VercelRequest, response: VercelRe
     const { success } = await verify(process.env.hcaptcha_secret, token)
 
     if (!success)
-      response.json({
+      return response.json({
         success: false,
         message: 'Invalid captcha!',
       })
 
     await authenticate()
     await pushMessage(data.contact, data.message)
+
+    return response.json({
+      success: true,
+      message: 'Message sent successfully!',
+    })
   }
-  catch {
-    response.json({
+  catch (error) {
+    console.error('Error:', error)
+
+    return response.json({
       success: false,
       message: 'Something went wrong! Try again later.',
     })
   }
-
-  response.json({
-    success: true,
-    message: 'Message sent successfully!',
-  })
 }
 
 async function authenticate() {
