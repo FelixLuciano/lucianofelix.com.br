@@ -1,8 +1,37 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { google } from 'googleapis'
 import { verify } from 'hcaptcha'
 
 
 const sheets = google.sheets('v4')
+
+export default async function handler(request: VercelRequest, response: VercelResponse) {
+  try {
+    const data = request.body()
+    const token = data['h-captcha-response']
+    const { success } = await verify(process.env.hcaptcha_secret, token)
+
+    if (!success)
+      response.json({
+        success: false,
+        message: 'Invalid captcha!',
+      })
+
+    await authenticate()
+    await pushMessage(data.contact, data.message)
+  }
+  catch {
+    response.json({
+      success: false,
+      message: 'Something went wrong! Try again later.',
+    })
+  }
+
+  response.json({
+    success: true,
+    message: 'Message sent successfully!',
+  })
+}
 
 async function authenticate() {
   const credentials = JSON.parse(process.env.google_credentials)
@@ -19,16 +48,11 @@ async function authenticate() {
   })
 }
 
-function createResponse(statusCode: number, success: boolean, body: object) {
-  return new Response(JSON.stringify({ success, ...body }), {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    status: statusCode,
-  })
-}
-
 function pushMessage(contact: string, message: string) {
+  const now = new Date().toLocaleString('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+  })
+
   return sheets.spreadsheets.values.append({
     spreadsheetId: '1oWWT-Fw0FQJdGO3VbtDFh3x_Uvid7bNuptGNWQkxZXM',
     range: 'Messages',
@@ -38,41 +62,8 @@ function pushMessage(contact: string, message: string) {
       range: 'Messages',
       majorDimension: 'ROWS',
       values: [
-        [
-          new Date().toLocaleString('pt-BR', {
-            timeZone: 'America/Sao_Paulo',
-          }),
-          contact,
-          message,
-        ],
+        [now, contact, message],
       ],
     },
-  })
-}
-
-export const runtime = 'edge'
-
-export async function POST(request: Request) {
-  try {
-    const data = await request.json()
-    const token = data['h-captcha-response']
-    const { success } = await verify(process.env.hcaptcha_secret, token)
-
-    if (!success)
-      return createResponse(400, false, {
-        message: 'Invalid captcha!',
-      })
-
-    await authenticate()
-    await pushMessage(data.contact, data.message)
-  }
-  catch {
-    return createResponse(500, false, {
-      message: 'Something went wrong! Try again later.',
-    })
-  }
-  
-  return createResponse(200, true, {
-    message: 'Message sent successfully!',
   })
 }
