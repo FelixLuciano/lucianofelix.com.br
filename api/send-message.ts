@@ -7,8 +7,7 @@ const sheets = google.sheets('v4')
 
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   try {
-    const data = request.body()
-    const token = data['h-captcha-response']
+    const token = request.body['h-captcha-response']
     const { success } = await verify(process.env.hcaptcha_secret, token)
 
     if (!success)
@@ -18,7 +17,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
       })
 
     await authenticate()
-    await pushMessage(data.contact, data.message)
+    await pushMessage(request.body.contact, request.body.message)
 
     return response.json({
       success: true,
