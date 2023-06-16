@@ -67,10 +67,14 @@ header.page-header > h1 {
 header.page-header > p {
     flex: 1 0 100%;
     padding: 0 2rem;
-    padding-right: 36%;
     font-size: 2.5rem;
     line-height: 4.35rem;
     letter-spacing: -.03em;
+}
+@media (min-width: 42rem) {
+    header.page-header > p {
+        padding-right: 36%;
+    }
 }
 header.page-header > p > span.marker {
     -webkit-box-decoration-break: clone;
