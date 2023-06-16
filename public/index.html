@@ -1,267 +1,406 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Luciano Felix</title>
-        <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
+<html lang="en">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+    <title>Luciano Felix</title>
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/style/style.css">
-        <link rel="stylesheet" href="/style/preflight.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <script src="/script/entry.js"></script>
-    </head>
-    <body>
-        <nav class="page-nav">
-            <ul>
-                <li>
-                    <a href="#links" class="nav-anchor-js">Links</a>
-                </li>
-                <li style="display: none;">
-                    <a href="#about" class="nav-anchor-js">About</a>
-                </li>
-                <li style="display: none;">
-                    <a href="#work" class="nav-anchor-js">Work</a>
-                </li>
-                <li style="display: none;">
-                    <a href="#contact" class="nav-anchor-js">Contact</a>
-                </li>
-            </ul>
-        </nav>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/preflight.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 
-        <section class="page-header">
-            <header>
-                <!-- <img src="image/logo-light.svg"> -->
-                <img src="image/logo-dark.svg">
-            </header>
-            <h1>
-                Luciano<br>
-                Felix
-            </h1>
-            <blockquote>
-                <span>Hello, I am Luciano and on this page you can know more about me and my creations.</span>
-            </blockquote>
-        </section>
+    <script src="/script/entry.js" defer></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
 
-        <section id="links" class="page-content">
+<body>
+    <nav class="page-nav">
+        <ul>
+            <li>
+                <a href="#links" is="smooth-anchor">Links</a>
+            </li>
+            <li>
+                <a href="#about" is="smooth-anchor">About</a>
+            </li>
+            <li>
+                <a href="#work" is="smooth-anchor">Work</a>
+            </li>
+            <li>
+                <a href="#contact" is="smooth-anchor">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <figure>
+            <!-- <img src="image/logo-light.svg" alt="Luciano Felix logo"> -->
+            <img src="image/logo-dark.svg" alt="Luciano Felix logo">
+        </figure>
+        <h1>
+            Luciano<br>
+            Felix
+        </h1>
+        <p>
+            <span class="marker" is="self-typing">Hello, I am Luciano and on this page you can know more about me and my
+                work.</span>
+        </p>
+    </header>
+
+    <main>
+        <section id="links">
             <h2>
                 Connect with me
             </h2>
 
-            <div class="page-content__container">
-                <ul class="h-list">
-                    <li>
-                        <h3>TWITTER</h3>
-                        <a href="https://twitter.com/FelixLuciano_" target="_blank" rel="noopener noreferer">@FelixLuciano_</a>
-                    </li>
-                    <li>
-                        <h3>LINKEDIN</h3>
-                        <a href="https://www.linkedin.com/in/luciano-felix/" target="_blank" rel="noopener noreferer">in/luciano-felix</a>
-                    </li>
-                    <li>
-                        <h3>GITHUB</h3>
-                        <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">@FelixLuciano</a>
-                    </li>
-                    <li>
-                        <h3>CODEPEN</h3>
-                        <a href="https://codepen.io/FelixLuciano" target="_blank" rel="noopener noreferer">@FelixLuciano</a>
-                    </li>
-                    <li style="display: none;">
-                        <h3>EMAIL</h3>
-                        <a href="#contact">Get in Touch</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="h-list full-row">
+                <li>
+                    <h3><span is="self-typing" data-remove="true">TWITTER</span></h3>
+                    <a href="https://twitter.com/FelixLuciano_" target="_blank"
+                        rel="noopener noreferer">@FelixLuciano_</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">LINKEDIN</span></h3>
+                    <a href="https://www.linkedin.com/in/luciano-felix/" target="_blank"
+                        rel="noopener noreferer">in/luciano-felix</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">GITHUB</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">@FelixLuciano</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">CODEPEN</span></h3>
+                    <a href="https://codepen.io/FelixLuciano" target="_blank" rel="noopener noreferer">@FelixLuciano</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">EMAIL</span></h3>
+                    <a href="#contact" is="smooth-anchor">Get in Touch</a>
+                </li>
+            </ul>
         </section>
 
-        <section id="about" class="page-content" style="display: none;">
+        <section id="about">
             <h2>
-                A student starting my career in computer engineering
+                <span is="self-typing" data-remove="true">Work in progress!</span>
             </h2>
 
-            <div class="page-content__container page-content__container--prose">
-                <img src="image/profile-photo.jpg">
-
-                <p>
-                    Vero diam ea aliquyam stet dolor. Invidunt et dignissim stet eum ipsum eos erat. Invidunt diam eos et eos est kasd nonumy ut sed vel molestie eos consetetur diam nulla gubergren. Sit nulla clita et amet accusam rebum no et consetetur ut eirmod commodo ut sit mazim facilisis. Dolor stet vel et. Nonumy amet laoreet.
-                </p>
-                <p>
-                    Vero sadipscing no te vero amet aliquam enim doming sadipscing id eleifend. Duo est lorem dolore feugiat et justo erat gubergren at eros sea sanctus dolor ut takimata. Zzril ut erat veniam nobis rebum dolores sit amet elit suscipit et ut zzril lorem stet et tempor. Assum sed blandit in lorem. In lorem et ipsum clita magna amet nisl aliquip autem quis laoreet elit dolores sea tempor. Magna erat autem amet dolore stet nostrud sit erat ea. Diam ipsum dolor gubergren hendrerit clita at lorem labore. Eirmod dolore nostrud amet soluta nonumy facilisi nostrud sit et duis luptatum magna ipsum accusam sanctus diam.
-                </p>
-            </div>
+            <p>
+                Welcome to my personal/professional website! Please note that this is a work in progress. I am
+                continuously updating and improving the content to provide a better experience for visitors.
+            </p>
+            <p>
+                I want to clarify that all the text information on this site does not necessarily represent my real
+                statements. While I am responsible for its development and management, some parts of the content may be
+                fictional or for illustrative purposes.
+            </p>
+            <p>
+                The purpose of this website is to showcase my skills, achievements, and relevant projects. However, it's
+                important to understand that some information may be simulated to demonstrate my abilities in specific
+                areas.
+            </p>
+            <p>
+                I value transparency and honesty in online communication, which is why I want to make it clear that the
+                text information found here may not correspond to my personal opinions or real statements.
+            </p>
+            <p>
+                As I progress in my personal and professional journey, I will update the content of this site with more
+                accurate and relevant information. I encourage you to check back periodically for updates and to follow
+                my progress.
+            </p>
+            <p>
+                Thank you for visiting my constantly evolving personal/professional website!
+            </p>
         </section>
 
-        <section class="page-content" style="display: none;">
+        <section id="about">
             <h2>
-                Graduation
+                <span is="self-typing" data-remove="true">A student starting my career in Computer Engineering</span>
             </h2>
 
-            <div class="page-content__container page-content__container--prose">
-                <p>
-                    Sanctus ut diam sit vel ea luptatum nonumy ipsum sea duis ut. Accumsan aliquip amet amet ea eum tation. Et accusam invidunt ipsum velit esse liber justo sea duo eos clita iusto stet. Ea aliquip diam et sit minim aliquyam elitr.
-                </p>
-                <p>
-                    Vel vel kasd erat est ullamcorper et sit et. Justo eros voluptua et consectetuer dolore et sanctus augue sed justo dolor autem stet dolore. Consetetur euismod esse duo stet sit. Consetetur justo amet sanctus liber erat sit et. Diam lorem magna et diam et sit gubergren at clita sed ipsum odio nonumy. Feugait sed vel nulla erat dolore ipsum nonumy. Ipsum zzril ipsum justo dolore ut nonummy erat takimata.
-                </p>
-            </div>
+            <p>
+                Welcome to my personal website! I'm thrilled to share my journey as a budding computer engineering
+                student with you. Allow me to introduce myself and provide a glimpse into my passion for technology
+                and the exciting path I'm embarking on.
+            </p>
+            <p>
+                My name is [Your Name], and I have always been captivated by the power of computers and their
+                ability to transform our world. From a young age, I found myself tinkering with gadgets, exploring
+                the depths of software applications, and delving into the intricacies of computer hardware. These
+                early experiences sparked an insatiable curiosity within me and led me to pursue a career in
+                computer engineering.
+            </p>
+            <p>
+                Currently, I am a dedicated student pursuing my degree in computer engineering at [Name of
+                University/Institution]. The program has been a perfect fit for my interests, allowing me to combine
+                my passion for problem-solving, innovation, and technology. Throughout my coursework, I have been
+                fortunate to gain a strong foundation in various disciplines such as programming, algorithms,
+                computer architecture, and electronic systems.
+            </p>
+            <p>
+                In addition to my academic pursuits, I am an avid learner and believe in the power of continuous
+                education. I actively engage in self-study and explore the latest advancements in the field of
+                computer engineering. This drive to stay at the forefront of technology ensures that I am equipped
+                with the knowledge and skills necessary to tackle the ever-evolving challenges of the digital age.
+            </p>
+            <p>
+                Beyond the theoretical aspect of computer engineering, I am also eager to gain hands-on experience.
+                I have been involved in various projects and internships, where I have had the opportunity to apply
+                my skills in real-world scenarios. These experiences have not only honed my technical abilities but
+                have also taught me the importance of teamwork, effective communication, and adaptability in a
+                professional environment.
+            </p>
 
-            <div class="page-content__container" style="display: none;">
-                <ul class="h-list">
-                    <li>
-                        <h3>2D Static Truss Finite Element Analysis</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Samurai Andrew</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Fake JobPosting Prediction</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Elements of Software Design</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Elements of Computing Systems</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Elements of Computer Vision</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>P2P UART Serialization</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Insper Mileage REST API case</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                    <li>
-                        <h3>Insper Agenda</h3>
-                        <a href="#" target="_blank" rel="noopener noreferer">repository</a>
-                    </li>
-                </ul>
-            </div>
+            <img src="image/profile-photo.jpg" alt="My personal photo">
         </section>
 
-        <section id="work" class="page-content" style="display: none;">
+        <section>
             <h2>
-                Programming
+                <span is="self-typing" data-remove="true">Graduation</span>
             </h2>
 
-            <div class="page-content__container page-content__container--prose">
-                <p>
-                    Nonumy facilisis kasd et sanctus sea sea elitr ipsum lorem clita gubergren no et dolores. Id commodo et justo invidunt iriure magna et nam elitr aliquyam est. Et dolor aliquyam molestie nobis lobortis. Vulputate eos invidunt.
-                </p>
-            </div>
+            <img src="https://live.staticflickr.com/65535/52827533684_4e5736f366_c.jpg" alt="Image">
 
-            <div class="page-content__container" style="display: none;">
-                <ul class="grid grid--small">
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="image/flame.jpg" alt="Image">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <p>
+                I am delighted to share with you the joyous news of my graduation. After years of hard work,
+                dedication, and countless hours of study, I have successfully completed my journey as a student and
+                earned my degree in computer engineering. This moment marks a significant milestone in my life and
+                symbolizes the beginning of a new and exciting chapter.
+            </p>
+            <p>
+                Throughout my academic journey, I have encountered numerous challenges and triumphs, each of which
+                has contributed to my personal and professional growth. I have had the privilege of learning from
+                esteemed professors, collaborating with brilliant classmates, and engaging in hands-on projects that
+                have tested my knowledge and skills. These experiences have not only deepened my understanding of
+                computer engineering but have also shaped me into a well-rounded individual ready to make a positive
+                impact in the field.
+            </p>
+            <p>
+                During my time in university, I have been fortunate to be exposed to a diverse range of subjects
+                within the field of computer engineering. From software development to hardware design, from
+                networking to data analysis, each course has expanded my horizons and allowed me to explore various
+                facets of this ever-evolving discipline. The knowledge and expertise I have gained have laid a
+                strong foundation for my future endeavors.
+            </p>
+
+            <ul class="h-list full-row">
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #1</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #2</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #3</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #4</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #5</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+                <li>
+                    <h3><span is="self-typing" data-remove="true">Graduation Project #6</span></h3>
+                    <a href="https://github.com/FelixLuciano" target="_blank" rel="noopener noreferer">Repository</a>
+                </li>
+            </ul>
         </section>
 
-        <section class="page-content" style="display: none;">
+        <section id="work">
             <h2>
-                Photograpy
+                <span is="self-typing" data-remove="true">Programming</span>
             </h2>
 
-            <div class="page-content__container page-content__container--prose">
-                <p>
-                    Ea ipsum ut. Dolores rebum magna eirmod dolor soluta dolor accusam dolor minim dolor kasd nisl justo esse et ex. Adipiscing at dignissim nisl at et magna est zzril nonumy suscipit autem sea adipiscing.
-                </p>
-            </div>
+            <p>
+                I have dedicated a significant amount of time to studying and practicing programming, constantly seeking
+                to improve my skills and keep up with technological trends. My experience spans various areas, including
+                web development, mobile applications, and data science. Over the years, I have gained proficiency in
+                several programming languages, such as Python, JavaScript, Java, and C++, as well as popular frameworks
+                and libraries like Django, React, and TensorFlow.
+            </p>
+            <p>
+                On my website, you will find a selection of projects that I have developed throughout my career. One of
+                them is a task management system, where I used web technologies to create an intuitive and efficient
+                interface. Additionally, I have built a mobile application that allows users to monitor and control home
+                devices connected to the Internet of Things (IoT), providing a simplified and personalized experience.
+            </p>
+            <p>
+                Another highlighted project is predictive data analysis using machine learning. I employed
+                classification and regression algorithms to predict trends and behaviors in complex datasets, assisting
+                businesses in making strategic decisions.
+            </p>
+            <p>
+                These projects represent a fraction of my work, and I am continuously exploring new technologies and
+                ideas to expand my programming expertise. I invite you to explore my website further to discover more
+                about my programming journey and the exciting projects I have undertaken.
+            </p>
 
-            <div class="page-content__container">
-                <ul class="grid">
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                    <li>
-                        <img src="image/thumbnail.jpg" alt="Image">
-                    </li>
-                </ul>
-            </div>
+            <ul class="grid dense full-row">
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferer">
+                        <img src="image/flame.jpg" alt="Image">
+                    </a>
+                </li>
+            </ul>
         </section>
 
-        <section id="contact" class="page-content" style="display: none;">
+        <section>
             <h2>
-                Get in Touch
+                <span is="self-typing" data-remove="true">Photograpy</span>
             </h2>
 
-            <div class="page-content__container">
-                Hello World!
-            </div>
+            <p>
+                Photography has always been a profound source of inspiration for me. Through the lens of my camera, I
+                strive to capture the beauty of the world around us. From breathtaking landscapes to intimate portraits,
+                I aim to convey emotions and tell captivating stories through my photographs. I have honed my technical
+                skills in various photographic techniques, including composition, lighting, and post-processing, to
+                create impactful and visually stunning images.
+            </p>
+            <p>
+                In addition to photography, I also delve into the realm of digital art. Through digital manipulation, I
+                blend my artistic vision with technology to create imaginative and surreal visuals. Whether it's
+                creating fantastical landscapes or transforming ordinary subjects into extraordinary works of art, I am
+                constantly pushing the boundaries of creativity in the digital realm. I utilize software tools and
+                techniques to bring my ideas to life and evoke emotions in the viewers.
+            </p>
+            <p>
+                On my website, you will discover a curated collection of my photography and digital art projects. You
+                will experience the diverse range of subjects I have explored, from natural landscapes to conceptual
+                compositions. Through my lens and digital canvas, I strive to evoke emotions, spark imagination, and
+                invite viewers to see the world from a unique perspective.
+            </p>
+            <p>
+                I am constantly seeking new opportunities to expand my artistic horizons and refine my craft. Whether
+                it's collaborating with other artists or experimenting with new techniques, I am dedicated to pushing
+                the boundaries of my creativity.
+            </p>
+
+            <ul class="grid full-row">
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/thumbnail.jpg" target="_blank" rel="noopener noreferer">
+                        <img src="image/thumbnail.jpg" alt="Image">
+                    </a>
+                </li>
+            </ul>
         </section>
 
-        <footer>
-            © 2023 Luciano Felix. All rights reserved.
-        </footer>
-    </body>
+        <section id="contact">
+            <h2>
+                <span is="self-typing" data-remove="true">Get in Touch</span>
+            </h2>
+
+            <form id="contact-form" action="/api/send-message" method="POST" class="full-row">
+                <label for="contact-form--contact">CONTACT</label>
+                <input id="contact-form--contact" name="contact">
+
+                <label for="contact-form--message">MESSAGE</label>
+                <textarea id="contact-form--message" name="message" is="auto-resize"></textarea>
+
+                <label>CAPTCHA</label>
+                <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
+
+                <div></div>
+                <input type="submit" value="SEND">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        © 2023 Luciano Felix. All rights reserved.
+    </footer>
+</body>
+
 </html>

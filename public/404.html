@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Not Found</title>
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/style/preflight.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            background-color: #DDD;
+            color: #222;
+            font-family: 'Inter', sans-serif;
+            font-size: max(12px, 1vw);
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            justify-content: end;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        main>div {
+            flex: 1 0 auto;
+            padding-left: 4rem;
+            font-size: 12rem;
+            line-height: 12rem;
+            font-weight: 700;
+            color: #A22;
+            text-shadow: 28rem 0, 56rem 0, 84rem 0, 112rem 0;
+            animation: markee 8s infinite linear;
+        }
+
+        @keyframes markee {
+            to {
+                transform: translateX(-28rem);
+            }
+        }
+
+        main>h1 {
+            flex: 1 0 auto;
+            padding-right: 2rem;
+            max-width: 32rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 3.5rem;
+            letter-spacing: .1em;
+            writing-mode: vertical-lr;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page-header">
+        <div>404</div>
+        <h1>Not<br>Found</h1>
+    </main>
+</body>
+
+</html>
