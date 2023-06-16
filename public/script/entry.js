@@ -1,10 +1,10 @@
-class SmoothAnchor extends HTMLAnchorElement {
+class SmoothAnchorElement extends HTMLAnchorElement {
   static scrollIntoSection(selector) {
     const section_node = document.querySelector(selector)
     const sectionTop = section_node.getBoundingClientRect().top
     const pageNav_node = document.querySelector('.page-nav')
     const pageNavBottom = pageNav_node.getBoundingClientRect().bottom
-  
+
     window.scrollBy({
       top: sectionTop - pageNavBottom,
       behavior: 'smooth'
@@ -21,7 +21,7 @@ class SmoothAnchor extends HTMLAnchorElement {
 
   handleClick(event) {
     event.preventDefault()
-    SmoothAnchor.scrollIntoSection(this.hash)
+    SmoothAnchorElement.scrollIntoSection(this.hash)
   }
 }
 
@@ -73,7 +73,7 @@ class SelfTypingElement extends HTMLSpanElement {
     await SelfTypingElement.sleep(SelfTypingElement.typeInterval * 5)
     this.cursor_node.style.display = 'inline'
     await SelfTypingElement.sleep(SelfTypingElement.typeInterval * 5)
-    
+
     return this.type()
   }
 
@@ -106,11 +106,31 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 }
 
+class AutoResizeTextAreaElement extends HTMLTextAreaElement {
+  connectedCallback() {
+    this.addEventListener('input', this.handleInput)
+  }
 
-customElements.define('smooth-anchor', SmoothAnchor, { extends: 'a' })
+  disconnectedCallback() {
+    this.removeEventListener('input', this.handleInput)
+  }
+
+  handleInput(event) {
+    this.updateHeight()
+  }
+
+  updateHeight() {
+    this.style.height = 'auto'
+    this.style.height = this.scrollHeight + 'px'
+  }
+}
+
+
+customElements.define('smooth-anchor', SmoothAnchorElement, { extends: 'a' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
+customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })
 
 addEventListener('DOMContentLoaded', () => {
   if (location.hash)
-    setTimeout(SmoothAnchor.scrollIntoSection, 512, location.hash)
+    setTimeout(SmoothAnchorElement.scrollIntoSection, 512, location.hash)
 })
