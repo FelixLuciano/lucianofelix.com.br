@@ -1,15 +1,22 @@
 :root {
-    --bg-primary: #A22;
-    --t-primary: #A22;
-    /* --t-primary: #F77; */
-    /* --primary: #A82; */
+    --bg-primary: #b91c1c;
+    --t-primary: #b91c1c;
+    /* --bg-primary: #A82;
+    --t-primary: #A82; */
 
-    background-color: #EEE;
-    /* background-color: #111;
-    color: #EEE; */
+    background-color: #e7e5e4;
+    color: #292524;
+    /* background-color: #0c0a09;
+    color: #e7e5e4; */
+
     font-size: max(12px, 1vw);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
+}
+::selection {
+    background-color: rgba(170 34 34 / 85%);
+    color: #DDD;
+    opacity: .5;
 }
 
 body {
@@ -21,7 +28,7 @@ body {
 nav.page-nav {
     flex: 1 0 100%;
     margin-top: 1rem;
-    padding: 1rem 2rem 0 3rem;
+    padding: 1rem 2rem 0 2rem;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -40,28 +47,20 @@ nav.page-nav > ul > li > a.nav-anchor--active {
     text-decoration: solid underline var(--t-primary);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 8rem;
-    counter-reset: heading-counter;
-}
-
-section.page-header {
-    /* min-height: 100vh; */
+header.page-header {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
 }
-section.page-header > header {
+header.page-header > figure {
     flex: 1 1 auto;
-    padding-left: 3rem;
+    padding-left: 2rem;
     position: relative;
 }
-section.page-header > header > img {
+header.page-header > figure > img {
     height: 12rem;
 }
-section.page-header > h1 {
+header.page-header > h1 {
     flex: 0 0 auto;
     padding-right: 2rem;
     width: 25%;
@@ -72,102 +71,90 @@ section.page-header > h1 {
     letter-spacing: .1em;
     writing-mode: vertical-lr;
 }
-section.page-header > blockquote {
+header.page-header > p {
     flex: 1 0 100%;
-    padding: 0 2rem 0 3rem;
+    padding: 0 2rem;
     padding-right: 36%;
     font-size: 2.5rem;
     line-height: 4.35rem;
     letter-spacing: -.03em;
 }
-section.page-header > blockquote > span {
+header.page-header > p > span.marker {
     padding: .15em .2em;
-    /* background-color: #EEE;
-    color: #111; */
+    border-radius: .25rem;
     background-color: var(--bg-primary);
     color: #EEE;
-    border-radius: .25rem;
     font-family: 'Open Sans', sans-serif;
     -webkit-box-decoration-break: clone;
     -moz-background-inline-policy: clone;
     box-decoration-break: clone;
 }
-section.page-header > blockquote > span:before {
+header.page-header > p > span.marker:before {
     content: open-quote;
 }
-section.page-header > blockquote > span:after {
+header.page-header > p > span.marker:after {
     content: close-quote;
 }
+header.page-header > p > span.marker > span.self-typing--cursor {
+    display: none;
+}
 
-section.page-content {
-    position: relative;
+
+main {
+    counter-reset: heading-counter;
     display: flex;
-    flex-wrap: wrap;
-    gap: 3rem 0;
+    flex-direction: column;
+    gap: 8rem;
 }
-section.page-content:before {
-    width: 2rem;
-    flex: 0 0 auto;
-    margin-top: auto;
-    padding: .6rem 0 0 .5rem;
-    counter-increment: heading-counter;
-    content: counter(heading-counter, decimal-leading-zero) ".";
-    color: var(--t-primary);
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: -.1em;
-    position: sticky;
-    top: 0;
+main > section {
+    padding: 0 2rem;
+    column-width: 28rem;
+    column-gap: 3rem;
+    column-rule: 1px dotted currentcolor;
+    position: relative;
 }
-section.page-content > h2 {
-    flex: 0 1 50%;
-    padding: 0 2rem 0 1rem;
+main > section > h2 {
+    padding: 0 0 1rem 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 3.5rem;
     line-height: 3rem;
     letter-spacing: -.05em;
 }
-section.page-content > div.page-content__container {
-    flex: 1 1 100%;
-    padding: 0 1rem 0 3rem;
-}
-section.page-content > div.page-content__container--prose {
-    font-size: 1.5rem;
-}
-@media (min-width: 650px) {
-    section.page-content > div.page-content__container--prose {
-        column-count: 2;
-        column-gap: 2rem;
-    }
-}
-@media (min-width: 1200px) {
-    section.page-content > div.page-content__container--prose {
-        column-count: 3;
-    }
-}
-section.page-content > div.page-content__container img {
-    border-radius: .2rem;
-}
-ul.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .5rem;
-}
-ul.grid.grid--small {
-    grid-template-columns: repeat(4, 1fr);
-}
-ul.grid > li img {
-    width: 100%;
+main > section > h2:before {
+    counter-increment: heading-counter;
+    content: counter(heading-counter, decimal-leading-zero) ". ";
+    color: var(--t-primary);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: .8em;
 }
 
+main > section > h2,
+main > section > .block {
+    break-inside: avoid-column;
+}
+main > section > .full-row {
+    column-span: all;
+}
+main > section img {
+    width: 100%;
+    border-radius: .2rem;
+}
+main > section p {
+    padding-bottom: 1rem;
+    hyphens: auto;
+}
+
+
+
 ul.h-list {
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
 }
 ul.h-list > li {
     display: flex;
-    border-bottom: .15rem dotted #222;
+    border-bottom: .15rem dotted currentcolor;
     line-height: 3rem;
 }
 ul.h-list > li > * {
@@ -179,8 +166,66 @@ ul.h-list > li > h3 {
 ul.h-list > li > a {
     color: var(--t-primary);
 }
+ul.h-list > li > a[href^="https"]:after {
+    content: '\29C9';
+    margin-right: .3rem;
+    font-size: 1.2rem;
+    float: right;
+}
+ul.h-list > li > a[href^="#"]:after {
+    content: '\21B3';
+    margin-right: .5rem;
+    font-size: 1.2rem;
+    float: right;
+}
+    
+
+ul.grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+}
+ul.grid.grid--small {
+    grid-template-columns: repeat(4, 1fr);
+}
+ul.grid > li img {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+form label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.page-content--test {
+}
 
 footer {
     padding: 0 2rem 6rem 3rem;
-    color: #555;
+    color: #444;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+
+
+.self-typing--cursor {
+    user-select: none;
+    color: var(--t-primary);
+    font-weight: 900;
+    animation: blink 512ms steps(2, start) infinite;
+    position: absolute;
+}
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
 }
