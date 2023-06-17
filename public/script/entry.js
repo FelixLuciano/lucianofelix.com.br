@@ -98,13 +98,7 @@ class SelfTypingElement extends HTMLSpanElement {
     if (this.dataset.remove) {
       const text_node = document.createTextNode(this.text_node.textContent)
 
-      try {
-        this.parentNode.insertBefore(text_node, this)
-      }
-      catch (e) {
-        console.log(e)
-        console.log(this, this.parentNode)
-      }
+      this.parentNode.insertBefore(text_node, this)
       this.remove()
     }
 
