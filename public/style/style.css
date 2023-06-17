@@ -47,6 +47,15 @@ header.page-header {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    position: relative;
+}
+header.page-header > img {
+    width: 2rem;
+    height: 2rem;
+    image-rendering: pixelated;
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
 }
 header.page-header > figure {
     flex: 1 1 auto;

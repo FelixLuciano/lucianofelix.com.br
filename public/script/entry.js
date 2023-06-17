@@ -51,13 +51,13 @@ class SelfTypingElement extends HTMLSpanElement {
 
   connectedCallback() {
     this.text_node = this.childNodes[0]
-    this.span_node = document.createElement('span')
+    this.queue_node = document.createElement('span')
 
-    this.span_node.textContent = this.text_node.textContent
-    this.span_node.style.color = 'transparent'
+    this.queue_node.textContent = this.text_node.textContent
+    this.queue_node.style.color = 'transparent'
     this.text_node.textContent = ''
 
-    this.parentNode.insertBefore(this.span_node, this.nextSibling)
+    this.parentNode.insertBefore(this.queue_node, this.nextSibling)
     SelfTypingElement.#observer.observe(this)
   }
 
@@ -71,13 +71,13 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 
   async type() {
-    if (this.span_node.textContent == '') {
+    if (this.queue_node.textContent == '') {
       await SelfTypingElement.sleep(this.typeInterval * 10)
       return this.destroy()
     }
 
-    this.text_node.textContent += this.span_node.textContent.substring(0, 1)
-    this.span_node.textContent = this.span_node.textContent.substring(1)
+    this.text_node.textContent += this.queue_node.textContent.substring(0, 1)
+    this.queue_node.textContent = this.queue_node.textContent.substring(1)
 
     await SelfTypingElement.sleep(SelfTypingElement.typeInterval)
 
@@ -85,17 +85,17 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 
   destroy() {
-    this.text_node.textContent += this.span_node.textContent
+    this.text_node.textContent += this.queue_node.textContent
 
-    if (this.dataset.remove) {
-      const text_node = document.createTextNode(this.text_node.textContent)
+    this.queue_node.remove()
 
-      this.parentNode.insertBefore(text_node, this)
-      this.remove()
-    }
+    if (this.dataset.remove == "false")
+      return
 
-    this.cursor_node.remove()
-    this.span_node.remove()
+    const text_node = document.createTextNode(this.text_node.textContent)
+
+    this.parentNode.insertBefore(text_node, this)
+    this.remove()
   }
 }
 
