@@ -143,8 +143,11 @@ main > section p {
 }
 
 footer {
+    margin: 8rem auto 0 auto;
     padding: 0 2rem 6rem 3rem;
+    max-width: 69rem;
     color: #444;
+    text-align: center;
 }
 
 
