@@ -34,6 +34,7 @@ class SelfTypingElement extends HTMLSpanElement {
   static async IntersectionObserverCallback(event) {
     for (const entry of event) {
       if (entry.isIntersecting) {
+        this.unobserve(entry.target)
         entry.target.init()
       }
     }
@@ -97,7 +98,13 @@ class SelfTypingElement extends HTMLSpanElement {
     if (this.dataset.remove) {
       const text_node = document.createTextNode(this.text_node.textContent)
 
-      this.parentNode.insertBefore(text_node, this)
+      try {
+        this.parentNode.insertBefore(text_node, this)
+      }
+      catch (e) {
+        console.log(e)
+        console.log(this, this.parentNode)
+      }
       this.remove()
     }
 
