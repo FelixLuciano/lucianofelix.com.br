@@ -157,11 +157,13 @@ ul.h-list {
     padding-top: 2rem;
 }
 ul.h-list > li {
-    display: flex;
     border-bottom: .15rem dotted currentcolor;
     line-height: 3rem;
 }
-ul.h-list > li > * {
+ul.h-list.full-row > li {
+    display: flex;
+}
+ul.h-list.full-row > li > * {
     flex: 1 1 100%;
 }
 ul.h-list > li > h3 {
