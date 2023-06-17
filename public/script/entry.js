@@ -131,6 +131,7 @@ class AsyncFormElement extends HTMLFormElement {
     event.preventDefault()
 
     const response_node = this.querySelector('.form--response')
+    const submitButton_node = this.querySelector('input[type="submit"]')
     const data = Object.fromEntries(new FormData(this).entries())
 
     if (data['g-recaptcha-response'] == '' || data['h-captcha-response'] == '')
@@ -138,6 +139,8 @@ class AsyncFormElement extends HTMLFormElement {
 
     for (const element of this.elements)
       element.readOnly = true
+
+    submitButton_node.value = "Sending..."
 
     try {
       const response = await fetch(this.action, {
@@ -152,11 +155,17 @@ class AsyncFormElement extends HTMLFormElement {
 
       response_node.innerText = responseData.message
 
-      if (responseData.success)
+      if (responseData.success) {
+        submitButton_node.value = "SEND"
         this.reset()
+      }
+      else {
+        submitButton_node.value = "TRY AGAIN"
+      }
     }
     catch {
       response_node.innerText = "Unable to send your message!"
+      submitButton_node.value = "TRY AGAIN"
     }
 
     for (const element of this.elements)
