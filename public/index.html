@@ -385,10 +385,10 @@
 
             <form id="contact-form" action="/api/send-message" method="POST" is="async-form" class="full-row">
                 <label for="contact-form--contact">CONTACT</label>
-                <input id="contact-form--contact" name="contact" required>
+                <input id="contact-form--contact" name="contact" placeholder="Enter your contact information (phone number, email, website, etc)" required>
 
                 <label for="contact-form--message">MESSAGE</label>
-                <textarea id="contact-form--message" name="message" is="auto-resize" required></textarea>
+                <textarea id="contact-form--message" name="message" is="auto-resize" placeholder="Hey Luciano,&#10;&#10;I wanted to reach out regarding [...]" required></textarea>
 
                 <label>CAPTCHA</label>
                 <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
