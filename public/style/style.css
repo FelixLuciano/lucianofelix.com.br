@@ -16,6 +16,7 @@
 }
 
 body {
+    padding-top: env(safe-area-inset-top, 0);
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -143,9 +144,9 @@ main > section p {
 }
 
 footer {
+    max-width: 69rem;
     margin: 0 auto;
     padding: 8rem 2rem 6rem 2rem;
-    max-width: 69rem;
     color: #444;
     text-align: center;
 }
@@ -232,6 +233,9 @@ ul.grid.dense {
     margin-right: auto;
     padding: 0 2rem;
     background-color: #000;
+    cursor: pointer;
+    border-bottom: none;
+    border-radius: .2rem;
     color: #FFF;
 }
 #contact-form input[type="submit"][readonly] {
@@ -249,8 +253,8 @@ ul.grid.dense {
 
 
 span[is="self-typing"] + span:before {
-    content: '|';
     user-select: none;
+    content: '|';
     position: absolute;
     animation: blink 1s steps(2, start) infinite;
     font-weight: 900;
