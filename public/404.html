@@ -6,7 +6,7 @@
     <meta name="description" content="Page not found.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,36 +16,36 @@
     <style>
         :root {
             background-color: #e7e5e4;
-            color: #292524;
-            font-family: 'Inter', sans-serif;
             font-size: max(12px, 1vw);
+            font-family: 'Inter', sans-serif;
+            color: #292524;
         }
 
         body {
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         main {
-            flex: 1 0 auto;
             display: flex;
-            justify-content: end;
-            align-content: center;
-            align-items: center;
             flex-wrap: wrap;
+            justify-content: end;
+            align-items: center;
+            align-content: center;
         }
 
         main > p {
             flex: 1 0 auto;
             padding-left: 4rem;
+            animation: markee 8s infinite linear;
             font-size: 12rem;
-            line-height: 12rem;
             font-weight: 700;
+            line-height: 12rem;
             color: #b91c1c;
             text-shadow: 70rem 0, 140rem 0;
-            animation: markee 8s infinite linear;
         }
+
         @keyframes markee {
             to {
                 transform: translateX(-70rem);
@@ -53,38 +53,38 @@
         }
 
         main > h1 {
+            writing-mode: vertical-lr;
             flex: 1 0 auto;
-            padding-right: 2rem;
+            z-index: 1;
             max-width: 32rem;
-            font-family: 'Open Sans', sans-serif;
+            padding-right: 2rem;
             font-size: 4rem;
+            font-family: 'Open Sans', sans-serif;
             font-weight: 700;
             line-height: 3.5rem;
             letter-spacing: .1em;
-            writing-mode: vertical-lr;
-            z-index: 1;
         }
 
         header,
         footer {
-            padding: 0 4rem;
-            flex: 1 0 auto;
             display: flex;
             align-items: center;
+            flex: 1 0 auto;
+            padding: 0 4rem;
         }
 
         footer > img {
+            image-rendering: pixelated;
             width: 100%;
             max-width: 18rem;
             height: 3rem;
-            image-rendering: pixelated;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <img src="image/logo-dark.svg" width="182" height="208" style="width: 5rem;">
+        <img src="image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;">
     </header>
 
     <main class="page-header">
@@ -93,7 +93,7 @@
     </main>
 
     <footer>
-        <img src="image/404.png" width="216" height="48">
+        <img src="image/404.png" alt="404 in code-128" width="216" height="48">
     </footer>
 </body>
 
