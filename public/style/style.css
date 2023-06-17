@@ -93,7 +93,7 @@ header.page-header > p > span.marker:after {
     content: close-quote;
 }
 header.page-header > p > span.marker > span.self-typing--cursor {
-    display: none;
+    display: none !important;
 }
 
 main {
