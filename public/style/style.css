@@ -215,6 +215,12 @@ ul.grid.dense {
     border-radius: .2rem .2rem 0 0;
     font: inherit;
 }
+#contact-form input[readonly],
+#contact-form textarea[readonly] {
+    background-color: #d6d3d1;
+    cursor: wait;
+    border-color: transparent;
+}
 #contact-form input {
     padding: 0 1rem;
     line-height: 3rem;
@@ -225,6 +231,10 @@ ul.grid.dense {
     padding: 0 2rem;
     background-color: #000;
     color: #FFF;
+}
+#contact-form input[type="submit"][readonly] {
+    background-color: #d6d3d1;
+    color: currentcolor;
 }
 #contact-form textarea {
     resize: none;

@@ -125,9 +125,55 @@ class AutoResizeTextAreaElement extends HTMLTextAreaElement {
   }
 }
 
+class AsyncFormElement extends HTMLFormElement {
+  connectedCallback() {
+    this.addEventListener('submit', this.#handleSubmit)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('submit', this.#handleSubmit)
+  }
+
+  async #handleSubmit(event) {
+    event.preventDefault()
+
+    const response_node = this.querySelector('.form--response')
+    const data = Object.fromEntries(new FormData(this).entries())
+
+    if (data['g-recaptcha-response'] == '' || data['h-captcha-response'] == '')
+      data['g-recaptcha-response'] = data['h-captcha-response'] = (await hcaptcha.execute(null, { async: true })).response
+
+    for (const element of this.elements)
+      element.readOnly = true
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+      })
+
+      const responseData = await response.json()
+
+      response_node.innerText = responseData.message
+    }
+    catch {
+      response_node.innerText = "Unable to send your message!"
+    }
+
+    for (const element of this.elements)
+      element.readOnly = false
+
+    hcaptcha.reset()
+  }
+}
+
 
 customElements.define('smooth-anchor', SmoothAnchorElement, { extends: 'a' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
+customElements.define('async-form', AsyncFormElement, { extends: 'form' })
 customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })
 
 addEventListener('DOMContentLoaded', () => {

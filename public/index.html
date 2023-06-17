@@ -383,17 +383,17 @@
                 <span is="self-typing" data-remove="true">Get in Touch</span>
             </h2>
 
-            <form id="contact-form" action="/api/send-message" method="POST" class="full-row">
+            <form id="contact-form" action="/api/send-message" method="POST" is="async-form" class="full-row">
                 <label for="contact-form--contact">CONTACT</label>
-                <input id="contact-form--contact" name="contact">
+                <input id="contact-form--contact" name="contact" required>
 
                 <label for="contact-form--message">MESSAGE</label>
-                <textarea id="contact-form--message" name="message" is="auto-resize"></textarea>
+                <textarea id="contact-form--message" name="message" is="auto-resize" required></textarea>
 
                 <label>CAPTCHA</label>
                 <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
 
-                <div></div>
+                <label class="form--response">SUBMIT</label>
                 <input type="submit" value="SEND">
             </form>
         </section>
