@@ -158,6 +158,9 @@ class AsyncFormElement extends HTMLFormElement {
       const responseData = await response.json()
 
       response_node.innerText = responseData.message
+
+      if (responseData.success)
+        this.reset()
     }
     catch {
       response_node.innerText = "Unable to send your message!"
