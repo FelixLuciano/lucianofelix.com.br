@@ -205,6 +205,9 @@ ul.grid {
 ul.grid.dense {
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
+ul.grid img {
+    object-fit: cover;
+}
 
 #contact-form {
     display: grid;
