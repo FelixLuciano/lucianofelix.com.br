@@ -189,6 +189,7 @@ ul.h-list > li > h3 {
 }
 ul.h-list > li > a {
     color: var(--t-primary);
+    display: block;
 }
 ul.h-list > li > a[href^="https"]:after {
     content: '\29C9';
