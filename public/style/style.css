@@ -10,6 +10,8 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: var(--t-color);
+    counter-reset: heading-counter;
+    scroll-behavior: smooth;
 }
 ::selection {
     opacity: .5;
@@ -17,20 +19,12 @@
     color: #DDD;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    padding-top: env(safe-area-inset-top, 0);
-}
-
 nav.page-nav {
-    flex: 1 0 100%;
     position: sticky;
     z-index: 1;
     top: 0;
-    margin-top: 1rem;
-    padding: 1rem 2rem 0 2rem;
+    margin: 1rem 0 4rem 0;
+    padding: 1rem 2rem;
 }
 nav.page-nav > ul {
     display: flex;
@@ -114,26 +108,20 @@ header.page-header > p > span.marker + span:before {
     display: none !important;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 8rem;
-    counter-reset: heading-counter;
-}
-main > section {
+section {
     column-width: 28rem;
     column-rule: 1px dotted var(--t-color-l1);
     column-gap: 3rem;
-    padding: 0 2rem;
+    padding: 4rem 2rem;
 }
-main > section > h2 {
+section > h2 {
     padding: 0 0 1rem 0;
     font-size: 3.5rem;
     font-family: 'Open Sans', sans-serif;
     line-height: 3rem;
     letter-spacing: -.05em;
 }
-main > section > h2:before {
+section > h2:before {
     content: counter(heading-counter, decimal-leading-zero) ". ";
     font-size: .8em;
     font-family: 'Open Sans', sans-serif;
@@ -142,35 +130,37 @@ main > section > h2:before {
     counter-increment: heading-counter;
 }
 
-main > section > h2,
-main > section > .block {
+section > h2,
+section > .block {
     break-inside: avoid-column;
 }
-main > section > .full-row {
+section > .full-row {
     column-span: all;
 }
 
-main > section img {
+section img {
     width: 100%;
     border-radius: .2rem;
 }
 
-main > section p {
+section p {
     padding-bottom: 1rem;
     hyphens: auto;
 }
 
 footer {
-    max-width: 69rem;
-    margin: 0 auto;
-    padding: 8rem 2rem 6rem 2rem;
+    padding: 4rem 2rem 6rem 2rem;
     text-align: center;
+}
+footer > img {
+    margin: 0 auto;
+    max-width: 69rem;
+    height: 4rem; 
+    image-rendering: pixelated;
 }
 
 
 ul.h-list {
-    display: flex;
-    flex-direction: column;
     padding-top: 2rem;
 }
 ul.h-list > li {
@@ -179,6 +169,7 @@ ul.h-list > li {
     line-height: 3rem;
 }
 ul.h-list.full-row > li {
+    line-height: 4.5rem;
     display: flex;
 }
 ul.h-list.full-row > li > * {

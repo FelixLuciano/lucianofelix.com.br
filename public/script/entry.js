@@ -1,30 +1,3 @@
-class SmoothAnchorElement extends HTMLAnchorElement {
-  static scrollIntoSection(selector) {
-    const section_node = document.querySelector(selector)
-    const sectionTop = section_node.getBoundingClientRect().top
-    const pageNav_node = document.querySelector('.page-nav')
-    const pageNavBottom = pageNav_node.getBoundingClientRect().bottom
-
-    window.scrollBy({
-      top: sectionTop - pageNavBottom,
-      behavior: 'smooth'
-    })
-  }
-
-  connectedCallback() {
-    this.addEventListener('click', this.handleClick)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('click', this.handleClick)
-  }
-
-  handleClick(event) {
-    event.preventDefault()
-    SmoothAnchorElement.scrollIntoSection(this.hash)
-  }
-}
-
 class SelfTypingElement extends HTMLSpanElement {
   static #observer = new IntersectionObserver(SelfTypingElement.IntersectionObserverCallback, {
     rootMargin: '0px 0px -8% 0px',
@@ -176,12 +149,6 @@ class AsyncFormElement extends HTMLFormElement {
 }
 
 
-customElements.define('smooth-anchor', SmoothAnchorElement, { extends: 'a' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
 customElements.define('async-form', AsyncFormElement, { extends: 'form' })
 customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })
-
-addEventListener('DOMContentLoaded', () => {
-  if (location.hash)
-    setTimeout(SmoothAnchorElement.scrollIntoSection, 512, location.hash)
-})
