@@ -2,11 +2,11 @@
   "name": "lucianofelix.com.br",
   "version": "1.0.0",
   "dependencies": {
+    "@cloudflare/pages-plugin-mailchannels": "^0.1.2",
     "googleapis": "^118.0.0",
     "hcaptcha": "^0.1.1"
   },
   "devDependencies": {
-    "@cloudflare/pages-plugin-mailchannels": "^0.1.2",
     "@vercel/node": "^2.15.1"
   }
 }
