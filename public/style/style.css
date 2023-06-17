@@ -50,12 +50,17 @@ header.page-header {
     position: relative;
 }
 header.page-header > img {
-    width: 2rem;
-    height: 2rem;
     image-rendering: pixelated;
     position: absolute;
-    right: 1rem;
     bottom: 0;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+@media (max-width: 42rem) {
+    header.page-header > img {
+        display: none;
+    }
 }
 header.page-header > figure {
     flex: 1 1 auto;
