@@ -92,7 +92,7 @@ header.page-header > p > span.marker:before {
 header.page-header > p > span.marker:after {
     content: close-quote;
 }
-header.page-header > p > span.marker > span.self-typing--cursor {
+header.page-header > p > span.marker + span:before {
     display: none !important;
 }
 
@@ -248,10 +248,11 @@ ul.grid.dense {
 }
 
 
-.self-typing--cursor {
+span[is="self-typing"] + span:before {
+    content: '|';
     user-select: none;
     position: absolute;
-    animation: blink 512ms steps(2, start) infinite;
+    animation: blink 1s steps(2, start) infinite;
     font-weight: 900;
     color: var(--t-primary);
 }

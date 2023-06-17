@@ -51,18 +51,13 @@ class SelfTypingElement extends HTMLSpanElement {
 
   connectedCallback() {
     this.text_node = this.childNodes[0]
-    this.cursor_node = document.createElement('span')
     this.span_node = document.createElement('span')
 
-    this.cursor_node.classList.add('self-typing--cursor')
-    this.cursor_node.textContent = '|'
-    this.cursor_node.style.display = 'none'
     this.span_node.textContent = this.text_node.textContent
-    this.span_node.style.opacity = 0
+    this.span_node.style.color = 'transparent'
     this.text_node.textContent = ''
 
     this.parentNode.insertBefore(this.span_node, this.nextSibling)
-    this.appendChild(this.cursor_node)
     SelfTypingElement.#observer.observe(this)
   }
 
@@ -71,10 +66,7 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 
   async init() {
-    await SelfTypingElement.sleep(SelfTypingElement.typeInterval * 5)
-    this.cursor_node.style.display = 'inline'
-    await SelfTypingElement.sleep(SelfTypingElement.typeInterval * 5)
-
+    await SelfTypingElement.sleep(SelfTypingElement.typeInterval * 10)
     return this.type()
   }
 
