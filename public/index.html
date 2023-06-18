@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head class="light">
     <title>Luciano Felix</title>
     <meta name="description" content="Hello, I am Luciano and on this page you can know more about me and my work.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,13 +34,17 @@
             <li>
                 <a href="#contact">Contact</a>
             </li>
+            <li data-marker="theme:">
+                <input id="theme-switch" type="checkbox" is="theme-switch">
+                <label for="theme-switch">Light</label>
+            </li>
         </ul>
     </nav>
 
     <header class="page-header">
         <figure>
-            <!-- <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208"> -->
-            <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208">
+            <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-light">
+            <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-dark">
         </figure>
         <h1>
             Luciano<br>
@@ -50,7 +54,7 @@
             <span class="marker" is="self-typing" data-remove="false">Hello, I am Luciano and on this page you can know
                 more about me and my work.</span>
         </p>
-        <img src="/image/l.png" alt="L in code-128" width="24" height="24">
+        <img src="/image/l.png" alt="L in code-128" width="24" height="24" class="dark:invert">
     </header>
 
     <section id="links">
@@ -82,7 +86,7 @@
         </ul>
     </section>
 
-    <section style="background-color: #fecaca;">
+    <section style="background-color: rgba(185  28  28 / .2);">
         <h2>
             <span is="self-typing">Work in progress!</span>
         </h2>
@@ -442,13 +446,13 @@
                 placeholder="Hey Luciano,&#10;&#10;I wanted to reach out regarding [...]" required></textarea>
             <label>CAPTCHA</label>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
-            <label class="form--response">SUBMIT</label>
-            <input type="submit" value="SEND">
+            <label for="contact-form--submit-button" class="form--response">SUBMIT</label>
+            <input id="contact-form--submit-button" type="submit" value="SEND">
         </form>
     </section>
 
     <footer>
-        <img src="/image/copyright.png" alt="Copyright in code-128">
+        <img src="/image/copyright.png" alt="Copyright in code-128" class="dark:invert">
         <p>
             <span is="self-typing">© 2023 Luciano Felix. All rights reserved.</span>
         </p>

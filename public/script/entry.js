@@ -1,3 +1,45 @@
+class ThemeSwitchElement extends HTMLInputElement {
+  static #LOCAL_STORAGE_KEY = 'theme'
+
+  connectedCallback() {
+    let theme = localStorage.getItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY)
+
+    this.value = theme !== null ? theme === 'true' : ThemeSwitchElement.#detectTheme()
+    this.addEventListener('input', this.handleSwitch)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('input', this.handleSwitch)
+  }
+
+  handleSwitch() {
+    this.value = this.checked
+  }
+
+  static #detectTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+
+  get value() {
+    return this.checked
+  }
+  set value(value) {
+    if(value === true) {
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
+    }
+    else {
+      document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
+    }
+
+    this.checked = value
+    
+    this.labels.forEach(label => label.textContent = value ? 'Dark' : 'Light')
+    localStorage.setItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY, value)
+  }
+}
+
 class SelfTypingElement extends HTMLSpanElement {
   static #observer = new IntersectionObserver(SelfTypingElement.IntersectionObserverCallback, {
     rootMargin: '0px 0px -8% 0px',
@@ -149,6 +191,7 @@ class AsyncFormElement extends HTMLFormElement {
 }
 
 
+customElements.define('theme-switch', ThemeSwitchElement, { extends: 'input' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
 customElements.define('async-form', AsyncFormElement, { extends: 'form' })
 customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })
