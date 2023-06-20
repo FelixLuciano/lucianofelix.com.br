@@ -14,8 +14,8 @@
     --t-color: #292524;
     --t-color-l1: #44403c;
     --t-color-l2: #78716c;
-    --bg-primary: #b91c1c;
-    --t-primary: #b91c1c;
+    --bg-primary: #991b1b;
+    --t-primary: #ba2222;
 }
 :root.dark {
     --bg-color-d1: #171717;
@@ -24,8 +24,8 @@
     --t-color: #e5e5e5;
     --t-color-l1: #737373;
     --t-color-l2: #d4d4d4;
-    --bg-primary: #b91c1c;
-    --t-primary: #ef4444;
+    --bg-primary: #991b1b;
+    --t-primary: #f87171;
 }
 ::selection {
     opacity: .5;
