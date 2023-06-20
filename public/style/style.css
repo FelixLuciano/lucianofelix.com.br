@@ -1,4 +1,13 @@
 :root {
+    background-color: var(--bg-color);
+    font-size: max(12px, 1vw);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--t-color);
+    counter-reset: heading-counter;
+    scroll-behavior: smooth;
+}
+:root.light {
     --bg-color-d1: #d6d3d1;
     --bg-color: #e7e5e4;
     --bg-color-l1: #fafaf9;
@@ -7,13 +16,6 @@
     --t-color-l2: #78716c;
     --bg-primary: #b91c1c;
     --t-primary: #b91c1c;
-    background-color: var(--bg-color);
-    font-size: max(12px, 1vw);
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: var(--t-color);
-    counter-reset: heading-counter;
-    scroll-behavior: smooth;
 }
 :root.dark {
     --bg-color-d1: #171717;
