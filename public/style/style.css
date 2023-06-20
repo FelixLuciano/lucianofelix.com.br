@@ -145,12 +145,31 @@ section {
     column-gap: 3rem;
     padding: 4rem 2rem;
 }
-section > h2 {
-    padding: 0 0 1rem 0;
-    font-size: 3.5rem;
+section > * {
+    padding-bottom: 1rem;
+}
+
+section > h2,
+section > h3,
+section > .block {
+    break-inside: avoid-column;
+}
+
+section > hr,
+section > .full-row {
+    column-span: all;
+}
+
+section > h2,
+section > h3 {
+    padding-bottom: 2rem;
     font-family: 'Open Sans', sans-serif;
-    line-height: 3rem;
     letter-spacing: -.05em;
+}
+
+section > h2 {
+    font-size: 3.5rem;
+    line-height: 3rem;
 }
 section > h2:before {
     content: counter(heading-counter, decimal-leading-zero) ". ";
@@ -161,23 +180,77 @@ section > h2:before {
     counter-increment: heading-counter;
 }
 
-section > h2,
-section > .block {
-    break-inside: avoid-column;
+section > h3 {
+    font-size: 2.5rem;
+    line-height: 1.5rem;
 }
-section > .full-row {
-    column-span: all;
+
+section > hr {
+    margin-top: 1rem;
+    border: none;
+}
+
+section p {
+    hyphens: auto;
 }
 
 section img {
     width: 100%;
     max-width: 100%;
     border-radius: .2rem;
+    object-fit: cover;
 }
 
-section p {
+section > ul > li {
+    margin-bottom: 1rem;
+    break-inside: avoid-column;
+    border-bottom: .15rem dotted var(--t-color);
+}
+section > ul > li > h3,
+section > ul > li > h4 {
+    font-size: 1.5rem;
     padding-bottom: 1rem;
-    hyphens: auto;
+}
+section > ul > li > a {
+    padding-bottom: .5rem;
+    display: block;
+    color: var(--t-primary);
+}
+section > ul > li > a:after {
+    float: right;
+    font-size: 1.2rem;
+}
+section > ul > li > a[href^="https://"]:after {
+    content: '\29C9';
+}
+section > ul > li > a[href^="#"]:after {
+    content: '\21B3';
+}
+section > ul.grid {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-auto-flow: row dense;
+}
+section > ul.grid > li {
+    border: none;
+    margin: 0;
+}
+section > ul.grid > li > a {
+    line-height: 2em;
+    text-underline-offset: .1em;
+    padding-bottom: 0;
+    color: var(--t-color);
+}
+section > ul.grid > li > a:after {
+    color: var(--t-primary);
+}
+section > ul.grid.dense {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: .4rem;
+}
+section > ul.grid.dense > li > a:after {
+    font-size: 1rem;
 }
 
 footer {
@@ -190,56 +263,6 @@ footer > img {
     max-width: 69rem;
     height: 4rem; 
     image-rendering: pixelated;
-}
-
-
-ul.h-list {
-    padding-top: 2rem;
-}
-ul.h-list > li {
-    break-inside: avoid-column;
-    border-bottom: .15rem dotted var(--t-color);
-    line-height: 3rem;
-}
-ul.h-list.full-row > li {
-    line-height: 4.5rem;
-    display: flex;
-}
-ul.h-list.full-row > li > * {
-    flex: 1 1 100%;
-}
-ul.h-list > li > h3 {
-    font-size: 1.5rem;
-}
-ul.h-list > li > a {
-    color: var(--t-primary);
-    display: block;
-}
-ul.h-list > li > a[href^="https"]:after {
-    content: '\29C9';
-    float: right;
-    margin-right: .3rem;
-    font-size: 1.2rem;
-}
-ul.h-list > li > a[href^="#"]:after {
-    content: '\21B3';
-    float: right;
-    margin-right: .5rem;
-    font-size: 1.2rem;
-}
-
-ul.grid {
-    display: grid;
-    gap: .25rem;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    grid-auto-flow: row dense;
-    padding-top: 2rem;
-}
-ul.grid.dense {
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-}
-ul.grid img {
-    object-fit: cover;
 }
 
 #contact-form {
