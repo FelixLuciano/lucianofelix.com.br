@@ -1,11 +1,11 @@
 :root {
+    scroll-behavior: smooth;
     background-color: var(--bg-color);
     font-size: max(12px, 1vw);
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: var(--t-color);
     counter-reset: heading-counter;
-    scroll-behavior: smooth;
 }
 :root.light {
     --bg-color-d1: #d6d3d1;
@@ -52,8 +52,8 @@ nav.page-nav {
 }
 nav.page-nav > ul {
     display: flex;
-    gap: 1rem;
     justify-content: space-between;
+    gap: 1rem;
     font-size: 1.2rem;
     list-style-position: inside;
     list-style-type: upper-roman;
@@ -195,25 +195,25 @@ section p {
 }
 
 section img {
+    object-fit: cover;
     width: 100%;
     max-width: 100%;
     border-radius: .2rem;
-    object-fit: cover;
 }
 
 section > ul > li {
-    margin-bottom: 1rem;
     break-inside: avoid-column;
+    margin-bottom: 1rem;
     border-bottom: .15rem dotted var(--t-color);
 }
 section > ul > li > h3,
 section > ul > li > h4 {
-    font-size: 1.5rem;
     padding-bottom: 1rem;
+    font-size: 1.5rem;
 }
 section > ul > li > a {
-    padding-bottom: .5rem;
     display: block;
+    padding-bottom: .5rem;
     color: var(--t-primary);
 }
 section > ul > li > a:after {
@@ -233,21 +233,21 @@ section > ul.grid {
     grid-auto-flow: row dense;
 }
 section > ul.grid > li {
-    border: none;
     margin: 0;
+    border: none;
 }
 section > ul.grid > li > a {
-    line-height: 2em;
     text-underline-offset: .1em;
     padding-bottom: 0;
+    line-height: 2em;
     color: var(--t-color);
 }
 section > ul.grid > li > a:after {
     color: var(--t-primary);
 }
 section > ul.grid.dense {
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: .4rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 section > ul.grid.dense > li > a:after {
     font-size: 1rem;
@@ -258,11 +258,11 @@ footer {
     text-align: center;
 }
 footer > img {
-    margin: 0 auto;
+    image-rendering: pixelated;
     width: 100%;
     max-width: 69rem;
-    height: 4rem; 
-    image-rendering: pixelated;
+    height: 4rem;
+    margin: 0 auto;
 }
 
 #contact-form {
@@ -294,9 +294,9 @@ footer > img {
 #contact-form input[readonly],
 #contact-form textarea[readonly] {
     background-color: var(--bg-color-d1);
-    color: var(--t-color-l1);
     cursor: wait;
     border-color: transparent;
+    color: var(--t-color-l1);
 }
 #contact-form input {
     padding: 0 1rem;
@@ -314,8 +314,8 @@ footer > img {
 }
 #contact-form input[type="submit"][readonly] {
     background-color: var(--t-color-l1);
-    color: var(--bg-color-d1);
     cursor: wait;
+    color: var(--bg-color-d1);
 }
 #contact-form textarea {
     resize: none;
