@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <nav class="page-nav">
+    <nav>
         <ul>
             <li>
                 <a href="#links">Links</a>
@@ -41,7 +41,7 @@
         </ul>
     </nav>
 
-    <header class="page-header">
+    <header>
         <figure>
             <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-light">
             <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-dark">
@@ -472,7 +472,7 @@
         <h2>
             <span is="self-typing">Get in Touch</span>
         </h2>
-        <form id="contact-form" action="/api/send-message" method="POST" is="async-form" class="full-row">
+        <form action="/api/send-message" method="POST" is="async-form" class="full-row">
             <label for="contact-form--contact">CONTACT</label>
             <input id="contact-form--contact" name="contact"
                 placeholder="Enter your contact information (phone number, email, website, etc)" required>
@@ -481,7 +481,7 @@
                 placeholder="Hey Luciano,&#10;&#10;I wanted to reach out regarding [...]" required></textarea>
             <label>CAPTCHA</label>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
-            <label for="contact-form--submit-button" class="form--response">SUBMIT</label>
+            <label for="contact-form--submit-button">SUBMIT</label>
             <input id="contact-form--submit-button" type="submit" value="SEND">
         </form>
     </section>
