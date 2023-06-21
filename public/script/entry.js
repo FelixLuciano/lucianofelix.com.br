@@ -145,8 +145,8 @@ class AsyncFormElement extends HTMLFormElement {
   async #handleSubmit(event) {
     event.preventDefault()
 
-    const response_node = this.querySelector('.form--response')
     const submitButton_node = this.querySelector('input[type="submit"]')
+    const response_node = this.querySelector(`label[for$="${submitButton_node.id}"]`)
     const data = Object.fromEntries(new FormData(this).entries())
 
     if (data['g-recaptcha-response'] == '' || data['h-captcha-response'] == '')
