@@ -1,4 +1,5 @@
 :root {
+    min-width: 300px;
     scroll-behavior: smooth;
     background-color: var(--bg-color);
     font-size: 16px;
@@ -240,8 +241,18 @@ section > ul > li > a[href^="#"]:after {
 section > ul.grid {
     display: grid;
     gap: .5rem;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fill, 1fr);
     grid-auto-flow: row dense;
+}
+@media (min-width: 24rem) {
+    section > ul.grid {
+        grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    }
+}
+@media (min-width: 16rem) {
+    section > ul.grid.dense {
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    }
 }
 section > ul.grid > li {
     margin: 0;
@@ -258,7 +269,9 @@ section > ul.grid > li > a:after {
 }
 section > ul.grid.dense {
     gap: .4rem;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+section > ul.grid.dense > li {
+    max-width: 100%;
 }
 section > ul.grid.dense > li > a:after {
     font-size: 1rem;
@@ -291,6 +304,7 @@ form label {
 }
 form input,
 form textarea {
+    max-width: 100%;
     margin-bottom: 2rem;
     background-color: var(--bg-color-l1);
     border-bottom: .2rem dotted currentcolor;
