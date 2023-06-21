@@ -1,12 +1,18 @@
 :root {
     scroll-behavior: smooth;
     background-color: var(--bg-color);
-    font-size: max(12px, 1vw);
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: var(--t-color);
     counter-reset: heading-counter;
 }
+@media (min-width: 1366px) {
+    :root {
+        font-size: calc((16 / 1366) * 100vw);
+    }
+}
+
 :root.light {
     --bg-color-d1: #d6d3d1;
     --bg-color: #e7e5e4;
@@ -29,8 +35,8 @@
 }
 ::selection {
     opacity: .5;
-    background-color: rgba(170 34 34 / 85%);
-    color: #DDD;
+    background-color: rgba(153 27 27 / 85%);
+    color: var(--bg-color-d1);
 }
 
 :root.light .hide-light {
@@ -43,14 +49,14 @@
     filter: invert(1);
 }
 
-nav.page-nav {
+nav {
     position: sticky;
     z-index: 1;
     top: 0;
     margin: 1rem 0 4rem 0;
     padding: 1rem 2rem;
 }
-nav.page-nav > ul {
+nav > ul {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -58,20 +64,20 @@ nav.page-nav > ul {
     list-style-position: inside;
     list-style-type: upper-roman;
 }
-nav.page-nav > ul li::marker {
+nav > ul li::marker {
     color: var(--t-primary);
 }
-nav.page-nav > ul li[data-marker]::marker {
+nav > ul li[data-marker]::marker {
     content: attr(data-marker);
 }
 
-header.page-header {
+header {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     position: relative;
 }
-header.page-header > img {
+header > img {
     image-rendering: pixelated;
     position: absolute;
     bottom: 0;
@@ -80,19 +86,19 @@ header.page-header > img {
     height: 2rem;
 }
 @media (max-width: 42rem) {
-    header.page-header > img {
+    header > img {
         display: none;
     }
 }
-header.page-header > figure {
+header > figure {
     flex: 1 1 auto;
     position: relative;
     padding-left: 2rem;
 }
-header.page-header > figure > img {
+header > figure > img {
     height: 12rem;
 }
-header.page-header > h1 {
+header > h1 {
     writing-mode: vertical-lr;
     flex: 0 0 auto;
     width: 25%;
@@ -104,10 +110,10 @@ header.page-header > h1 {
     color: #000000;
     letter-spacing: .1em;
 }
-:root.dark header.page-header > h1 {
+:root.dark header > h1 {
     color: #FFFFFF;
 }
-header.page-header > p {
+header > p {
     flex: 1 0 100%;
     padding: 0 2rem;
     font-size: 2.5rem;
@@ -115,11 +121,16 @@ header.page-header > p {
     letter-spacing: -.03em;
 }
 @media (min-width: 42rem) {
-    header.page-header > p {
-        padding-right: 36%;
+    header > p {
+        padding-right: 16%;
     }
 }
-header.page-header > p > span.marker {
+@media (min-width: 64rem) {
+    header > p {
+        padding-right: 32%;
+    }
+}
+header > p > span.marker {
     -webkit-box-decoration-break: clone;
     -moz-background-inline-policy: clone;
     box-decoration-break: clone;
@@ -129,18 +140,18 @@ header.page-header > p > span.marker {
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
 }
-header.page-header > p > span.marker:before {
+header > p > span.marker:before {
     content: open-quote;
 }
-header.page-header > p > span.marker:after {
+header > p > span.marker:after {
     content: close-quote;
 }
-header.page-header > p > span.marker + span:before {
+header > p > span.marker + span:before {
     display: none !important;
 }
 
 section {
-    column-width: 28rem;
+    column-width: 20rem;
     column-rule: 1px dotted var(--t-color-l1);
     column-gap: 3rem;
     padding: 4rem 2rem;
@@ -220,7 +231,7 @@ section > ul > li > a:after {
     float: right;
     font-size: 1.2rem;
 }
-section > ul > li > a[href^="https://"]:after {
+section > ul > li > a[target="_blank"]:after {
     content: '\29C9';
 }
 section > ul > li > a[href^="#"]:after {
@@ -265,21 +276,21 @@ footer > img {
     margin: 0 auto;
 }
 
-#contact-form {
+form {
     display: grid;
 }
 @media (min-width: 50rem) {
-    #contact-form {
+    form {
         grid-template-columns: 1fr 2fr;
     }
 }
-#contact-form label {
+form label {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
 }
-#contact-form input,
-#contact-form textarea {
+form input,
+form textarea {
     margin-bottom: 2rem;
     background-color: var(--bg-color-l1);
     border-bottom: .2rem dotted currentcolor;
@@ -287,22 +298,22 @@ footer > img {
     font: inherit;
     color: inherit;
 }
-#contact-form input::placeholder,
-#contact-form textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
     color: var(--t-color-l2);
 }
-#contact-form input[readonly],
-#contact-form textarea[readonly] {
+form input[readonly],
+form textarea[readonly] {
     background-color: var(--bg-color-d1);
     cursor: wait;
     border-color: transparent;
     color: var(--t-color-l1);
 }
-#contact-form input {
+form input {
     padding: 0 1rem;
     line-height: 3rem;
 }
-#contact-form input[type="submit"] {
+form input[type="submit"] {
     margin-top: 1rem;
     margin-right: auto;
     padding: 0 2rem;
@@ -312,12 +323,12 @@ footer > img {
     border-radius: .2rem;
     color: var(--bg-color);
 }
-#contact-form input[type="submit"][readonly] {
+form input[type="submit"][readonly] {
     background-color: var(--t-color-l1);
     cursor: wait;
     color: var(--bg-color-d1);
 }
-#contact-form textarea {
+form textarea {
     resize: none;
     overflow: hidden;
     min-height: 12rem;
