@@ -55,7 +55,7 @@ nav {
     z-index: 1;
     top: 0;
     margin: 1rem 0 4rem 0;
-    padding: 1rem 2rem;
+    padding: 1rem clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
 }
 nav > ul {
     display: flex;
@@ -94,7 +94,7 @@ header > img {
 header > figure {
     flex: 1 1 auto;
     position: relative;
-    padding-left: 2rem;
+    padding-left: clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
 }
 header > figure > img {
     height: 12rem;
@@ -103,7 +103,7 @@ header > h1 {
     writing-mode: vertical-lr;
     flex: 0 0 auto;
     width: 25%;
-    padding-right: 2rem;
+    padding-right: clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
     font-size: 3rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
