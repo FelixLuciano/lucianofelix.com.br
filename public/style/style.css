@@ -146,9 +146,6 @@ header > p > span.marker:before {
 header > p > span.marker:after {
     content: close-quote;
 }
-header > p > span.marker + span:before {
-    display: none !important;
-}
 
 section {
     column-width: 20rem;
