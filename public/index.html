@@ -51,7 +51,7 @@
             Felix
         </h1>
         <p>
-            <span class="marker" is="self-typing" data-remove="false">Hello, I am Luciano and on this page you can know
+            <span class="marker" is="self-typing" data-cursor=" " data-remove="false">Hello, I am Luciano and on this page you can know
                 more about me and my work.</span>
         </p>
         <img src="/image/l.png" alt="L in code-128" width="24" height="24" class="dark:invert">
@@ -187,7 +187,7 @@
             </p>
             <hr />
             <h3>
-                Featured projetcs
+                <span is="self-typing">Featured projetcs</span>
             </h3>
             <ul>
                 <li>
@@ -246,7 +246,7 @@
             </p>
             <hr />
             <h3>
-                Featured projetcs
+                <span is="self-typing">Featured projetcs</span>
             </h3>
             <ul class="grid dense full-row">
                 <li>
@@ -341,7 +341,7 @@
             </p>
             <hr />
             <h3>
-                Featured projetcs
+                <span is="self-typing">Featured projetcs</span>
             </h3>
             <ul class="grid full-row">
                 <li>
@@ -473,15 +473,15 @@
             <span is="self-typing">Get in Touch</span>
         </h2>
         <form action="/api/send-message" method="POST" is="async-form" class="full-row">
-            <label for="contact-form--contact">CONTACT</label>
+            <label for="contact-form--contact"><span is="self-typing">CONTACT</span></label>
             <input id="contact-form--contact" name="contact"
                 placeholder="Enter your contact information (phone number, email, website, etc)" required>
-            <label for="contact-form--message">MESSAGE</label>
+            <label for="contact-form--message"><span is="self-typing">MESSAGE</span></label>
             <textarea id="contact-form--message" name="message" is="auto-resize"
                 placeholder="Hey Luciano,&#10;&#10;I wanted to reach out regarding [...]" required></textarea>
-            <label>CAPTCHA</label>
+            <label><span is="self-typing">CAPTCHA</span></label>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
-            <label for="contact-form--submit-button">SUBMIT</label>
+            <label for="contact-form--submit-button"><span is="self-typing">SUBMIT</span></label>
             <input id="contact-form--submit-button" type="submit" value="SEND">
         </form>
     </section>
@@ -489,7 +489,7 @@
     <footer>
         <img src="/image/copyright.png" alt="Copyright in code-128" class="dark:invert">
         <p>
-            <span is="self-typing">© 2023 Luciano Felix. All rights reserved.</span>
+            © 2023 Luciano Felix. All rights reserved.
         </p>
     </footer>
 </body>

@@ -1,12 +1,11 @@
 :root {
-    min-width: 300px;
     scroll-behavior: smooth;
+    min-width: 300px;
     background-color: var(--bg-color);
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: var(--t-color);
-    counter-reset: heading-counter;
 }
 @media (min-width: 1366px) {
     :root {
@@ -183,14 +182,6 @@ section > h2 {
     font-size: 3.5rem;
     line-height: 3rem;
 }
-section > h2:before {
-    content: counter(heading-counter, decimal-leading-zero) ". ";
-    font-size: .8em;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
-    color: var(--t-primary);
-    counter-increment: heading-counter;
-}
 
 section > h3 {
     font-size: 2.5rem;
@@ -360,16 +351,15 @@ input[is="theme-switch"] + label {
     cursor: pointer;
 }
 
-span[is="self-typing"] + span:before {
+:has(span[is="self-typing"]) {
+    position: relative;
+}
+.type-async--cursor {
     user-select: none;
-    content: '|';
+    display: block;
     position: absolute;
-    animation: blink 1s steps(2, start) infinite;
+    top: 0px;
+    left: 0px;
     font-weight: 900;
     color: var(--t-primary);
-}
-@keyframes blink {
-    to {
-        visibility: hidden;
-    }
 }
