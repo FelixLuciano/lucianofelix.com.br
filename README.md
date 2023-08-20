@@ -21,8 +21,9 @@ MIT License. However, the content of this website, including personal photos,
 text, and other creative works, is owned by Luciano Felix and protected by
 applicable copyright laws.
 
-Unauthorized use or reproduction of the website's content, including personal
-photos, is strictly prohibited without prior permission from Luciano Felix.
+> [!WARNING]
+> Unauthorized use or reproduction of the website's content, including personal
+> photos, is strictly prohibited without prior permission from Luciano Felix.
 
 <br />
 
