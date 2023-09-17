@@ -35,7 +35,7 @@ class ThemeSwitchElement extends HTMLInputElement {
 
     this.checked = value
     
-    this.labels.forEach(label => label.textContent = value ? 'Dark' : 'Light')
+    this.labels.forEach(label => label.textContent = value ? label.dataset.darkLabel : label.dataset.lightLabel)
     localStorage.setItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY, value)
   }
 }
@@ -73,6 +73,7 @@ class SelfTypingElement extends HTMLSpanElement {
     this.queue_node.style.color = 'transparent'
     this.cursor_node.textContent = this.dataset.cursor || '|'
     this.cursor_node.classList = 'type-async--cursor'
+    this.cursor_node.ariaHidden = 'true'
     this.text_node.textContent = ''
 
     this.parentNode.style.setProperty('position', 'relative')
@@ -109,6 +110,7 @@ class SelfTypingElement extends HTMLSpanElement {
     this.text_node.textContent += this.queue_node.textContent
 
     this.queue_node.remove()
+    this.cursor_node.remove()
 
     if (this.dataset.remove == "false")
       return
@@ -116,16 +118,13 @@ class SelfTypingElement extends HTMLSpanElement {
     const text_node = document.createTextNode(this.text_node.textContent)
 
     this.parentNode.insertBefore(text_node, this)
-    this.cursor_node.remove()
     this.remove()
   }
 
   #updateCursorPosition() {
     const rects = this.getClientRects()
     const lastRect = rects[rects.length - 1]
-    const parentRect = this.getBoundingClientRect()
-
-    console.log(lastRect, parentRect)
+    const parentRect = this.parentNode.getBoundingClientRect()
 
     this.cursor_node.style.left = `${lastRect.right - parentRect.left}px`
     this.cursor_node.style.top = `${lastRect.top - parentRect.top}px`
