@@ -49,6 +49,11 @@
     filter: invert(1);
 }
 
+body {
+    max-width: 1920px;
+    margin: 0 auto ! important;
+}
+
 nav {
     position: sticky;
     z-index: 1;
