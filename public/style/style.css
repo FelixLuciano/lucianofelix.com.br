@@ -1,42 +1,47 @@
 :root {
     scroll-behavior: smooth;
     min-width: 300px;
-    background-color: var(--bg-color);
+    background-color: var(--background);
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    color: var(--t-color);
+    color: var(--text);
 }
 @media (min-width: 1366px) {
     :root {
-        font-size: calc((16 / 1366) * 100vw);
+        font-size: clamp(16px, (16 / 1366) * 100vw, 26px);
     }
 }
 
 :root.light {
-    --bg-color-d1: #d6d3d1;
-    --bg-color: #e7e5e4;
-    --bg-color-l1: #fafaf9;
-    --t-color: #292524;
-    --t-color-l1: #44403c;
-    --t-color-l2: #78716c;
-    --bg-primary: #991b1b;
-    --t-primary: #ba2222;
+    --text: #1A1414;
+    --background: #E7E5E4;
+    --primary: #992222;
+    --secondary: #420000;
+    --accent: #FD0D0D;
 }
 :root.dark {
-    --bg-color-d1: #171717;
-    --bg-color: #0a0a0a;
-    --bg-color-l1: #404040;
-    --t-color: #e5e5e5;
-    --t-color-l1: #737373;
-    --t-color-l2: #d4d4d4;
-    --bg-primary: #991b1b;
-    --t-primary: #f87171;
+    --text: #EBE5E5;
+    --background: #1B1918;
+    --primary: #DD6464;
+    --secondary: #FFBDBD;
+    --accent: #F20202;
+}
+:root {
+    --text-d1: color-mix(in oklab, var(--text) 80%, black);
+    --text-b1: color-mix(in oklab, var(--text) 80%, white);
+    --background-d1: color-mix(in oklab, var(--background) 85%, black);
+    --background-b1: color-mix(in oklab, var(--background) 50%, white);
+    --primary-d1: color-mix(in oklab, var(--primary) 80%, black);
+    --primary-b1: color-mix(in oklab, var(--primary) 80%, white);
+    --secondary-b1: color-mix(in oklab, var(--secondary) 80%, black);
+    --secondary-b1: color-mix(in oklab, var(--secondary) 80%, white);
+    --accent-d1: color-mix(in oklab, var(--accent) 80%, black);
+    --accent-b1: color-mix(in oklab, var(--accent) 80%, white);
 }
 ::selection {
-    opacity: .5;
-    background-color: rgba(153 27 27 / 85%);
-    color: var(--bg-color-d1);
+    background-color: color-mix(in oklab, var(--primary) 80%, transparent);
+    color: var(--text-d1);
 }
 
 :root.light .hide-light {
@@ -70,7 +75,7 @@ nav > ul {
     list-style-type: upper-roman;
 }
 nav > ul li::marker {
-    color: var(--t-primary);
+    color: var(--primary-b1);
 }
 nav > ul li[data-marker]::marker {
     content: attr(data-marker);
@@ -140,10 +145,13 @@ header > p > span.marker {
     -moz-background-inline-policy: clone;
     box-decoration-break: clone;
     padding: .15em .2em;
-    background-color: var(--bg-primary);
+    background-color: var(--primary);
     border-radius: .25rem;
     font-family: 'Open Sans', sans-serif;
-    color: #FFF;
+    color: #FFFFFF;
+}
+:root.dark header > p > span.marker {
+    background-color: var(--primary-d1);
 }
 header > p > span.marker:before {
     content: open-quote;
@@ -154,7 +162,7 @@ header > p > span.marker:after {
 
 section {
     column-width: 20rem;
-    column-rule: 1px dotted var(--t-color-l1);
+    column-rule: 1px dotted var(--text-b1);
     column-gap: 3rem;
     padding: 4rem clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
 }
@@ -209,7 +217,7 @@ section img {
 section > ul > li {
     break-inside: avoid-column;
     margin-bottom: 1rem;
-    border-bottom: .15rem dotted var(--t-color);
+    border-bottom: .15rem dotted var(--text);
 }
 section > ul > li > h3,
 section > ul > li > h4 {
@@ -219,7 +227,7 @@ section > ul > li > h4 {
 section > ul > li > a {
     display: block;
     padding-bottom: .5rem;
-    color: var(--t-primary);
+    color: var(--primary);
 }
 section > ul > li > a:after {
     float: right;
@@ -255,10 +263,10 @@ section > ul.grid > li > a {
     text-underline-offset: .1em;
     padding-bottom: 0;
     line-height: 2em;
-    color: var(--t-color);
+    color: var(--text);
 }
 section > ul.grid > li > a:after {
-    color: var(--t-primary);
+    color: var(--primary-d1);
 }
 section > ul.grid.dense {
     gap: .4rem;
@@ -299,7 +307,7 @@ form input,
 form textarea {
     max-width: 100%;
     margin-bottom: 2rem;
-    background-color: var(--bg-color-l1);
+    background-color: var(--background-d1);
     border-bottom: .2rem dotted currentcolor;
     border-radius: .2rem .2rem 0 0;
     font: inherit;
@@ -307,14 +315,14 @@ form textarea {
 }
 form input::placeholder,
 form textarea::placeholder {
-    color: var(--t-color-l2);
+    color: var(--text-b1);
 }
 form input[readonly],
 form textarea[readonly] {
-    background-color: var(--bg-color-d1);
+    background-color: var(--background-b1);
     cursor: wait;
     border-color: transparent;
-    color: var(--t-color-l1);
+    color: var(--text-b1);
 }
 form input {
     padding: 0 1rem;
@@ -324,16 +332,16 @@ form input[type="submit"] {
     margin-top: 1rem;
     margin-right: auto;
     padding: 0 2rem;
-    background-color: var(--t-color);
+    background-color: var(--text);
     cursor: pointer;
     border-bottom: none;
     border-radius: .2rem;
-    color: var(--bg-color);
+    color: var(--background);
 }
 form input[type="submit"][readonly] {
-    background-color: var(--t-color-l1);
+    background-color: var(--text-b1);
     cursor: wait;
-    color: var(--bg-color-d1);
+    color: var(--background-d1);
 }
 form textarea {
     resize: none;
@@ -363,5 +371,5 @@ input[is="theme-switch"] + label {
     top: 0px;
     left: 0px;
     font-weight: 900;
-    color: var(--t-primary);
+    color: var(--primary);
 }

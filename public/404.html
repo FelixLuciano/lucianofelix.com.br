@@ -13,12 +13,28 @@
     <link rel="stylesheet" href="/style/preflight.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap"
         rel="stylesheet">
+        
+    <script src="/script/entry.js" defer></script>
     <style>
         :root {
-            background-color: #e7e5e4;
+            background-color: #E7E5E4;
             font-size: max(12px, 1vw);
             font-family: 'Inter', sans-serif;
-            color: #292524;
+            color: #1A1414;
+        }
+        :root.dark {
+            background-color: #1B1918;
+            color: #EBE5E5;
+        }
+
+        :root.light .hide-light {
+            display: none;
+        }
+        :root.dark .hide-dark {
+            display: none;
+        }
+        :root.dark .dark\:invert {
+            filter: invert(1);
         }
 
         body {
@@ -42,8 +58,11 @@
             font-size: 12rem;
             font-weight: 700;
             line-height: 12rem;
-            color: #b91c1c;
+            color: #992222;
             text-shadow: 70rem 0, 140rem 0;
+        }
+        :root.dark main > p {
+            color: #DD6464;
         }
 
         @keyframes markee {
@@ -84,16 +103,18 @@
 
 <body>
     <header>
-        <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;">
+        <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;" class="hide-dark">
+        <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;" class="hide-light">
     </header>
 
     <main class="page-header">
         <p>ERROR 404</p>
         <h1>Not<br>Found</h1>
+        <input type="checkbox" is="theme-switch" hidden>
     </main>
 
     <footer>
-        <img src="/image/404.png" alt="404 in code-128" width="216" height="48">
+        <img src="/image/404.png" alt="404 in code-128" width="216" height="48" class="dark:invert">
     </footer>
 </body>
 
