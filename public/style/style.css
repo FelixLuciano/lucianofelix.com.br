@@ -9,7 +9,7 @@
 }
 @media (min-width: 1366px) {
     :root {
-        font-size: clamp(16px, (16 / 1366) * 100vw, 26px);
+        font-size: clamp(16px, (16 / 1366) * 100vw, 18px);
     }
 }
 
@@ -40,7 +40,7 @@
     --accent-b1: color-mix(in oklab, var(--accent) 80%, white);
 }
 ::selection {
-    background-color: color-mix(in oklab, var(--primary) 80%, transparent);
+    background-color: color-mix(in oklab, var(--accent) 80%, transparent);
     color: var(--text-d1);
 }
 
@@ -54,17 +54,19 @@
     filter: invert(1);
 }
 
-body {
-    max-width: 1920px;
-    margin: 0 auto ! important;
+body > * {
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav {
     position: sticky;
     z-index: 1;
     top: 0;
-    margin: 1rem 0 4rem 0;
-    padding: 1rem clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    padding: 1rem clamp(1rem, calc(16 / 1366 * 100vw), 2rem);
 }
 nav > ul {
     display: flex;
@@ -103,16 +105,16 @@ header > img {
 header > figure {
     flex: 1 1 auto;
     position: relative;
-    padding-left: clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
+    padding-left: 1rem;
 }
 header > figure > img {
-    height: 12rem;
+    height: 10rem;
 }
 header > h1 {
     writing-mode: vertical-lr;
     flex: 0 0 auto;
     width: 25%;
-    padding-right: clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
+    padding-right: clamp(1rem, calc(16 / 1366 * 100vw), 2rem);
     font-size: 3rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -125,20 +127,12 @@ header > h1 {
 }
 header > p {
     flex: 1 0 100%;
-    padding: 0 clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
+    padding: 0 1rem;
     font-size: 2.5rem;
     line-height: 4.35rem;
     letter-spacing: -.03em;
-}
-@media (min-width: 42rem) {
-    header > p {
-        padding-right: 16%;
-    }
-}
-@media (min-width: 64rem) {
-    header > p {
-        padding-right: 32%;
-    }
+    font-family: 'Open Sans', sans-serif;
+    text-wrap: balance;
 }
 header > p > span.marker {
     -webkit-box-decoration-break: clone;
@@ -147,7 +141,6 @@ header > p > span.marker {
     padding: .15em .2em;
     background-color: var(--primary);
     border-radius: .25rem;
-    font-family: 'Open Sans', sans-serif;
     color: #FFFFFF;
 }
 :root.dark header > p > span.marker {
@@ -164,21 +157,32 @@ section {
     column-width: 20rem;
     column-rule: 1px dotted var(--text-b1);
     column-gap: 3rem;
-    padding: 4rem clamp(1rem, calc(16 / 1500 * 100vw), 2rem);
+    padding: 4rem clamp(1rem, calc(16 / 1366 * 100vw), 2rem);
 }
-section > * {
-    padding-bottom: 1rem;
+main > section, main ~ section {
+    animation: reveal-section ease-out both;
+    animation-timeline: view(block);
+    animation-range: entry 0 entry 50vh;
+}
+@keyframes reveal-section {
+    from {
+        /* transform: translatey(50vh); */
+        opacity: 0;
+        filter: blur(8rem);
+    }
+}
+@media (prefers-reduced-motion) {
+    main > section, main ~ section {
+        animation: none;
+        animation-timeline: none;
+        animation-range: none;
+    }
 }
 
 section > h2,
 section > h3,
 section > .block {
     break-inside: avoid-column;
-}
-
-section > hr,
-section > .full-row {
-    column-span: all;
 }
 
 section > h2,
@@ -188,22 +192,63 @@ section > h3 {
     letter-spacing: -.05em;
 }
 
+body {
+    counter-reset: heading;
+}
+
 section > h2 {
     font-size: 3.5rem;
     line-height: 3rem;
+    counter-increment: heading;
+    counter-reset: heading-2;
+}
+section > h2:before {
+    content: counter(heading, upper-roman) '.' / '';
+    position: absolute;
+    transform: translateX(-150%);
+    color: var(--primary);
+    font-size: .75em;
+}
+@media (max-width: 1450px) {
+    :root {
+        scroll-padding-top: 3rem;
+    }
+    section > h2:before {
+        transform: translateY(-100%);
+        font-size: .5em;
+    }
 }
 
 section > h3 {
     font-size: 2.5rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
+    counter-increment: heading-2;
+}
+section > h3:before {
+    content: counter(heading-2, lower-alpha) '.' / '';
+    position: absolute;
+    transform: translateX(-150%);
+    color: var(--primary);
+    font-size: .75em;
+}
+@media (max-width: 1450px) {
+    section > h3:before {
+        transform: translateY(-100%);
+        font-size: .5em;
+    }
 }
 
+section > hr,
+section > .full-row {
+    column-span: all;
+}
 section > hr {
-    margin-top: 1rem;
+    margin-top: 2rem;
     border: none;
 }
 
 section p {
+    padding-bottom: 1rem;
     hyphens: auto;
 }
 
@@ -216,18 +261,18 @@ section img {
 
 section > ul > li {
     break-inside: avoid-column;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     border-bottom: .15rem dotted var(--text);
 }
 section > ul > li > h3,
 section > ul > li > h4 {
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
     font-size: 1.5rem;
 }
 section > ul > li > a {
     display: block;
     padding-bottom: .5rem;
-    color: var(--primary);
+    color: var(--primary-b1);
 }
 section > ul > li > a:after {
     float: right;

@@ -65,6 +65,9 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 
   connectedCallback() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      return
+
     this.text_node = this.childNodes[0]
     this.queue_node = document.createElement('span')
     this.cursor_node = document.createElement('span')
