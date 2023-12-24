@@ -159,23 +159,17 @@ section {
     column-gap: 3rem;
     padding: 4rem clamp(1rem, calc(16 / 1366 * 100vw), 2rem);
 }
-main > section, main ~ section {
-    animation: reveal-section ease-out both;
-    animation-timeline: view(block);
-    animation-range: entry 0 entry 50vh;
-}
-@keyframes reveal-section {
-    from {
-        /* transform: translatey(50vh); */
-        opacity: 0;
-        filter: blur(8rem);
-    }
-}
-@media (prefers-reduced-motion) {
+@media only screen and not (prefers-reduced-motion) {
     main > section, main ~ section {
-        animation: none;
-        animation-timeline: none;
-        animation-range: none;
+        animation: reveal-section ease-out both;
+        animation-timeline: view(block);
+        animation-range: entry 0 entry 50vh;
+    }
+    @keyframes reveal-section {
+        from {
+            opacity: 0;
+            filter: blur(8rem);
+        }
     }
 }
 
@@ -283,6 +277,16 @@ section > ul > li > a[target="_blank"]:after {
 }
 section > ul > li > a[href^="#"]:after {
     content: '\21B3';
+}
+section > ul > li > a[is="print-page-anchor"]:after {
+    content: '\1F5C1';
+}
+section > ul > li > a.disabled {
+    color: var(--secondary);
+    pointer-events: none;
+}
+section > ul > li > a.disabled:after {
+    content: none;
 }
 section > ul.grid {
     display: grid;
