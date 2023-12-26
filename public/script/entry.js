@@ -14,6 +14,8 @@ class ThemeSwitchElement extends HTMLInputElement {
 
   handleSwitch() {
     this.value = this.checked
+
+    localStorage.setItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY, this.value)
   }
 
   static #detectTheme() {
@@ -36,7 +38,6 @@ class ThemeSwitchElement extends HTMLInputElement {
     this.checked = value
     
     this.labels.forEach(label => label.textContent = value ? label.dataset.darkLabel : label.dataset.lightLabel)
-    localStorage.setItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY, value)
   }
 }
 
