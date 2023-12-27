@@ -159,16 +159,18 @@ section {
     column-gap: 3rem;
     padding: 4rem clamp(1rem, calc(16 / 1366 * 100vw), 2rem);
 }
-@media only screen and not (prefers-reduced-motion) {
-    main > section, main ~ section {
-        animation: reveal-section ease-out both;
-        animation-timeline: view(block);
-        animation-range: entry 0 entry 50vh;
-    }
-    @keyframes reveal-section {
-        from {
-            opacity: 0;
-            filter: blur(8rem);
+@media only screen and (min-width: 50rem) {
+    @media not (prefers-reduced-motion) {
+        main > section, main ~ section {
+            animation: reveal-section ease-out both;
+            animation-timeline: view(block);
+            animation-range: entry 0 entry 50vh;
+        }
+        @keyframes reveal-section {
+            from {
+                opacity: 0;
+                filter: blur(8rem);
+            }
         }
     }
 }
