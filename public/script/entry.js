@@ -212,43 +212,52 @@ class AsyncFormElement extends HTMLFormElement {
 }
 
 class PrintPageElement extends HTMLAnchorElement {
+  static get iframe() {
+    let iframe = document.getElementById('printing-doc-iframe')
+
+    if (iframe !== null) return iframe
+
+    iframe = document.createElement('iframe')
+    iframe.id = 'printing-doc-iframe'
+    iframe.style.display = 'none'
+
+    return iframe
+  }
+
   connectedCallback() {
     this.addEventListener('click', this.onclick)
   }
 
   onclick(event) {
     event.preventDefault()
+    this.classList.add('disabled')
+
+    const iframe = PrintPageElement.iframe
     const saveContent = this.innerHTML
 
+    this.innerText = 'Carregando...'
+    iframe.src = this.href
+    
+    iframe.onload = () => {
+      try {
+        iframe.contentWindow.focus()
+        iframe.contentWindow.print()
+      }
+      catch (error) {
+        console.error(error)
+        window.open(this.href, this.target, '')
+      }
+      finally {
+        this.innerHTML = saveContent
+
+        this.classList.remove('disabled')
+      }
+    }
+    iframe.onerror = () => {
+      throw 'Failed to load page!'
+    }
+
     try {
-      const iframe = document.createElement('iframe')
-      
-      this.innerText = 'Carregando...'
-      iframe.style.display = 'none'
-      iframe.src = this.href
-
-      iframe.onload = () => {
-        try {
-          iframe.contentWindow.onblur = () => iframe.remove()
-          
-          iframe.contentWindow.focus()
-          iframe.contentWindow.print()
-        }
-        catch (error) {
-          console.error(error)
-          window.open(this.href, this.target, '')
-        }
-        finally {
-          this.innerHTML = saveContent
-
-          this.classList.remove('disabled')
-        }
-      }
-      iframe.onerror = () => {
-        throw 'Failed to load page!'
-      }
-
-      this.classList.add('disabled')
       document.body.appendChild(iframe)
     }
     catch (error) {
