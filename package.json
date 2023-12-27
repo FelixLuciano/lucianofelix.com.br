@@ -2,10 +2,10 @@
   "name": "lucianofelix.com.br",
   "version": "1.0.0",
   "dependencies": {
-    "googleapis": "^118.0.0",
+    "googleapis": "^129.0.0",
     "hcaptcha": "^0.1.1"
   },
   "devDependencies": {
-    "@vercel/node": "^2.15.1"
+    "@vercel/node": "^2.15.10"
   }
 }
