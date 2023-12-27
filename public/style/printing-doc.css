@@ -1,0 +1,111 @@
+@page {
+    size: A4 portrait;
+    margin: 0cm;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media only screen and (min-width: 315mm) {
+    :root {
+        zoom: 1.5;
+    }
+}
+
+@media only screen {
+    body {
+        padding: 2mm;
+        background-color: #262626;
+    }
+    .doc-page {
+        background-color: #FFFFFF;
+        margin: 0 auto 5mm auto;
+    }
+    body > footer {
+        margin-top: 1cm;
+        margin-bottom: 4mm;
+        color: #e5e5e5;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+@media only print {
+    body > footer {
+        display: none;
+    }
+}
+
+.doc-page {
+    width: 210mm;
+    height: 297mm;
+    padding: 1cm;
+    color: #0a0a0a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    break-after: always;
+    break-inside: avoid;
+    column-count: 2;
+    column-gap: 5mm;
+    overflow: hidden;
+}
+
+.doc-page h1 {
+    color: #262626;
+    font-size: 25pt;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.doc-page hr,
+.full-row {
+    column-span: all;
+}
+.doc-page hr {
+    padding: 2mm 0;
+    border: none;
+    border-top: 1pt solid #AAAAAA;
+}
+
+.doc-page section {
+    break-inside: avoid-column;
+}
+
+.doc-page h2 {
+    margin-bottom: 1mm;
+    color: #262626;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.doc-page dl {
+    padding-bottom: 5mm;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 4mm 2mm;
+    break-inside: avoid-column;
+}
+.doc-page dl.dense {
+    grid-gap: 0mm 2mm;
+}
+dl > dt {
+    color: #4b5563;
+    text-align: right;
+}
+.doc-page dl > dd > ul > li {
+    list-style-position: outside;
+}
+
+.doc-page ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2mm;
+    list-style-type: square;
+    list-style-position: inside;
+}
+.doc-page ul > li::marker {
+    color: #6b7280;
+}
+.doc-page strong {
+    color: #111827;
+}

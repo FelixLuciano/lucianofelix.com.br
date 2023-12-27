@@ -211,8 +211,58 @@ class AsyncFormElement extends HTMLFormElement {
   }
 }
 
+class PrintPageElement extends HTMLAnchorElement {
+  connectedCallback() {
+    this.addEventListener('click', this.onclick)
+  }
+
+  onclick(event) {
+    event.preventDefault()
+    const saveContent = this.innerHTML
+
+    try {
+      const iframe = document.createElement('iframe')
+      
+      this.innerText = 'Carregando...'
+      iframe.style.display = 'none'
+      iframe.src = this.href
+
+      iframe.onload = () => {
+        try {
+          iframe.contentWindow.onblur = () => iframe.remove()
+          
+          iframe.contentWindow.focus()
+          iframe.contentWindow.print()
+        }
+        catch (error) {
+          console.error(error)
+          window.open(this.href, this.target, '')
+        }
+        finally {
+          this.innerHTML = saveContent
+
+          this.classList.remove('disabled')
+        }
+      }
+      iframe.onerror = () => {
+        throw 'Failed to load page!'
+      }
+
+      this.classList.add('disabled')
+      document.body.appendChild(iframe)
+    }
+    catch (error) {
+      console.error(error)
+      this.classList.remove('disabled')
+      window.open(this.href, this.target, '')
+
+      this.innerHTML = saveContent
+    }
+  }
+}
 
 customElements.define('theme-switch', ThemeSwitchElement, { extends: 'input' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
 customElements.define('async-form', AsyncFormElement, { extends: 'form' })
 customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })
+customElements.define('print-page', PrintPageElement, { extends: 'a' })

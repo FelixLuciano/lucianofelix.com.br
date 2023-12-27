@@ -10,8 +10,9 @@ My personal website. On this page you can know more about me and my creations. [
 - Fluid layout that dynamically adjusts and scales to accommodate varying screen sizes.
 - Asynchronous contact form that automatically populates a Google Docs spreadsheet.
 - Follows accessible and semantic templating practices, minimizing the use of classes and relying primarily on Custom Elements for interactivity.
-- Custom 404 page.
-
+- Printable HTML resume page for easy sharing and offline reference.
+- Incorporates engaging animations to enhance the overall user experience.
+- Custom 404 fallback page.
 
 ## Theme
 
