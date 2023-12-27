@@ -3,7 +3,9 @@
 
 <head>
     <title>Luciano Felix</title>
-    <meta name="description" content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho.">
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
 
@@ -12,7 +14,8 @@
     <meta property="profile:first_name" content="Luciano">
     <meta property="profile:last_name" content="Felix">
     <meta property="og:title" content="Luciano Felix" />
-    <meta property="og:description" content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho." />
+    <meta property="og:description"
+        content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho." />
     <meta property="og:image" content="https://lucianofelix.com.br/image/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -39,10 +42,10 @@
             <li value="2">
                 <a href="#sobre">Sobre</a>
             </li>
-            <li value="5">
+            <li value="4">
                 <a href="#trabalho">Trabalho</a>
             </li>
-            <li value="6">
+            <li value="5">
                 <a href="#contato">Contato</a>
             </li>
             <li data-marker=" ">
@@ -50,7 +53,7 @@
             </li>
             <li data-marker="tema:">
                 <input id="theme-switch" type="checkbox" is="theme-switch">
-                <label for="theme-switch" data-light-label="Claro" data-dark-label="Escuro">claro</label>
+                <label for="theme-switch" data-light-label="Claro" data-dark-label="Escuro" tabindex="0">Claro</label>
             </li>
         </ul>
     </nav>
@@ -65,7 +68,8 @@
             Felix
         </h1>
         <p>
-            <span class="marker" is="self-typing" data-cursor=" " data-remove="false">Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho.</span>
+            <span class="marker" is="self-typing" data-cursor=" " data-remove="false">Olá, eu sou o Luciano e nesta
+                página você irá saber mais sobre mim e o meu trabalho.</span>
         </p>
         <img src="/image/l.png" alt="L in code-128" width="24" height="24" class="dark:invert">
     </header>
@@ -99,7 +103,7 @@
         </ul>
     </section>
 
-    <main hidden>
+    <main>
         <section id="sobre">
             <h2>
                 <span is="self-typing">Um estudante iniciando minha carreira na Engenharia de Computação</span>
@@ -127,6 +131,19 @@
         </section>
 
         <section>
+            <h2 class="full-row">
+                Uma foto bonita
+            </h2>
+            <figure class="full-row">
+                <figcaption style="padding-bottom: 1rem; hyphens: auto; max-width: 50rem;">
+                    Esta é a vista do meu Pentium Dual-Core em um equipamento de microscopia metalográfica. Este foi o
+                    processador do meu primeiro computador, que me acompanhou nos primeiros anos da minha jornada.
+                </figcaption>
+                <img loading="lazy" src="https://res.cloudinary.com/lucianofelix-com-br/image/upload/w_1366/f_auto/q_auto/v1/visuals/image_11_b52vac" alt="Uma foto bonita" width="1366" height="1025">
+            </figure>
+        </section>
+
+        <section id="trabalho" hidden>
             <h2>
                 <span is="self-typing">De estudante a graduado</span>
             </h2>
@@ -189,29 +206,17 @@
             </h3>
             <ul class="grid full-row">
                 <li>
-                    <img src="/image/class.jpg"
-                        alt="Image" width="630" height="420" loading="lazy">
+                    <img src="/image/class.jpg" alt="Image" width="630" height="420" loading="lazy">
                     Turma
                 </li>
                 <li>
-                    <img src="/image/insper-mileage.jpg"
-                        alt="Image" width="630" height="420" loading="lazy">
+                    <img src="/image/insper-mileage.jpg" alt="Image" width="630" height="420" loading="lazy">
                     Shell Echo-Marathon 2023
                 </li>
             </ul>
         </section>
 
-        <section>
-            <h2 class="full-row">
-                Uma foto bonita
-            </h2>
-            <p class="full-row">
-                Apenas um breve comentário sobre a imagem abaixo.
-            </p>
-            <img loading="lazy" src="/image/pentium.jpg" alt="My photo" width="1366" height="911" class="full-row">
-        </section>
-
-        <section id="trabalho">
+        <section hidden>
             <h2>
                 <span is="self-typing">Programação como habilidade artesanal</span>
             </h2>
@@ -326,7 +331,7 @@
     <footer>
         <img src="/image/copyright.png" alt="Copyright in code-128" class="dark:invert">
         <p>
-            © 2023 Luciano Felix. Todos os direitos reservados.
+            © 2024 Luciano Felix. Todos os direitos reservados.
         </p>
     </footer>
 </body>
