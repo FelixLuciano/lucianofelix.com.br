@@ -34,7 +34,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
   }
 }
 
-async function authenticate() {
+export async function authenticate() {
   const credentials = JSON.parse(process.env.google_credentials)
   const auth = new google.auth.GoogleAuth({
     credentials,
@@ -48,7 +48,7 @@ async function authenticate() {
   google.options({ auth })
 }
 
-function pushMessage(contact: string, message: string) {
+export function pushMessage(contact: string, message: string) {
   const now = new Date().toLocaleString('pt-BR', {
     timeZone: 'America/Sao_Paulo',
   })
