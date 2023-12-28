@@ -30,7 +30,7 @@
 :root {
     --text-d1: color-mix(in oklab, var(--text) 80%, black);
     --text-b1: color-mix(in oklab, var(--text) 80%, white);
-    --background-d1: color-mix(in oklab, var(--background) 85%, black);
+    --background-d1: color-mix(in oklab, var(--background) 90%, black);
     --background-b1: color-mix(in oklab, var(--background) 50%, white);
     --primary-d1: color-mix(in oklab, var(--primary) 80%, black);
     --primary-b1: color-mix(in oklab, var(--primary) 80%, white);
@@ -347,7 +347,7 @@ form {
         grid-template-columns: 1fr 2fr;
     }
 }
-form label {
+form :nth-child(odd) {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -361,6 +361,13 @@ form textarea {
     border-radius: .2rem .2rem 0 0;
     font: inherit;
     color: inherit;
+}
+form input:focus,
+form textarea:focus {
+    outline-width: .15rem;
+    outline-style: solid;
+    outline-color: var(--primary);
+    outline-offset: .25rem;
 }
 form input::placeholder,
 form textarea::placeholder {
@@ -381,7 +388,7 @@ form input[type="submit"] {
     margin-top: 1rem;
     margin-right: auto;
     padding: 0 2rem;
-    background-color: var(--text);
+    background-color: var(--secondary);
     cursor: pointer;
     border-bottom: none;
     border-radius: .2rem;
@@ -399,6 +406,11 @@ form textarea {
     padding: 1rem;
     padding-bottom: 3rem;
     line-height: 2rem;
+}
+form output {
+    color: var(--primary);
+    font-size: 1.5rem;
+    grid-column-start: 2;
 }
 
 

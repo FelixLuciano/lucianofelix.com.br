@@ -151,7 +151,7 @@
             <img src="/image/profile-photo.jpg" alt="My photo" width="678" height="904">
         </section>
 
-        <section>
+        <section hidden>
             <h2>
                 <span is="self-typing">From Student to Graduate</span>
             </h2>
@@ -254,7 +254,9 @@
             <label><span is="self-typing">CAPTCHA</span></label>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
             <label for="contact-form--submit-button"><span is="self-typing">SUBMIT</span></label>
-            <input id="contact-form--submit-button" type="submit" value="SEND">
+            <input id="contact-form--submit-button" type="submit" value="SEND" data-send="SEND" data-sending="SENDING..." data-error="TRY AGAIN">
+            <div></div>
+            <output name="response" hidden></output>
         </form>
     </section>
 
