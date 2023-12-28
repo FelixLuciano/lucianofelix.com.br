@@ -1,10 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { google } from 'googleapis'
 import { verify } from 'hcaptcha'
 
 import { authenticate, pushMessage } from './send-message'
 
-const sheets = google.sheets('v4')
 
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   try {
