@@ -66,7 +66,7 @@ class SelfTypingElement extends HTMLSpanElement {
   }
 
   connectedCallback() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    if (this.dataset.force === undefined && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
       return
 
     this.text_node = this.childNodes[0]
