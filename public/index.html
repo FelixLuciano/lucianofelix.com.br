@@ -145,9 +145,18 @@
             </h3>
             <ul>
                 <li>
-                    <a href="cv/" target="_blank" rel="noopener noreferer">Visualizar documento</a>
-                    <a download="luciano_felix_dias_resumo_2024.html" target="_blank" rel="noopener noreferer" href="cv/">Baixar documento (HTML)</a>
-                    <a is="print-page" href="cv/">Baixar documento (PDF)</a>
+                    <ul>
+                        <li>
+                            <a href="cv/" target="_blank" rel="noopener noreferer">Visualizar documento</a>
+                        </li>
+                        <li>
+                            <a download="luciano_felix_dias_resumo_2024.html" target="_blank" rel="noopener noreferer"
+                                href="cv/">Baixar documento (HTML)</a>
+                        </li>
+                        <li>
+                            <a is="print-page" href="cv/">Baixar documento (PDF)</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </section>
@@ -161,7 +170,9 @@
                     Esta é a vista do meu Pentium Dual-Core em um equipamento de microscopia metalográfica. Este foi o
                     processador do meu primeiro computador, que me acompanhou nos primeiros anos da minha jornada.
                 </figcaption>
-                <img loading="lazy" src="https://res.cloudinary.com/lucianofelix-com-br/image/upload/w_1366/f_auto/q_auto/v1/visuals/image_11_b52vac" alt="Uma foto bonita" width="1366" height="1025">
+                <img loading="lazy"
+                    src="https://res.cloudinary.com/lucianofelix-com-br/image/upload/w_1366/f_auto/q_auto/v1/visuals/image_11_b52vac"
+                    alt="Uma foto bonita" width="1366" height="1025">
             </figure>
         </section>
 
@@ -336,7 +347,8 @@
         <h2>
             <span is="self-typing">Entre em contato</span>
         </h2>
-        <form action="/api/enviar-mensagem" method="POST" is="async-form" data-error="Não foi possível enviar!" class="full-row">
+        <form action="/api/enviar-mensagem" method="POST" is="async-form" data-error="Não foi possível enviar!"
+            class="full-row">
             <label for="contact-form--contact"><span is="self-typing">CONTATO</span></label>
             <input id="contact-form--contact" name="contact"
                 placeholder="Insira suas informações de contato (número de telefome, e-mail, site etc)" required>
@@ -346,7 +358,8 @@
             <div><span is="self-typing">CAPTCHA</span></div>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
             <label for="contact-form--submit-button"><span is="self-typing">SUBMETER</span></label>
-            <input id="contact-form--submit-button" type="submit" value="ENVIAR" data-send="ENVIAR" data-sending="ENVIANDO..." data-error="TENTE NOVAMENTE">
+            <input id="contact-form--submit-button" type="submit" value="ENVIAR" data-send="ENVIAR"
+                data-sending="ENVIANDO..." data-error="TENTE NOVAMENTE">
             <div></div>
             <output name="response" hidden></output>
         </form>
