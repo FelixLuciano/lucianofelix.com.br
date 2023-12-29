@@ -28,6 +28,21 @@
 
     <script src="/script/entry.js" defer></script>
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "dateCreated": "2024-01-01T12:34:00-03:00",
+          "dateModified": "2024-01-01T14:53:00-03:00",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "Luciano Felix",
+            "description": "A student starting my career in Computer Engineering",
+            "image": "https://lucianofelix.com.br/image/profile-photo.jpg"
+          }
+        }
+    </script>
 </head>
 
 <body>
@@ -45,7 +60,7 @@
             <li value="5">
                 <a href="#contact">Contact</a>
             </li>
-            <li data-marker="">
+            <li data-marker="λ.">
                 <a href="/">Português</a>
             </li>
             <li data-marker="theme:">
@@ -101,7 +116,7 @@
     </section>
 
     <main>
-        <section id="about">
+        <section id="about" hidden>
             <h2>
                 <span is="self-typing">A student starting my career in Computer Engineering</span>
             </h2>
@@ -153,7 +168,9 @@
             <label><span is="self-typing">CAPTCHA</span></label>
             <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
             <label for="contact-form--submit-button"><span is="self-typing">SUBMIT</span></label>
-            <input id="contact-form--submit-button" type="submit" value="SEND">
+            <input id="contact-form--submit-button" type="submit" value="SEND" data-send="SEND" data-sending="SENDING..." data-error="TRY AGAIN">
+            <div></div>
+            <output name="response" hidden></output>
         </form>
     </section>
 

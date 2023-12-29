@@ -34,21 +34,21 @@ export default async function handler(request: VercelRequest, response: VercelRe
   }
 }
 
-async function authenticate() {
+export async function authenticate() {
   const credentials = JSON.parse(process.env.google_credentials)
-  const auth = await new google.auth.GoogleAuth({
+  const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: [
       'https://www.googleapis.com/auth/drive',
       'https://www.googleapis.com/auth/drive.file',
       'https://www.googleapis.com/auth/spreadsheets',
     ],
-  }).getClient()
+  })
 
   google.options({ auth })
 }
 
-function pushMessage(contact: string, message: string) {
+export function pushMessage(contact: string, message: string) {
   const now = new Date().toLocaleString('pt-BR', {
     timeZone: 'America/Sao_Paulo',
   })
