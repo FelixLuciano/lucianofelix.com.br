@@ -223,14 +223,14 @@ section > h3 {
 section > h3:before {
     content: counter(heading-2, lower-alpha) '.' / '';
     position: absolute;
-    transform: translateX(-150%);
     color: var(--primary);
-    font-size: max(.75em, 1.75rem);
+    transform: translateY(-100%);
+    font-size: .5em;
 }
-@media (max-width: 1450px) {
-    section > h3:before {
-        transform: translateY(-100%);
-        font-size: .5em;
+@media (min-width: 1450px) {
+    section > hr + h3:before {
+        font-size: max(.75em, 1.75rem);
+        transform: translateX(-150%);
     }
 }
 
@@ -239,7 +239,7 @@ section > .full-row {
     column-span: all;
 }
 section > hr {
-    margin-top: 2rem;
+    margin-top: 3rem;
     border: none;
 }
 
@@ -265,29 +265,29 @@ section > ul > li > h4 {
     padding-bottom: .5rem;
     font-size: 1.5rem;
 }
-section > ul > li > a {
+section > ul li > a {
     display: block;
     padding-bottom: .5rem;
     color: var(--primary-b1);
 }
-section > ul > li > a:after {
+section > ul li > a:after {
     float: right;
     font-size: 1.2rem;
 }
-section > ul > li > a[target="_blank"]:after {
+section > ul li > a[target="_blank"]:after {
     content: '\29C9' / '';
 }
-section > ul > li > a[href^="#"]:after {
+section > ul li > a[href^="#"]:after {
     content: '\21B3' / '';
 }
-section > ul > li > a[download]:after, section > ul > li > a[is="print-page"]:after {
+section > ul li > a[download]:after, section > ul li > a[is="print-page"]:after {
     content: '\2193' / '';
 }
-section > ul > li > a.disabled {
+section > ul li > a.disabled {
     color: var(--secondary);
     pointer-events: none;
 }
-section > ul > li > a.disabled:after {
+section > ul li > a.disabled:after {
     content: none;
 }
 section > ul.grid {
