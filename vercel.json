@@ -1,5 +1,6 @@
 {
   "images": {
+    "sizes": [425, 768, 1024, 1366],
     "minimumCacheTTL": 60,
     "domains": [
       "https://lh3.googleusercontent.com"
