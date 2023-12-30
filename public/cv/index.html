@@ -6,11 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="/style/globals.css">
     <link rel="stylesheet" href="/style/printing-doc.css">
     <link rel="stylesheet" href="/style/preflight.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400..700&display=swap" rel="stylesheet">
+    
+    <script src="/script/entry.js" defer></script>
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li data-marker="">
+                <a href="javascript:print()">Imprimir</a>
+            </li>
+            <li data-marker="tema:">
+                <input id="theme-switch" type="checkbox" is="theme-switch">
+                <label for="theme-switch" data-light-label="Claro" data-dark-label="Escuro" tabindex="0">Claro</label>
+            </li>
+        </ul>
+    </nav>
+
     <div class="doc-page">
         <h1>
             LUCIANO FELIX DIAS
@@ -151,7 +167,26 @@
     </div>
 
     <footer>
-        © 2024 Luciano Felix. Todos os direitos reservados.
+        <div>
+            <div style="border-bottom-width: 1px; border-right-width: 1px;">
+                <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="50" height="43" class="hide-light"
+                    style="width: 3rem; height: 3rem;">
+                <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="50" height="43" class="hide-dark"
+                    style="width: 3rem; height: 3rem;">
+            </div>
+            <div style="border-bottom-width: 1px;"></div>
+            <div style="grid-area: 1 / 3 / 4 / -1; border-left-width: 1px;">
+                <img src="/image/copyright.png" alt="Copyright in code-128" class="hide-dark"
+                    style="image-rendering: pixelated; width: 3rem; height: 16rem;">
+                <img src="/image/copyright-dark.png" alt="Copyright in code-128" class="hide-light"
+                    style="image-rendering: pixelated; width: 3rem; height: 16rem;">
+            </div>
+            <p style="grid-area: 3 / span 2; border-top-width: 1px; font-size: .75rem;">
+                © 2024 LUCIANO FELIX. TODOS OS DIREITOS RESERVADOS.<br />
+                É TERMINANTEMENTE PROIBIDA A UTILIZAÇÃO OU REPRODUÇÃO NÃO AUTORIZADA DO CONTEÚDO DO SITE, INCLUINDO
+                FOTOS PESSOAIS, SEM AUTORIZAÇÃO PRÉVIA.
+            </p>
+        </div>
     </footer>
 </body>
 
