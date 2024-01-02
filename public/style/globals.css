@@ -84,26 +84,26 @@ nav > ul li[data-marker]::marker {
     content: attr(data-marker);
 }
 
-
-
 footer {
-    --text-b1: color-mix(in oklab, var(--text) 50%, var(--background));
-    margin-top: 4rem;
-    padding: 0 clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
-    color: color-mix(in oklab, var(--text) 90%, var(--background));
+    column-width: 20rem;
+    column-rule: 1px dotted var(--text-b1);
+    column-gap: 3rem;
+    padding: 4rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
 }
-footer > div {
+footer > * {
+    break-inside: avoid-column;
+}
+footer > h2 {
+    padding-bottom: 2rem;
+    color: var(--primary);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    line-height: 0.85em;
+    letter-spacing: -.05em;
+}
+footer > p {
     padding-bottom: 1rem;
-    border: 1px dotted var(--text-b1);
-    border-bottom-width: 0;
-    border-radius: .5rem .5rem 0 0;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto 1fr auto;
-}
-footer > div > * {
-    padding: .75rem;
-    border: 0 dotted var(--text-b1);
+    hyphens: auto;
 }
 
 input[is="theme-switch"] {
