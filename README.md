@@ -1,6 +1,6 @@
 # LucianoFelix.com.br
 
-My personal website. On this page you can know more about me and my creations. [See it online](https://lucianofelix.com.br).
+My personal website. On this page you can know more about me and my work. [See it online](https://lucianofelix.com.br).
 
 ## Features
 
