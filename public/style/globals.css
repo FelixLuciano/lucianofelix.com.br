@@ -34,7 +34,7 @@
     --background-b1: color-mix(in oklab, var(--background) 50%, white);
     --primary-d1: color-mix(in oklab, var(--primary) 80%, black);
     --primary-b1: color-mix(in oklab, var(--primary) 80%, white);
-    --secondary-b1: color-mix(in oklab, var(--secondary) 80%, black);
+    --secondary-d1: color-mix(in oklab, var(--secondary) 80%, black);
     --secondary-b1: color-mix(in oklab, var(--secondary) 80%, white);
     --accent-d1: color-mix(in oklab, var(--accent) 80%, black);
     --accent-b1: color-mix(in oklab, var(--accent) 80%, white);
@@ -58,14 +58,18 @@ body > * {
 }
 
 nav {
+    max-width: 100%;
     position: sticky;
     z-index: 1;
     top: 0;
     margin-top: 1rem;
     margin-bottom: 4rem;
-    padding: 1rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
+    background-color: var(--background);
 }
 nav > ul {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 1rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
     display: flex;
     justify-content: space-between;
     gap: 1rem;
