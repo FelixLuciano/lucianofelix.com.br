@@ -140,7 +140,23 @@
                 aspectos fundamentais como trabalho em equipe, comunicação eficaz e adaptabilidade em ambientes
                 profissionais.
             </p>
-            <img src="/image/profile-photo.jpg" alt="My photo" width="720" height="960">
+            <div style="position: relative;">
+                <img src="/image/profile-photo.jpg" alt="My photo" width="720" height="960">
+                <svg width="100" height="100" viewBox="-64 -64 128 128" style="position: absolute; right: 4px; bottom: -40px;">
+                    <defs>
+                        <path id="pp" d="M0,64A1,1,0,0,0,0,-64A1,1,0,0,0,0,64A1,1,0,0,0,0,-64A1,1,0,0,0,0,64" />
+                    </defs>
+                    <circle r="48" fill="none" stroke="var(--primary)" stroke-width="25" />
+                    <text transform="scale(.85)" fill="var(--background)" font-family="inherit" font-weight="bold" font-size="19" letter-spacing="3">
+                        <textPath href="#pp">#OPENTOWORK
+                            <animate attributeName="startOffset" values="0%;50%" dur="10s" repeatCount="indefinite" />
+                        </textPath>
+                        <textPath href="#pp">#OPENTOWORK
+                            <animate attributeName="startOffset" values="25%;75%" dur="10s" repeatCount="indefinite" />
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
             <hr />
             <h3>
                 <span is="self-typing">Curriculum Vitae</span>
@@ -387,9 +403,9 @@
             FOTOS PESSOAIS, SEM AUTORIZAÇÃO PRÉVIA.
         </p>
         <img src="/image/copyright.png" alt="Copyright in code-128" class="hide-dark"
-            style="image-rendering: pixelated; width: 4rem; height: 20rem; margin-left: auto;">
+            style="image-rendering: pixelated; width: 4rem; height: 20rem;">
         <img src="/image/copyright-dark.png" alt="Copyright in code-128" class="hide-light"
-            style="image-rendering: pixelated; width: 4rem; height: 20rem; margin-left: auto;">
+            style="image-rendering: pixelated; width: 4rem; height: 20rem;">
     </footer>
 </body>
 
