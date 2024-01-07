@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182 208">
-  <path fill="#666" d="M85.5 137.5h-32v-34.1c0-3.5-2.2-6.6-5.5-7.8l-10.5-3.8V26.7h32v44.6c9.9 7.5 16 19.3 16 32.1v34.1z"/>
-  <path fill="#444" d="M85.5 103.4h-32v-32c0-3.5-2.2-6.6-5.5-7.8l-26.5-9.7V26.7h32v4.8l5.5 2c15.9 5.8 26.5 21 26.5 37.9v32z"/>
-  <path fill="#222" d="M85.5 71.4h-32v-16c0-3.5-2.2-6.6-5.5-7.8L0 30.1 10.9 0l48 17.5c15.9 5.8 26.5 21 26.5 37.9v16z"/>
-  <path d="M181.5 175.5l-11.7 32H53.5v-192l32 11.6v148.4z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -15 182 212">
+  <clipPath id="mm">
+    <path d="m48,6.125l32,16,0,142,94,0-16,32,-120,0 z" />
+  </clipPath>
+  <path d="M48,40l0,20,0,8q16,8,16,24" fill="none" stroke-width="32" stroke="#666666" />
+  <path d="M32,16l0,16,16,8q16,8,16,24" fill="none" stroke-width="32" stroke="#444444" />
+  <path d="M0,0l48,24q16,8,16,24" fill="none" stroke-width="32" stroke="#222222" />
+  <path d="m64,6.125L64,180l110,0" fill="none" stroke-width="32" stroke="#000000" clip-path="url(#mm)" />
 </svg>
