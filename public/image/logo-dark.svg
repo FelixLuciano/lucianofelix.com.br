@@ -1,9 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -15 182 212">
-  <clipPath id="mm">
-    <path d="m48,6.125l32,16,0,142,94,0-16,32,-120,0 z" />
+  <clipPath id="a">
+    <path d="m35.75,-0l44.25,22.125,0,142,94,0-16,32,-122.75,0 z" />
   </clipPath>
-  <path d="M48,40l0,20,0,8q16,8,16,24" fill="none" stroke-width="32" stroke="#666666" />
-  <path d="M32,16l0,16,16,8q16,8,16,24" fill="none" stroke-width="32" stroke="#444444" />
-  <path d="M0,0l48,24q16,8,16,24" fill="none" stroke-width="32" stroke="#222222" />
-  <path d="m64,6.125L64,180l110,0" fill="none" stroke-width="32" stroke="#000000" clip-path="url(#mm)" />
+  <g fill="none" stroke-width="32" stroke="#000000">
+    <path stroke="#666666" d="M48,40l0,28q16,8,16,24" />
+    <path stroke="#444444" d="M32,16l0,16,16,8q16,8,16,24" />
+    <path stroke="#222222" d="M0,0l48,24q16,8,16,24" />
+    <path clip-path="url(#a)" d="m48,-11.777q16,8,16,24L64,180l110,0" />
+  </g>
 </svg>

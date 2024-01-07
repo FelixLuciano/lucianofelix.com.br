@@ -1,18 +1,23 @@
-<svg width="182" height="208" viewBox="0 0 182 208" xmlns="http://www.w3.org/2000/svg">
-  <path class="p1" fill="#666" d="M85.5 137.5h-32v-34.1c0-3.5-2.2-6.6-5.5-7.8l-10.5-3.8V26.7h32v44.6c9.9 7.5 16 19.3 16 32.1v34.1z"/>
-  <path class="p2" fill="#444" d="M85.5 103.4h-32v-32c0-3.5-2.2-6.6-5.5-7.8l-26.5-9.7V26.7h32v4.8l5.5 2c15.9 5.8 26.5 21 26.5 37.9v32z"/>
-  <path class="p3" fill="#222" d="M85.5 71.4h-32v-16c0-3.5-2.2-6.6-5.5-7.8L0 30.1 10.9 0l48 17.5c15.9 5.8 26.5 21 26.5 37.9v16z"/>
-  <path class="p4" d="M181.5 175.5l-11.7 32H53.5v-192l32 11.6v148.4z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -15 182 212">
   <style>
-    .p1 { fill: #666; }
-    .p2 { fill: #444; }
-    .p3 { fill: #222; }
-    .p4 { fill: #000; }
+    .c1 { stroke: #000; }
+    .c2 { stroke: #222; }
+    .c3 { stroke: #444; }
+    .c4 { stroke: #666; }
     @media (prefers-color-scheme: dark) {
-      .p1 { fill: #777; }
-      .p2 { fill: #AAA; }
-      .p3 { fill: #DDD; }
-      .p4 { fill: #FFF; }
+      .c1 { stroke: #FFF; }
+      .c2 { stroke: #DDD; }
+      .c3 { stroke: #AAA; }
+      .c4 { stroke: #777; }
     }
   </style>
+  <clipPath id="a">
+    <path d="m35.75,-0l44.25,22.125,0,142,94,0-16,32,-122.75,0 z" />
+  </clipPath>
+  <g fill="none" stroke-width="32" class="c1">
+    <path class="c4" d="M48,40l0,28q16,8,16,24" />
+    <path class="c3" d="M32,16l0,16,16,8q16,8,16,24" />
+    <path class="c2" d="M0,0l48,24q16,8,16,24" />
+    <path clip-path="url(#a)" d="m48,-11.777q16,8,16,24L64,180l110,0" />
+  </g>
 </svg>
