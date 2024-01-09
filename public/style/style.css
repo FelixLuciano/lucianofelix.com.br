@@ -68,7 +68,7 @@ header > p > span.marker:after {
     content: close-quote;
 }
 
-section {
+:is(aside, section) {
     column-width: 20rem;
     column-rule: 1px dotted var(--text-b1);
     column-gap: 3rem;
@@ -76,7 +76,8 @@ section {
 }
 @media only screen and (min-width: 50rem) {
     @media not (prefers-reduced-motion) {
-        main > section, main ~ section {
+        main > section,
+        main ~ section {
             animation: reveal-section ease-out both;
             animation-timeline: view(block);
             animation-range: entry 0 entry 50vh;
@@ -90,14 +91,11 @@ section {
     }
 }
 
-section > h2,
-section > h3,
-section > .block {
+:is(aside, section) > :is(h2, h3, .block) {
     break-inside: avoid-column;
 }
 
-section > h2,
-section > h3 {
+:is(aside, section) > :is(h2, h3) {
     padding-bottom: 2rem;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -.05em;
@@ -107,13 +105,13 @@ body {
     counter-reset: heading;
 }
 
-section > h2 {
+:is(aside, section) > h2 {
     font-size: clamp(2rem, calc(56 / 1366 * 100vw), 3.5rem);
     line-height: 0.85em;
     counter-increment: heading;
     counter-reset: heading-2;
 }
-section > h2:before {
+:is(aside, section) > h2:before {
     content: counter(heading, upper-roman) '.' / '';
     position: absolute;
     transform: translateX(-150%);
@@ -124,18 +122,18 @@ section > h2:before {
     :root {
         scroll-padding-top: 3rem;
     }
-    section > h2:before {
+    :is(aside, section) > h2:before {
         transform: translateY(-100%);
         font-size: .5em;
     }
 }
 
-section > h3 {
+:is(aside, section) > h3 {
     font-size: clamp(1.5rem, calc(40 / 1366 * 100vw), 2.5rem);
     line-height: 0.8em;
     counter-increment: heading-2;
 }
-section > h3:before {
+:is(aside, section) > h3:before {
     content: counter(heading-2, lower-alpha) '.' / '';
     position: absolute;
     color: var(--primary);
@@ -143,104 +141,102 @@ section > h3:before {
     font-size: .5em;
 }
 @media (min-width: 1450px) {
-    section > hr + h3:before {
+    :is(aside, section) > hr + h3:before {
         font-size: max(.75em, 1.75rem);
         transform: translateX(-150%);
     }
 }
 
-section > hr,
-section > .full-row {
+:is(aside, section) > :is(hr, .full-row){
     column-span: all;
 }
-section > hr {
+:is(aside, section) > hr {
     margin-top: 3rem;
     border: none;
 }
 
-section p {
+:is(aside, section) p {
     padding-bottom: 1rem;
     hyphens: auto;
 }
 
-section img {
+:is(aside, section) img {
     object-fit: cover;
     width: 100%;
     max-width: 100%;
     border-radius: .2rem;
 }
 
-section > ul > li {
+:is(aside, section) > ul > li {
     break-inside: avoid-column;
     margin-bottom: 2rem;
     border-bottom: .15rem dotted var(--text);
 }
-section > ul > li > h3,
-section > ul > li > h4 {
+:is(aside, section) > ul > li > :is(h3, h4) {
     padding-bottom: .5rem;
     font-size: 1.5rem;
 }
-section > ul li > a {
+:is(aside, section) > ul li > a {
     display: block;
     padding-bottom: .5rem;
     color: var(--primary-b1);
 }
-section > ul li > a:after {
+:is(aside, section) > ul li > a:after {
     float: right;
     font-size: 1.2rem;
 }
-section > ul li > a[target="_blank"]:after {
+:is(aside, section) > ul li > a[target="_blank"]:after {
     content: '\29C9' / '';
 }
-section > ul li > a[href^="#"]:after {
+:is(aside, section) > ul li > a[href^="#"]:after {
     content: '\21B3' / '';
 }
-section > ul li > a[download]:after, section > ul li > a[is="print-page"]:after {
+:is(aside, section) > ul li > a:is([download], [is="print-page"]):after {
     content: '\2193' / '';
 }
-section > ul li > a.disabled {
+:is(aside, section) > ul li > a.disabled {
     color: var(--secondary);
     pointer-events: none;
 }
-section > ul li > a.disabled:after {
+:is(aside, section) > ul li > a.disabled:after {
     content: none;
 }
-section > ul.grid {
+:is(aside, section) > ul.grid {
     display: grid;
     gap: .5rem;
     grid-template-columns: repeat(auto-fill, 1fr);
     grid-auto-flow: row dense;
 }
 @media (min-width: 24rem) {
-    section > ul.grid {
+    :is(aside, section) > ul.grid {
         grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
     }
 }
 @media (min-width: 16rem) {
-    section > ul.grid.dense {
+    :is(aside, section) > ul.grid.dense {
         grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     }
 }
-section > ul.grid > li {
+:is(aside, section) > ul.grid > li {
     margin: 0;
     border: none;
 }
-section > ul.grid > li > a {
+:is(aside, section) > ul.grid > li > a {
     text-underline-offset: .1em;
     padding-bottom: 0;
     line-height: 2em;
     color: var(--text);
 }
-section > ul.grid > li > a:after {
+:is(aside, section) > ul.grid > li > a:after {
     color: var(--primary-d1);
 }
-section > ul.grid.dense {
+:is(aside, section) > ul.grid.dense {
     gap: .4rem;
 }
-section > ul.grid.dense > li {
+:is(aside, section) > ul.grid.dense > li {
     max-width: 100%;
 }
-section > ul.grid.dense > li > a:after {
+:is(aside, section) > ul.grid.dense > li > a:after {
     font-size: 1rem;
 }
 
@@ -257,8 +253,7 @@ form :nth-child(odd) {
     font-size: 1.5rem;
     font-weight: 600;
 }
-form input,
-form textarea {
+form :is(input, textarea) {
     max-width: 100%;
     margin-bottom: 2rem;
     background-color: var(--background-d1);
@@ -267,19 +262,16 @@ form textarea {
     font: inherit;
     color: inherit;
 }
-form input:focus,
-form textarea:focus {
+form :is(input, textarea):focus {
     outline-width: .15rem;
     outline-style: solid;
     outline-color: var(--primary);
     outline-offset: .25rem;
 }
-form input::placeholder,
-form textarea::placeholder {
+form :is(input, textarea)::placeholder {
     color: var(--text-b1);
 }
-form input[readonly],
-form textarea[readonly] {
+form :is(input, textarea)[readonly] {
     background-color: var(--background-b1);
     cursor: wait;
     border-color: transparent;
