@@ -13,6 +13,7 @@
     }
 }
 
+:root,
 :root.light {
     --text: #1A1414;
     --background: #E7E5E4;
@@ -26,6 +27,15 @@
     --primary: #DD6464;
     --secondary: #FFBDBD;
     --accent: #F20202;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #EBE5E5;
+        --background: #1B1918;
+        --primary: #DD6464;
+        --secondary: #FFBDBD;
+        --accent: #F20202;
+    }
 }
 :root {
     --text-d1: color-mix(in oklab, var(--text) 80%, black);
@@ -49,6 +59,24 @@
 }
 :root.dark .hide-dark {
     display: none;
+}
+
+:root.light .hide-dark {
+    display: initial;
+}
+:root.dark .hide-light {
+    display: initial;
+}
+
+@media (prefers-color-scheme: light) {
+    .hide-light {
+        display: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .hide-dark {
+        display: none;
+    }
 }
 
 body > * {
