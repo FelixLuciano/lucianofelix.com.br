@@ -2,10 +2,15 @@
   <clipPath id="a">
     <path d="m35.75,-0l44.25,22.125,0,142,94,0-16,32,-122.75,0 z" />
   </clipPath>
+  <clipPath id="b">
+    <rect x="-8" y="-15" width="72" height="108" />
+  </clipPath>
   <g fill="none" stroke-width="32" stroke="#000000">
-    <path stroke="#666666" d="M48,40l0,28q16,8,16,24" />
-    <path stroke="#444444" d="M32,16l0,16,16,8q16,8,16,24" />
-    <path stroke="#222222" d="M0,0l48,24q16,8,16,24" />
+    <g clip-path="url(#b)">
+      <path stroke="#666666" d="M48,40l0,28q16,8,16,24" />
+      <path stroke="#444444" d="M32,16l0,16,16,8q16,8,16,24" />
+      <path stroke="#222222" d="M0,0l48,24q16,8,16,24" />
+    </g>
     <path clip-path="url(#a)" d="m48,-11.777q16,8,16,24L64,180l110,0" />
   </g>
 </svg>
