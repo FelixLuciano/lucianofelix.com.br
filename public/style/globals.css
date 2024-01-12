@@ -51,7 +51,10 @@
 }
 ::selection {
     background-color: color-mix(in oklab, var(--accent) 80%, transparent);
-    color: var(--text-d1);
+    color: var(--text);
+}
+:root.dark ::selection {
+    background-color: color-mix(in oklab, var(--accent-d1) 80%, transparent);
 }
 
 :root.light .hide-light {
