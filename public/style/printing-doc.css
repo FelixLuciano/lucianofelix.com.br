@@ -1,135 +1,124 @@
 @page {
-  size: A4 portrait;
-  margin: 0cm;
-}
-
-body {
-  @media only print {
-    > :is(nav, footer) {
-      display: none;
-    }
-  }
-
-  > nav {
-    margin-bottom: 2rem;
-  }
-
-  > main {
-    overflow-x: auto;
-    padding: 0 1rem;
-  }
+    size: A4 portrait;
+    margin: 0cm;
 }
 
 @media only screen {
-  .doc-page {
-    background-color: #FFFFFF;
-    margin: 0 auto 5mm auto;
-
+    .doc-page {
+        background-color: #FFFFFF;
+        margin: 0 auto 5mm auto;
+    }
     @media only screen and (max-width: 210mm) {
-      zoom: 0.66666;
+        .doc-page {
+            zoom: 0.66666;
+        }
     }
-
     @media only screen and (min-width: 315mm) {
-      zoom: 1.5;
+        .doc-page {
+            zoom: 1.5;
+        }
     }
+    :root.dark .doc-page {
+        background-color: #262626;
+        color: #FFFFFF;
+    }
+    :root.dark .doc-page h1,
+    :root.dark .doc-page h2 {
+        color: #DD6464;
+    }
+    :root.dark .doc-page strong {
+        color: #e5e7eb;
+    }
+    :root.dark .doc-page dt {
+        color: #9ca3af;
+    }
+}
+@media only print {
+    body > nav,
+    body > footer {
+        display: none;
+    }
+}
 
-    :root.dark & {
-      background-color: #262626;
-      color: #FFFFFF;
-    }
-
-    :root.dark & h1,
-    :root.dark & h2 {
-      color: #DD6464;
-    }
-
-    :root.dark & strong {
-      color: #e5e7eb;
-    }
-
-    :root.dark & dt {
-      color: #9ca3af;
-    }
-  }
+body > nav {
+    margin-bottom: 2rem;
+}
+body > main {
+    overflow-x: auto;
+    padding: 0 1rem;
 }
 
 .doc-page {
-  width: 210mm;
-  height: 297mm;
-  padding: 1cm;
-  color: #0a0a0a;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10pt;
-  font-weight: 500;
-  break-after: always;
-  break-inside: avoid;
-  column-count: 2;
-  column-gap: 5mm;
-  overflow: hidden;
+    width: 210mm;
+    height: 297mm;
+    padding: 1cm;
+    color: #0a0a0a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    break-after: always;
+    break-inside: avoid;
+    column-count: 2;
+    column-gap: 5mm;
+    overflow: hidden;
+}
 
-  h1 {
+.doc-page h1 {
     color: #992222;
     font-size: 25pt;
     font-weight: bold;
     line-height: 1em;
-  }
+}
 
-  hr,
-  .full-row {
+.doc-page hr,
+.full-row {
     column-span: all;
-  }
-
-  hr {
+}
+.doc-page hr {
     padding: 2mm 0;
     border: none;
     border-top: 1pt solid #AAAAAA;
-  }
+}
 
-  section {
+.doc-page section {
     break-inside: avoid-column;
-  }
+}
 
-  h2 {
+.doc-page h2 {
     margin-bottom: 1mm;
     color: #992222;
     font-size: 14pt;
     font-weight: bold;
-  }
+}
 
-  dl {
+.doc-page dl {
     padding-bottom: 5mm;
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-gap: 4mm 2mm;
     break-inside: avoid-column;
+}
+.doc-page dl.dense {
+    grid-gap: 0mm 2mm;
+}
+.doc-page dl > dt {
+    color: #4b5563;
+    text-align: right;
+}
+.doc-page dl > dd > ul > li {
+    list-style-position: outside;
+}
 
-    &.dense {
-      grid-gap: 0mm 2mm;
-    }
-
-    > dt {
-      color: #4b5563;
-      text-align: right;
-    }
-
-    > dd > ul > li {
-      list-style-position: outside;
-    }
-  }
-
-  ul {
+.doc-page ul {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2mm;
     list-style-type: square;
     list-style-position: inside;
-
-    > li::marker {
-      color: #6b7280;
-    }
-  }
-
-  strong {
+}
+.doc-page ul > li::marker {
+    color: #6b7280;
+}
+.doc-page strong {
     color: #111827;
-  }
 }

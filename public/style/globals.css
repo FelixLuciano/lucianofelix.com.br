@@ -1,3 +1,18 @@
+:root {
+    scroll-behavior: smooth;
+    min-width: 300px;
+    background-color: var(--background);
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text);
+}
+@media (min-width: 1366px) {
+    :root {
+        font-size: clamp(16px, (16 / 1366) * 100vw, 18px);
+    }
+}
+
 :root,
 :root.light {
     --text: #1A1414;
@@ -34,7 +49,6 @@
     --accent-d1: color-mix(in oklab, var(--accent) 80%, black);
     --accent-b1: color-mix(in oklab, var(--accent) 80%, white);
 }
-
 ::selection {
     background-color: color-mix(in oklab, var(--accent) 80%, transparent);
     color: var(--text-d1);
@@ -65,20 +79,6 @@
     }
 }
 
-:root {
-    scroll-behavior: smooth;
-    min-width: 300px;
-    background-color: var(--background);
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: var(--text);
-
-    @media (min-width: 1366px) {
-        font-size: clamp(16px, (16 / 1366) * 100vw, 18px);
-    }
-}
-
 body > * {
     max-width: 1366px;
     margin-left: auto;
@@ -93,28 +93,23 @@ nav {
     margin-top: 1rem;
     margin-bottom: 4rem;
     background-color: var(--background);
-
-    > ul {
-        max-width: 1366px;
-        margin: 0 auto;
-        padding: 1rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        font-size: clamp(1rem, calc(24 / 1366 * 100vw), 1.2rem);
-        list-style-position: inside;
-        list-style-type: upper-roman;
-
-        li {
-            &::marker {
-                color: var(--primary-b1);
-            }
-
-            &[data-marker]::marker {
-                content: attr(data-marker);
-            }
-        }
-    }
+}
+nav > ul {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 1rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: clamp(1rem, calc(24 / 1366 * 100vw), 1.2rem);
+    list-style-position: inside;
+    list-style-type: upper-roman;
+}
+nav > ul li::marker {
+    color: var(--primary-b1);
+}
+nav > ul li[data-marker]::marker {
+    content: attr(data-marker);
 }
 
 footer {
@@ -122,33 +117,29 @@ footer {
     column-rule: 1px dotted var(--text-b1);
     column-gap: 3rem;
     padding: 4rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
-
-    > * {
-        break-inside: avoid-column;
-    }
-
-    > h2 {
-        padding-bottom: 2rem;
-        color: var(--primary);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 3rem;
-        line-height: 0.85em;
-        letter-spacing: -.05em;
-    }
-
-    > p {
-        padding-bottom: 1rem;
-        hyphens: auto;
-    }
+}
+footer > * {
+    break-inside: avoid-column;
+}
+footer > h2 {
+    padding-bottom: 2rem;
+    color: var(--primary);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    line-height: 0.85em;
+    letter-spacing: -.05em;
+}
+footer > p {
+    padding-bottom: 1rem;
+    hyphens: auto;
 }
 
 input[is="theme-switch"] {
     display: none;
-
-    + label {
-        user-select: none;
-        cursor: pointer;
-    }
+}
+input[is="theme-switch"] + label {
+    user-select: none;
+    cursor: pointer;
 }
 
 :has(span[is="self-typing"]) {
