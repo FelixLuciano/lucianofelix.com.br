@@ -1,28 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -15 182 212">
   <style>
-    .c1 { stroke: #000; }
-    .c2 { stroke: #222; }
-    .c3 { stroke: #444; }
-    .c4 { stroke: #666; }
+    .c1 { stroke: #1A1414; }
+    .c2 { stroke: #3D3737; }
+    .c3 { stroke: #645E5E; }
+    .c4 { stroke: #8D8988; }
     @media (prefers-color-scheme: dark) {
-      .c1 { stroke: #FFF; }
-      .c2 { stroke: #DDD; }
-      .c3 { stroke: #AAA; }
-      .c4 { stroke: #777; }
+      .c1 { stroke: #E7E5E4; }
+      .c2 { stroke: #bcb7b7; }
+      .c3 { stroke: #908c8b; }
+      .c4 { stroke: #666261; }
     }
   </style>
   <clipPath id="a">
-    <path d="m35.75,-0l44.25,22.125,0,142,94,0-16,32,-122.75,0 z" />
+    <path d="m35.75 0l44.25 22.125v142h94l-16 32h-122.75 z"/>
   </clipPath>
   <clipPath id="b">
     <rect x="-8" y="-15" width="72" height="108" />
   </clipPath>
   <g fill="none" stroke-width="32" class="c1">
     <g clip-path="url(#b)">
-      <path class="c4" d="M48,40l0,28q16,8,16,24" />
-      <path class="c3" d="M32,16l0,16,16,8q16,8,16,24" />
-      <path class="c2" d="M0,0l48,24q16,8,16,24" />
+      <path class="c4" d="M48 40v28q16 8 16 24"/>
+      <path class="c3" d="M32 16v16l16 8q16 8 16 24"/>
+      <path class="c2" d="M0 0l48 24q16 8 16 24"/>
     </g>
-    <path clip-path="url(#a)" d="m48,-11.777q16,8,16,24L64,180l110,0" />
+    <path clip-path="url(#a)" d="m48-11.777q16 8 16 24V180h110"/>
   </g>
 </svg>
