@@ -38,6 +38,9 @@
     body > footer {
         display: none;
     }
+    .doc-page abbr {
+        text-decoration: none;
+    }
 }
 
 body > nav {
