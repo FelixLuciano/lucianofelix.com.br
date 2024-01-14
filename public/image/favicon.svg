@@ -12,7 +12,7 @@
     }
   </style>
   <clipPath id="a">
-    <path d="m35.75 0l44.25 22.125v142h94l-16 32h-122.75 z"/>
+    <path d="m35.75 0l44.25 22.125L174 165l-16 32H35.75 z"/>
   </clipPath>
   <clipPath id="b">
     <rect x="-8" y="-15" width="72" height="108" />
@@ -23,6 +23,6 @@
       <path class="c3" d="M32 16v16l16 8q16 8 16 24"/>
       <path class="c2" d="M0 0l48 24q16 8 16 24"/>
     </g>
-    <path clip-path="url(#a)" d="m48-11.777q16 8 16 24V180h110"/>
+    <path clip-path="url(#a)" d="m48-11.777q16 8 16 24V181h110"/>
   </g>
 </svg>
