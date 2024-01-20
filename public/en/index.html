@@ -64,9 +64,12 @@
             <li data-marker="λ.">
                 <a href="/">Português</a>
             </li>
-            <li data-marker="theme:">
-                <input id="theme-switch" type="checkbox" is="theme-switch">
-                <label for="theme-switch" role="switch" data-light-label="Light" data-dark-label="Dark">Light</label>
+            <li data-marker="tema:">
+                <label for="page-theme-select" class="sr-only">Tema:</label>
+                <select id="page-theme-select" is="theme-select" value="light">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
             </li>
         </ul>
     </nav>

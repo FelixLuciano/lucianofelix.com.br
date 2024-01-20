@@ -82,6 +82,18 @@
     }
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 body > * {
     max-width: 1366px;
     margin-left: auto;
@@ -137,12 +149,11 @@ footer > p {
     hyphens: auto;
 }
 
-input[is="theme-switch"] {
-    display: none;
+select[is="theme-select"] {
+    background: none;
 }
-input[is="theme-switch"] + label {
-    user-select: none;
-    cursor: pointer;
+select[is="theme-select"] > option {
+    background-color: var(--background-d1);
 }
 
 :has(span[is="self-typing"]) {

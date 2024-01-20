@@ -1,43 +1,32 @@
-class ThemeSwitchElement extends HTMLInputElement {
+class ThemeSelectElement extends HTMLSelectElement {
   static #LOCAL_STORAGE_KEY = 'theme'
 
   connectedCallback() {
-    let theme = localStorage.getItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY)
+    let theme = localStorage.getItem(ThemeSelectElement.#LOCAL_STORAGE_KEY)
+    this.value = theme !== null ? theme : ThemeSelectElement.#detectTheme()
 
-    this.value = theme !== null ? theme === 'true' : ThemeSwitchElement.#detectTheme()
-    this.addEventListener('input', this.handleSwitch)
+    this.addEventListener('input', this.handleSelect)
+    this.handleSelect()
   }
 
   disconnectedCallback() {
-    this.removeEventListener('input', this.handleSwitch)
+    this.removeEventListener('input', this.handleSelect)
   }
 
-  handleSwitch() {
-    this.value = this.checked
+  handleSelect() {
+    localStorage.setItem(ThemeSelectElement.#LOCAL_STORAGE_KEY, this.value)
 
-    localStorage.setItem(ThemeSwitchElement.#LOCAL_STORAGE_KEY, this.value)
+    for (const option of this)
+      document.documentElement.classList.remove(option.value)
+
+    document.documentElement.classList.add(this.value)
   }
 
   static #detectTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  }
-
-  get value() {
-    return this.checked
-  }
-  set value(value) {
-    if(value === true) {
-      document.documentElement.classList.add('dark')
-      document.documentElement.classList.remove('light')
-    }
-    else {
-      document.documentElement.classList.add('light')
-      document.documentElement.classList.remove('dark')
-    }
-
-    this.checked = value
-    
-    this.labels.forEach(label => label.textContent = value ? label.dataset.darkLabel : label.dataset.lightLabel)
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+      return this[1].value
+    else
+      return this[0].value
   }
 }
 
@@ -272,7 +261,7 @@ class PrintPageElement extends HTMLAnchorElement {
   }
 }
 
-customElements.define('theme-switch', ThemeSwitchElement, { extends: 'input' })
+customElements.define('theme-select', ThemeSelectElement, { extends: 'select' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
 customElements.define('async-form', AsyncFormElement, { extends: 'form' })
 customElements.define('auto-resize', AutoResizeTextAreaElement, { extends: 'textarea' })

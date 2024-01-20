@@ -65,8 +65,11 @@
                 <a href="/en">English</a>
             </li>
             <li data-marker="tema:">
-                <input id="theme-switch" type="checkbox" is="theme-switch">
-                <label for="theme-switch" role="switch" data-light-label="Claro" data-dark-label="Escuro" tabindex="0">Claro</label>
+                <label for="page-theme-select" class="sr-only">Tema:</label>
+                <select id="page-theme-select" is="theme-select" value="light">
+                    <option value="light">Claro</option>
+                    <option value="dark">Escuro</option>
+                </select>
             </li>
         </ul>
     </nav>
