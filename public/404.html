@@ -26,12 +26,41 @@
             background-color: #1B1918;
             color: #EBE5E5;
         }
-
         :root.light .hide-light {
             display: none;
         }
         :root.dark .hide-dark {
             display: none;
+        }
+
+        :root.light .hide-dark {
+            display: initial;
+        }
+        :root.dark .hide-light {
+            display: initial;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .hide-light {
+                display: none;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            .hide-dark {
+                display: none;
+            }
         }
         :root.dark .dark\:invert {
             filter: invert(1);
@@ -107,6 +136,10 @@
             <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;" class="hide-dark">
             <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208" style="width: 5rem;" class="hide-light">
         </a>
+        <select is="theme-select" value="light" class="sr-only">
+            <option value="light">Claro</option>
+            <option value="dark">Escuro</option>
+        </select>
     </header>
 
     <main class="page-header">
