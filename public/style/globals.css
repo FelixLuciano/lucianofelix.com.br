@@ -109,7 +109,7 @@ nav {
     margin-bottom: 4rem;
     background-color: var(--background);
 }
-nav > ul {
+nav > ol {
     max-width: 1366px;
     margin: 0 auto;
     padding: 1rem clamp(1rem, calc(32 / 1366 * 100vw), 2rem);
@@ -120,10 +120,10 @@ nav > ul {
     list-style-position: inside;
     list-style-type: upper-roman;
 }
-nav > ul li::marker {
+nav > ol li::marker {
     color: var(--primary-b1);
 }
-nav > ul li[data-marker]::marker {
+nav > ol li[data-marker]::marker {
     content: attr(data-marker);
 }
 

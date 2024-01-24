@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
 
-    <meta property="og:url" content="https://lucianofelix.com.br/" />
-    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://lucianofelix.com.br/">
+    <meta property="og:type" content="profile">
     <meta property="profile:first_name" content="Luciano">
     <meta property="profile:last_name" content="Felix">
-    <meta property="og:title" content="Luciano Felix" />
-    <meta property="og:description" content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho." />
-    <meta property="og:image" content="https://lucianofelix.com.br/image/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Luciano Felix">
+    <meta property="og:description" content="Olá, eu sou o Luciano e nesta página você irá saber mais sobre mim e o meu trabalho.">
+    <meta property="og:image" content="https://lucianofelix.com.br/image/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,17 +48,17 @@
 
 <body>
     <nav>
-        <ul>
+        <ol>
             <li value="1">
                 <a href="#links">Links</a>
             </li>
             <li value="2">
                 <a href="#sobre">Sobre</a>
             </li>
-            <li value="4">
+            <!-- <li value="4">
                 <a href="#trabalho">Trabalho</a>
-            </li>
-            <li value="5">
+            </li> -->
+            <li value="4">
                 <a href="#contato">Contato</a>
             </li>
             <li data-marker="λ.">
@@ -66,18 +66,18 @@
             </li>
             <li data-marker="tema:">
                 <label for="page-theme-select" class="sr-only">Tema:</label>
-                <select id="page-theme-select" is="theme-select" value="light">
+                <select id="page-theme-select" is="theme-select">
                     <option value="light">Claro</option>
                     <option value="dark">Escuro</option>
                 </select>
             </li>
-        </ul>
+        </ol>
     </nav>
 
     <header>
         <figure>
-            <img src="/image/logo-light.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-light">
-            <img src="/image/logo-dark.svg" alt="Luciano Felix logo" width="182" height="208" class="hide-dark">
+            <img src="/image/logo-light.svg" alt="Luciano Felix" width="182" height="208" class="hide-light">
+            <img src="/image/logo-dark.svg" alt="Luciano Felix" width="182" height="208" class="hide-dark">
         </figure>
         <h1>
             Luciano<br>
@@ -87,8 +87,8 @@
             <span class="marker" is="self-typing" data-cursor=" " data-remove="false" data-force="true">Olá, eu sou o
                 Luciano e nesta página você irá saber mais sobre mim e o meu trabalho.</span>
         </p>
-        <img src="/image/l.png" alt="L in Data Matrix" width="24" height="24" class="hide-dark">
-        <img src="/image/l-dark.png" alt="L in Data Matrix" width="24" height="24" class="hide-light">
+        <img src="/image/l.png" alt="L em Data Matrix" width="24" height="24" class="hide-dark">
+        <img src="/image/l-dark.png" alt="L em Data Matrix" width="24" height="24" class="hide-light">
     </header>
 
     <aside id="links">
@@ -144,7 +144,7 @@
                 profissionais.
             </p>
             <div style="position: relative;">
-                <img src="/image/profile-photo.jpg" alt="My photo" width="720" height="960">
+                <img src="/image/profile-photo.jpg" alt="Minha foto" width="720" height="960">
                 <svg width="90" height="90" viewBox="-64 -64 128 128" style="position: absolute; right: 4px; bottom: -40px;">
                     <defs>
                         <path id="pp" d="M0,-56Q-56,-56,-56,0T0,56,56,0,0,-56,-56,0,0,56,56,0,0,-56" />
@@ -160,7 +160,7 @@
                     </text>
                 </svg>
             </div>
-            <hr />
+            <hr>
             <h3>
                 <span is="self-typing">Curriculum Vitae</span>
             </h3>
@@ -191,11 +191,11 @@
                     processador do meu primeiro computador, que me acompanhou nos primeiros anos da minha jornada.
                 </figcaption>
                 <picture>
-                    <source media="(max-width: 480px)"
+                    <source media="(max-width: 480px)" sizes="(max-width: 480px) 480px"
                         srcset="https://lh3.googleusercontent.com/pw/ABLVV84VXQJFMVph_J3G4pPenJS9Gh95uZ3l0fLfZY5Ol058yZ_vFdb81I3shkogyk5DfXKt-cknHq9AkcAHF5YgKe1Ird3ZlxzorobA5eiIcO1kN84rFmZEiIsJFxV2SXTlde_V0XctKr67Fh6AeR36AWZX=w480-h360-s-no-gm 480w">
-                    <source media="(max-width: 768px)"
+                    <source media="(max-width: 768px)" sizes="(max-width: 768px) 768px"
                         srcset="https://lh3.googleusercontent.com/pw/ABLVV84VXQJFMVph_J3G4pPenJS9Gh95uZ3l0fLfZY5Ol058yZ_vFdb81I3shkogyk5DfXKt-cknHq9AkcAHF5YgKe1Ird3ZlxzorobA5eiIcO1kN84rFmZEiIsJFxV2SXTlde_V0XctKr67Fh6AeR36AWZX=w800-h600-s-no-gm 800w">
-                    <source media="(max-width: 1025px)"
+                    <source media="(max-width: 1025px)" sizes="(max-width: 1025px) 1025px"
                         srcset="https://lh3.googleusercontent.com/pw/ABLVV84VXQJFMVph_J3G4pPenJS9Gh95uZ3l0fLfZY5Ol058yZ_vFdb81I3shkogyk5DfXKt-cknHq9AkcAHF5YgKe1Ird3ZlxzorobA5eiIcO1kN84rFmZEiIsJFxV2SXTlde_V0XctKr67Fh6AeR36AWZX=w1024-h768-s-no-gm 1024w">
                     <img alt="Uma foto bonita" width="1366" height="1025"
                         src="https://lh3.googleusercontent.com/pw/ABLVV84VXQJFMVph_J3G4pPenJS9Gh95uZ3l0fLfZY5Ol058yZ_vFdb81I3shkogyk5DfXKt-cknHq9AkcAHF5YgKe1Ird3ZlxzorobA5eiIcO1kN84rFmZEiIsJFxV2SXTlde_V0XctKr67Fh6AeR36AWZX=w1366-h1025-s-no-gm">
@@ -230,7 +230,7 @@
                 facets of this ever-evolving discipline. The knowledge and expertise I have gained have laid a
                 strong foundation for my future endeavors.
             </p>
-            <hr />
+            <hr>
             <h3>
                 <span is="self-typing">Trabalhos em destaque</span>
             </h3>
@@ -322,7 +322,7 @@
                     <a href="https://github.com/FelixLuciano/Insper-Mileage-REST-API-case" target="_blank" rel="noopener noreferer">Abrir repositório</a>
                 </li>
             </ul>
-            <hr />
+            <hr>
             <h3>
                 <span is="self-typing">Momentos em destaque</span>
             </h3>
@@ -375,7 +375,7 @@
                 ideas to expand my programming expertise. I invite you to explore my website further to discover more
                 about my programming journey and the exciting projects I have undertaken.
             </p>
-            <hr />
+            <hr>
             <h3>
                 <span is="self-typing">Trabalhos em destaque</span>
             </h3>
@@ -466,7 +466,7 @@
 
     <footer>
         <h2>
-            © 2024<br />
+            © 2024<br>
             LUCIANO FELIX
         </h2>
         <p>
@@ -476,9 +476,9 @@
             É TERMINANTEMENTE PROIBIDA A UTILIZAÇÃO OU REPRODUÇÃO NÃO AUTORIZADA DO CONTEÚDO DO SITE, INCLUINDO
             FOTOS PESSOAIS, SEM AUTORIZAÇÃO PRÉVIA.
         </p>
-        <img src="/image/copyright.png" alt="Copyright in code-128" class="hide-dark"
+        <img src="/image/copyright.png" alt="Copyright em code-128" class="hide-dark"
             style="image-rendering: pixelated; width: 4rem; height: 20rem;">
-        <img src="/image/copyright-dark.png" alt="Copyright in code-128" class="hide-light"
+        <img src="/image/copyright-dark.png" alt="Copyright em code-128" class="hide-light"
             style="image-rendering: pixelated; width: 4rem; height: 20rem;">
     </footer>
 </body>
