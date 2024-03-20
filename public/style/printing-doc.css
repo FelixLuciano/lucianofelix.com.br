@@ -94,6 +94,11 @@ body > main {
     font-weight: bold;
 }
 
+.doc-page p {
+    padding-bottom: 5mm;
+    break-inside: avoid-column;
+}
+
 .doc-page dl {
     padding-bottom: 5mm;
     display: grid;
