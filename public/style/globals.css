@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Inter'), url(https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZ1zfLehuMj8UB2gN6h6HlQMhBwZQMwDOmFBNquE9Y0-wFlo10q6D5VSJQ365wjSKnC1-AEiRgn4J4pBLnxC4VzBuLjCbWSG_DRfZ1mbmXWZI7Od6ZDp17cHQmx-HJHQnG3aNgAP3yBLGLWJjxgic7LJ_nI66ssu_ZuanccxAf7_uo83BbWZc-teGYMpJjD2qKoCzTMr62CfnDPpzUE6ZpR-NxwDzrbX3xVkxyQGew3JhYnIAEdhsXoc19xG6AMy_zBA-Nw-dDnMJCmJLzxUEQBeDrJKhfCQfdlDcMlUv-_FdkAfYDHunaU4hhK4db2RID_TYiFFuS0Fd8SQgr8oiakxCcDf8QuAzJUW0npDjLGrOfo2X_DdhAscwfp36W7mfU65grWpDXqdBm03vcsH0dCWN_rUMja9DlqhDwRuTS5U6f5B-y197BCS47PvkJRH9ZWejIAYBTYjoQ4y4Ta-FRqkeFJCHqAj75NcJZgvq1Iss7X0FI8&skey=c491285d6722e4fa&v=v13) format('woff2');
+}
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400 700;
+    font-stretch: 100%;
+    font-display: swap;
+    src: local('Open Sans'), url(https://fonts.gstatic.com/l/font?kit=memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVfS20T2yhzLWpq-Q8vSEXeGUN8ZwnRgh9o11_XMuvRvVuE57r6z3xIL2phd-RohuPuqB4n__-EVSe7k-_fS9bFBzGcBFZcAkJix7InaKs9AXeJgyPTlBFNsIaTJoe__KdRXewflCUYFs0hhfRS_nGy1rjrLAlHK2aJ1HrBpfKjS6f_H5TtQbp-YYkmCxdtNQu73tgrKe-tJ2Nfg75-LeEyzcTXrZecs4udk3hTk6uwfLqb03_uY8Ui5K9HMhf6kWEb1vkNIN_MmOacoKu1lkqs-KsyP14WmBtM6aQ3ZYnt3Q4mfYanLH1TD-lKpPFfUj_Y8UMVVVByPF-O892gv1I8N3nDWzbwq4CrJV7o7hKyykKJlhGXX6rR2uCrZeRoDm2SPZXMUIcNaP6GZ2s17Y4hTHt3-oEld0lXFE7Pa6O0SeA33Hj1OGcEDonpa8eCs8lrRHa2NnxQVYi5t9kDO-6vpbHrVkOYInbKxPnSyl3w4ak4DaiJxs&skey=62c1cbfccc78b4b2&v=v40) format('woff2');
+}
+
 :root {
     scroll-behavior: smooth;
     min-width: 300px;
