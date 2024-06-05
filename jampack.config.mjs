@@ -3,7 +3,7 @@ export default {
     browserslist: 'last 1 version, not dead',
   },
   image: {
-    src_exclude: /^\/image\/favicon\.svg$/,
+    src_exclude: /favicon\.svg/,
     external: {
       process: 'download',
     },
