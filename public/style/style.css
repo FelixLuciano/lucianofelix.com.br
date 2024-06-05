@@ -74,6 +74,10 @@ header > p > span.marker:after {
         main > section,
         main ~ section {
             animation: reveal-section ease-out both;
+        }
+        main > section,
+        main ~ section,
+        .poop {
             animation-timeline: view(block);
             animation-range: entry 0 entry 50vh;
         }
