@@ -3,7 +3,7 @@ class ThemeSelectElement extends HTMLSelectElement {
 
   connectedCallback() {
     let theme = localStorage.getItem(ThemeSelectElement.#LOCAL_STORAGE_KEY)
-    this.value = theme !== null ? theme : ThemeSelectElement.#detectTheme()
+    this.value = theme !== null ? theme : this.#detectTheme()
 
     this.addEventListener('input', this.handleSelect)
     this.handleSelect()
@@ -22,11 +22,11 @@ class ThemeSelectElement extends HTMLSelectElement {
     document.documentElement.classList.add(this.value)
   }
 
-  static #detectTheme() {
+  #detectTheme() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-      return this[1].value
+      return this.get(1).value
     else
-      return this[0].value
+      return this.get(0).value
   }
 }
 
