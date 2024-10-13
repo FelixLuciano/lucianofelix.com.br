@@ -23,7 +23,8 @@
         color: #FFFFFF;
     }
     :root.dark .doc-page h1,
-    :root.dark .doc-page h2 {
+    :root.dark .doc-page h2,
+    :root.dark .doc-page h4 {
         color: #DD6464;
     }
     :root.dark .doc-page strong {
@@ -125,6 +126,10 @@ body > main {
 .doc-page dl > dd > ul > li {
     list-style-position: outside;
 }
+.doc-page dl > dd.padding-bottom {
+    padding-bottom: 3mm;
+}
+
 
 .doc-page ul {
     display: grid;
@@ -132,6 +137,9 @@ body > main {
     grid-gap: 2mm;
     list-style-type: square;
     list-style-position: inside;
+}
+.doc-page ul.dense {
+    grid-gap: 0mm;
 }
 .doc-page ul > li::marker {
     color: #6b7280;
