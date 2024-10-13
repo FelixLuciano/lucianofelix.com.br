@@ -94,16 +94,25 @@ body > main {
     font-weight: bold;
 }
 
+.doc-page h3 {
+    font-weight: bold;
+}
+
+.doc-page h4 {
+    color: #992222;
+    font-weight: bold;
+}
+
 .doc-page p {
-    padding-bottom: 5mm;
+    padding-bottom: 2mm;
     break-inside: avoid-column;
 }
 
 .doc-page dl {
-    padding-bottom: 5mm;
+    padding-bottom: 2mm;
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-gap: 4mm 2mm;
+    grid-gap: 3mm 2mm;
     break-inside: avoid-column;
 }
 .doc-page dl.dense {
