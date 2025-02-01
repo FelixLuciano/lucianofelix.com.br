@@ -24,9 +24,9 @@ class ThemeSelectElement extends HTMLSelectElement {
 
   #detectTheme() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-      return this.get(1).value
+      return this.options[1].value
     else
-      return this.get(0).value
+      return this.options[0].value
   }
 }
 
