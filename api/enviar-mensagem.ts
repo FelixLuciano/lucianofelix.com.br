@@ -7,7 +7,11 @@ import { authenticate, pushMessage } from './send-message'
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   try {
     const token = request.body['h-captcha-response']
-    const { success } = await verify(process.env.hcaptcha_secret, token)
+    const hcaptchaSecret = process.env.hcaptcha_secret
+    if (!hcaptchaSecret) {
+      throw new Error('hcaptcha_secret environment variable is not set')
+    }
+    const { success } = await verify(hcaptchaSecret, token)
 
     if (!success)
       return response.json({
