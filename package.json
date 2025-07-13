@@ -6,10 +6,10 @@
   },
   "dependencies": {
     "googleapis": "^129.0.0",
-    "hcaptcha": "^0.1.1"
+    "hcaptcha": "^0.2.0"
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.23.4",
-    "@vercel/node": "^2.15.10"
+    "@divriots/jampack": "^0.33.1",
+    "@vercel/node": "^5.3.5"
   }
 }
