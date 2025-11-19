@@ -27,20 +27,14 @@
     :root.dark .doc-page h4 {
         color: #DD6464;
     }
-    :root.dark .doc-page strong {
-        color: #e5e7eb;
-    }
-    :root.dark .doc-page dt {
-        color: #9ca3af;
-    }
 }
 @media only print {
     body > nav,
     body > footer {
         display: none;
     }
-    .doc-page abbr {
-        text-decoration: none;
+    body > main {
+        padding: 0 !important;
     }
 }
 
@@ -60,42 +54,28 @@ body > main {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10pt;
     font-weight: 500;
-    break-after: always;
-    break-inside: avoid;
-    column-count: 2;
-    column-gap: 5mm;
     overflow: hidden;
 }
 
 .doc-page h1 {
+    padding-bottom: 4mm;
     color: #992222;
-    font-size: 25pt;
+    font-size: 15pt;
     font-weight: bold;
     line-height: 1em;
 }
 
-.doc-page hr,
-.full-row {
-    column-span: all;
-}
-.doc-page hr {
-    padding: 2mm 0;
-    border: none;
-    border-top: 1pt solid #AAAAAA;
-}
-
-.doc-page section {
-    break-inside: avoid-column;
-}
-
 .doc-page h2 {
-    margin-bottom: 1mm;
+    padding: 4mm 0 1mm 0;
+    border-bottom: 1pt solid #AAAAAA;
     color: #992222;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: bold;
 }
 
 .doc-page h3 {
+    padding-top: 2mm;
+    font-size: 12pt;
     font-weight: bold;
 }
 
@@ -104,46 +84,27 @@ body > main {
     font-weight: bold;
 }
 
-.doc-page p {
-    padding-bottom: 2mm;
-    break-inside: avoid-column;
-}
-
 .doc-page dl {
-    padding-bottom: 2mm;
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-gap: 3mm 2mm;
+    grid-gap: 0 2mm;
     break-inside: avoid-column;
 }
-.doc-page dl.dense {
-    grid-gap: 0mm 2mm;
+.doc-page dl.horizontal {
+    grid-gap: 0 2mm;
+    grid-template-columns: initial;
+    grid-auto-flow: row;
+    justify-content: space-between;
 }
-.doc-page dl > dt {
-    color: #4b5563;
-    text-align: right;
+.doc-page dl.horizontal dt {
+    grid-row-start: 1;
+    text-align: left;
 }
-.doc-page dl > dd > ul > li {
-    list-style-position: outside;
-}
-.doc-page dl > dd.padding-bottom {
-    padding-bottom: 3mm;
+.doc-page dl.horizontal dd {
+    grid-row-start: 2;
 }
 
-
-.doc-page ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2mm;
-    list-style-type: square;
-    list-style-position: inside;
-}
-.doc-page ul.dense {
-    grid-gap: 0mm;
-}
-.doc-page ul > li::marker {
-    color: #6b7280;
-}
-.doc-page strong {
-    color: #111827;
+.doc-page p {
+    text-align: justify;
+    line-height: 13pt;
 }
