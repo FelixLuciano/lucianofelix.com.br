@@ -31,26 +31,26 @@
 
 :root,
 :root.light {
-    --text: #1A1414;
-    --background: #E7E5E4;
-    --primary: #992222;
-    --secondary: #420000;
-    --accent: #FD0D0D;
+    --text: #13171A;
+    --background: #E5E5E7;
+    --primary: #1A5E98;
+    --secondary: #002041;
+    --accent: #088FFD;
 }
 :root.dark {
     --text: #EBE5E5;
-    --background: #1B1918;
-    --primary: #DD6464;
-    --secondary: #FFBDBD;
-    --accent: #F20202;
+    --background: #19191B;
+    --primary: #57A1DD;
+    --secondary: #B3DEFF;
+    --accent: #0187F2;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --text: #EBE5E5;
-        --background: #1B1918;
-        --primary: #DD6464;
-        --secondary: #FFBDBD;
-        --accent: #F20202;
+        --background: #19191B;
+        --primary: #57A1DD;
+        --secondary: #B3DEFF;
+        --accent: #0187F2;
     }
 }
 :root {

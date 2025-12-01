@@ -24,7 +24,7 @@
     }
     :root.dark .doc-page h1,
     :root.dark .doc-page h2 {
-        color: #DD6464;
+        color: #57A1DD;
     }
 }
 @media only print {
@@ -58,7 +58,7 @@ body > main {
 
 .doc-page h1 {
     padding-bottom: 4mm;
-    color: #992222;
+    color: #1A5E98;
     font-size: 15pt;
     font-weight: bold;
     line-height: 1em;
@@ -67,7 +67,7 @@ body > main {
 .doc-page h2 {
     padding: 3mm 0 1mm 0;
     border-bottom: 1pt solid #AAAAAA;
-    color: #992222;
+    color: #1A5E98;
     font-size: 12pt;
     font-weight: bold;
 }

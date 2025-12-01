@@ -26,28 +26,28 @@ My personal website. On this page you can know more about me and my work. [See i
     </tr>
     <tr>
         <td>Text</td>
-        <td><code><img src="https://placehold.co/12/1A1414/1A1414?text=A" alt="#1A1414"> #1A1414</code></td>
+        <td><code><img src="https://placehold.co/12/1A1414/1A1414?text=A" alt="#13171A"> #13171A</code></td>
         <td><code><img src="https://placehold.co/12/EBE5E5/EBE5E5?text=A" alt="#EBE5E5"> #EBE5E5</code></td>
     </tr>
     <tr>
         <td>Background</td>
-        <td><code><img src="https://placehold.co/12/E7E5E4/E7E5E4?text=A" alt="#E7E5E4"> #E7E5E4</code></td>
-        <td><code><img src="https://placehold.co/12/1B1918/1B1918?text=A" alt="#1B1918"> #1B1918</code></td>
+        <td><code><img src="https://placehold.co/12/E7E5E4/E7E5E4?text=A" alt="#E5E5E7"> #E5E5E7</code></td>
+        <td><code><img src="https://placehold.co/12/1B1918/1B1918?text=A" alt="#19191B"> #19191B</code></td>
     </tr>
     <tr>
         <td>Primary</td>
-        <td><code><img src="https://placehold.co/12/992222/992222?text=A" alt="#992222"> #992222</code></td>
-        <td><code><img src="https://placehold.co/12/DD6464/DD6464?text=A" alt="#DD6464"> #DD6464</code></td>
+        <td><code><img src="https://placehold.co/12/992222/992222?text=A" alt="#1A5E98"> #1A5E98</code></td>
+        <td><code><img src="https://placehold.co/12/DD6464/DD6464?text=A" alt="#57A1DD"> #57A1DD</code></td>
     </tr>
     <tr>
         <td>Secondary</td>
-        <td><code><img src="https://placehold.co/12/420000/420000?text=A" alt="#420000"> #420000</code></td>
-        <td><code><img src="https://placehold.co/12/FFBDBD/FFBDBD?text=A" alt="#FFBDBD"> #FFBDBD</code></td>
+        <td><code><img src="https://placehold.co/12/420000/420000?text=A" alt="#002041"> #002041</code></td>
+        <td><code><img src="https://placehold.co/12/FFBDBD/FFBDBD?text=A" alt="#B3DEFF"> #B3DEFF</code></td>
     </tr>
     <tr>
         <td>Accent</td>
-        <td><code><img src="https://placehold.co/12/FD0D0D/FD0D0D?text=A" alt="#FD0D0D"> #FD0D0D</code></td>
-        <td><code><img src="https://placehold.co/12/F20202/F20202?text=A" alt="#F20202"> #F20202</code></td>
+        <td><code><img src="https://placehold.co/12/FD0D0D/FD0D0D?text=A" alt="#088FFD"> #088FFD</code></td>
+        <td><code><img src="https://placehold.co/12/F20202/F20202?text=A" alt="#0187F2"> #0187F2</code></td>
     </tr>
 </table>
 
