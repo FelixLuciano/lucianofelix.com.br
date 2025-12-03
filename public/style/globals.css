@@ -142,6 +142,11 @@ nav > ol li::marker {
 nav > ol li[data-marker]::marker {
     content: attr(data-marker);
 }
+@media (max-width: 32rem) {
+    nav > ol li:has(> a[href^="#"]) {
+        display: none;
+    }
+}
 
 footer {
     column-width: 20rem;
