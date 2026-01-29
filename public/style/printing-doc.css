@@ -57,7 +57,7 @@ body > main {
 }
 
 .doc-page h1 {
-    padding-bottom: 4mm;
+    padding-bottom: 6pt;
     color: #1A5E98;
     font-size: 15pt;
     font-weight: bold;
@@ -65,16 +65,17 @@ body > main {
 }
 
 .doc-page h2 {
-    padding: 3mm 0 1mm 0;
-    border-bottom: 1pt solid #AAAAAA;
+    margin: 6pt 0;
+    border-bottom: 1pt solid #6A7282;
     color: #1A5E98;
     font-size: 12pt;
     font-weight: bold;
+    line-height: 16pt;
 }
 
 .doc-page h3 {
-    padding-top: 2mm;
     font-size: 12pt;
+    line-height: 14pt;
     font-weight: bold;
 }
 
@@ -87,6 +88,11 @@ body > main {
     grid-template-columns: max-content 1fr;
     grid-gap: 0 2mm;
     break-inside: avoid-column;
+}
+
+.doc-page ol {
+    padding-left: 12pt;
+    list-style: square outside;
 }
 .doc-page dl.horizontal {
     grid-gap: 0 2mm;
@@ -102,7 +108,14 @@ body > main {
     grid-row-start: 2;
 }
 
-.doc-page p {
+.doc-page p,
+.doc-page li {
     text-align: justify;
     line-height: 13pt;
+}
+
+.doc-page p,
+.doc-page ol,
+.doc-page dl {
+    margin-bottom: 4pt;
 }
