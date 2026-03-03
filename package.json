@@ -5,11 +5,11 @@
     "build": "jampack ./public"
   },
   "dependencies": {
-    "googleapis": "^129.0.0",
+    "googleapis": "^171.4.0",
     "hcaptcha": "^0.2.0"
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.33.1",
-    "@vercel/node": "^5.3.5"
+    "@divriots/jampack": "^0.34.0",
+    "@vercel/node": "^3.0.1"
   }
 }
