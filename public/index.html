@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="/style/style.css">
 
     <script src="/script/entry.js" defer></script>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
     <script type="application/ld+json">
         {
@@ -59,13 +58,6 @@
             </li>
             <li data-marker="λ.">
                 <a href="/en">English</a>
-            </li>
-            <li data-marker="tema:">
-                <label for="page-theme-select" class="sr-only">Tema:</label>
-                <select id="page-theme-select" is="theme-select">
-                    <option value="light">Claro</option>
-                    <option value="dark">Escuro</option>
-                </select>
             </li>
         </ol>
     </nav>
@@ -232,103 +224,13 @@
                 Com a conclusão do curso, estou ansioso para iniciar minha carreira profissional, aplicando as habilidades
                 adquiridas em novos desafios e continuando a buscar inovação e crescimento pessoal.
             </p>
-            <hr>
-            <h3>
-                <span is="self-typing">Trabalhos em destaque</span>
-            </h3>
             <ul>
                 <li>
-                    <h4>
-                        <span is="self-typing">Processador RISC-V</span>
-                    </h4>
-                    <a href="https://pfeinsper.github.io/24a-CTI-RISCV/" target="_blank" rel="noopener noreferer">Abrir
-                        relatório</a>
-                        <a href="https://www.insper.edu.br/pt/noticias/2024/5/alunos-desenvolvem-processador-para-o-ministerio-da-ciencia--tec/"
-                            target="_blank" rel="noopener noreferer">Abrir matéria</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Otimização de carteira de ações</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/wallet-tunning" target="_blank"
-                        rel="noopener noreferer">Abrir repositório</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Predição de vagas falsas</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/Fake-JobPosting-Prediction" target="_blank"
-                        rel="noopener noreferer">Abrir repositório</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">The Language</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/the-language/blob/main/slides.pdf" target="_blank"
-                                rel="noopener noreferer">Ver apresentação</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/the-language" target="_blank" rel="noopener noreferer">Abrir
-                                repositório</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Análise de Treliças Finitas</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/2d-static-truss-fea" target="_blank" rel="noopener noreferer">Abrir
-                        repositório</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Cyberbullet Chaos: Neon Rogue</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://youtu.be/_oUnLcO1Bhc" target="_blank" rel="noopener noreferer">Assistir DEMO</a>
-                        </li>
-                        <li>
-                            <a href="https://ricardorr.itch.io/cyberbullet-chaos-neon-rogue-mobile" target="_blank"
-                                rel="noopener noreferer">Jogar on-line</a>
-                        </li>
-                        <li>
-                            <a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.CyberbulletChaosNeonRogue"
-                                target="_blank" rel="noopener noreferer">Baixar</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">SafeBin</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.lucianofelix.com.br/safe-bin" target="_blank" rel="noopener noreferer">Abrir
-                                APP</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/safe-bin" target="_blank" rel="noopener noreferer">Abrir
-                                repositório</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Células Solares</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.lucianofelix.com.br/celulas-solares" target="_blank"
-                                rel="noopener noreferer">Abrir relatório</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/celulas-solares" target="_blank" rel="noopener noreferer">Abrir
-                                repositório</a>
-                        </li>
-                    </ul>
+                    <h3>
+                        <span is="self-typing">Diretório de projetos</span>
+                    </h3>
+                    <a href="https://github.com/FelixLuciano/FelixLuciano/tree/main/insper"
+                        target="_blank" rel="noopener noreferer">Ver no GitHub</a>
                 </li>
             </ul>
             <hr>
@@ -471,24 +373,14 @@
 
     <section id="contato">
         <h2>
-            <span is="self-typing">Entre em contato</span>
+            Entre em contato
         </h2>
-        <form action="/api/enviar-mensagem" method="POST" is="async-form" data-error="Não foi possível enviar!"
-            class="full-row">
-            <label for="contact-form--contact"><span is="self-typing">CONTATO</span></label>
-            <input id="contact-form--contact" name="contact"
-                placeholder="Insira suas informações de contato (número de telefome, e-mail, site etc)" required>
-            <label for="contact-form--message"><span is="self-typing">MENSAGEM</span></label>
-            <textarea id="contact-form--message" name="message" is="auto-resize"
-                placeholder="Olá, Luciano!&#10;&#10;Eu queria entrar em contato sobre [...]" required></textarea>
-            <div><span is="self-typing">CAPTCHA</span></div>
-            <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
-            <label for="contact-form--submit-button"><span is="self-typing">SUBMETER</span></label>
-            <input id="contact-form--submit-button" type="submit" value="ENVIAR" data-send="ENVIAR"
-                data-sending="ENVIANDO..." data-error="TENTE NOVAMENTE">
-            <div></div>
-            <output name="response" hidden></output>
-        </form>
+        <p style="column-span: all; font-size: clamp(16px, calc(67 / 1366 * 100vw), 67px); font-weight: bold;">
+            <span is="self-typing">&#67;&#79;&#78;&#84;&#65;&#84;&#79;&#91;&#64;&#93;&#76;&#85;&#67;&#73;&#65;&#78;&#79;&#70;&#69;&#76;&#73;&#88;&#91;&#46;&#93;&#67;&#79;&#77;&#91;&#46;&#93;&#66;&#82;</span>
+        </p>
+        <p style="break-inside: avoid-column;">
+            Envie um e-mail neste endereço e eu devo respondê-lo assim que possível.
+        </p>
     </section>
 
     <footer>
@@ -503,6 +395,13 @@
             É TERMINANTEMENTE PROIBIDA A UTILIZAÇÃO OU REPRODUÇÃO NÃO AUTORIZADA DO CONTEÚDO DO SITE, INCLUINDO
             FOTOS PESSOAIS, SEM AUTORIZAÇÃO PRÉVIA.
         </p>
+        <div>
+            <label for="page-theme-select">Tema:</label>
+            <select id="page-theme-select" is="theme-select">
+                <option value="light">Claro</option>
+                <option value="dark">Escuro</option>
+            </select>
+        </div>
         <img src="/image/copyright.png" alt="Copyright em code-128" class="hide-dark"
             style="image-rendering: pixelated; width: 4rem; height: 20rem;">
         <img src="/image/copyright-dark.png" alt="Copyright em code-128" class="hide-light"

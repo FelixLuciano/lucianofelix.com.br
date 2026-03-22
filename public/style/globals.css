@@ -142,7 +142,7 @@ nav > ol li::marker {
 nav > ol li[data-marker]::marker {
     content: attr(data-marker);
 }
-@media (max-width: 32rem) {
+@media (max-width: 21rem) {
     nav > ol li:has(> a[href^="#"]) {
         display: none;
     }
@@ -169,7 +169,22 @@ footer > p {
     padding-bottom: 1rem;
     hyphens: auto;
 }
+footer > ol {
+    list-style: square outside;
+    
+}
+footer > ol > li::marker {
+    color: var(--primary);
+}
+footer > ol > li > a,
+footer > ol > li > label {
+    color: var(--secondary);
+    line-height: 2em;
+}
 
+label[for="page-theme-select"] {
+    color: var(--primary);
+}
 select[is="theme-select"] {
     background: none;
 }

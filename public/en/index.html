@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="/style/style.css">
 
     <script src="/script/entry.js" defer></script>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
     <script type="application/ld+json">
         {
@@ -59,13 +58,6 @@
             </li>
             <li data-marker="λ.">
                 <a href="/">Português</a>
-            </li>
-            <li data-marker="theme:">
-                <label for="page-theme-select" class="sr-only">Theme:</label>
-                <select id="page-theme-select" is="theme-select">
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                </select>
             </li>
         </ol>
     </nav>
@@ -216,102 +208,13 @@
                 development. With the completion of my degree, I am eager to begin my professional career, applying the skills I
                 have acquired to new challenges and continuing to pursue innovation and personal growth.
             </p>
-            <hr>
-            <h3>
-                <span is="self-typing">Features Projects</span>
-            </h3>
             <ul>
                 <li>
-                    <h4>
-                        <span is="self-typing">RISC-V CPU Core</span>
-                    </h4>
-                    <a href="https://pfeinsper.github.io/24a-CTI-RISCV/" target="_blank" rel="noopener noreferer">Open report</a>
-                    <a href="https://www.insper.edu.br/noticias/alunos-desenvolvem-processador-para-o-ministerio-da-ciencia-tecnologia-e-inovacao/"
-                        target="_blank" rel="noopener noreferer">Open article</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Stock Wallet Tunning</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/wallet-tunning" target="_blank"
-                        rel="noopener noreferer">Abrir repositório</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Fake JobPosting Prediction</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/Fake-JobPosting-Prediction" target="_blank"
-                        rel="noopener noreferer">Open repository</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">The Language</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/the-language/blob/main/slides.pdf" target="_blank"
-                                rel="noopener noreferer">See presentation</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/the-language" target="_blank" rel="noopener noreferer">Open
-                                repository</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">2D Static Truss FEA</span>
-                    </h4>
-                    <a href="https://github.com/FelixLuciano/2d-static-truss-fea" target="_blank" rel="noopener noreferer">Open
-                        repository</a>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Cyberbullet Chaos: Neon Rogue</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://youtu.be/_oUnLcO1Bhc" target="_blank" rel="noopener noreferer">Watch DEMO</a>
-                        </li>
-                        <li>
-                            <a href="https://ricardorr.itch.io/cyberbullet-chaos-neon-rogue-mobile" target="_blank"
-                                rel="noopener noreferer">Play online</a>
-                        </li>
-                        <li>
-                            <a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.CyberbulletChaosNeonRogue"
-                                target="_blank" rel="noopener noreferer">Download</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">SafeBin</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.lucianofelix.com.br/safe-bin" target="_blank" rel="noopener noreferer">Open
-                                APP</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/safe-bin" target="_blank" rel="noopener noreferer">Open
-                                repository</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>
-                        <span is="self-typing">Solar cells</span>
-                    </h4>
-                    <ul>
-                        <li>
-                            <a href="https://github.lucianofelix.com.br/celulas-solares" target="_blank"
-                                rel="noopener noreferer">Open report</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/FelixLuciano/celulas-solares" target="_blank" rel="noopener noreferer">Open
-                                repository</a>
-                        </li>
-                    </ul>
+                    <h3>
+                        <span is="self-typing">Project directory</span>
+                    </h3>
+                    <a href="https://github.com/FelixLuciano/FelixLuciano/tree/main/insper"
+                        target="_blank" rel="noopener noreferer">See on GitHub</a>
                 </li>
             </ul>
             <hr>
@@ -361,22 +264,14 @@
 
     <section id="contact">
         <h2>
-            <span is="self-typing">Get in Touch</span>
+            Get in Touch
         </h2>
-        <form action="/api/send-message" method="POST" is="async-form" class="full-row">
-            <label for="contact-form--contact"><span is="self-typing">CONTACT</span></label>
-            <input id="contact-form--contact" name="contact"
-                placeholder="Enter your contact information (phone number, email, website, etc)" required>
-            <label for="contact-form--message"><span is="self-typing">MESSAGE</span></label>
-            <textarea id="contact-form--message" name="message" is="auto-resize"
-                placeholder="Hey Luciano,&#10;&#10;I wanted to reach out regarding [...]" required></textarea>
-            <label><span is="self-typing">CAPTCHA</span></label>
-            <div class="h-captcha" data-sitekey="ff156874-0cc8-4f8f-a8f1-790f80b035b7"></div>
-            <label for="contact-form--submit-button"><span is="self-typing">SUBMIT</span></label>
-            <input id="contact-form--submit-button" type="submit" value="SEND" data-send="SEND" data-sending="SENDING..." data-error="TRY AGAIN">
-            <div></div>
-            <output name="response" hidden></output>
-        </form>
+        <p style="column-span: all; font-size: clamp(16px, calc(67 / 1366 * 100vw), 67px); font-weight: bold;">
+            <span is="self-typing">&#67;&#79;&#78;&#84;&#65;&#67;&#84;&#91;&#64;&#93;&#76;&#85;&#67;&#73;&#65;&#78;&#79;&#70;&#69;&#76;&#73;&#88;&#91;&#46;&#93;&#67;&#79;&#77;&#91;&#46;&#93;&#66;&#82;</span>
+        </p>
+        <p style="break-inside: avoid-column;">
+            Send me an e-mail to this address and I will reply as soon as possible.
+        </p>
     </section>
 
     <footer>
@@ -391,6 +286,13 @@
             UNAUTHORIZED USE OR REPRODUCTION OF THE WEBSITE'S CONTENT, INCLUDING PERSONAL PHOTOS, IS STRICTLY PROHIBITED
             WITHOUT PRIOR PERMISSION.
         </p>
+        <div>
+            <label for="page-theme-select">Theme:</label>
+            <select id="page-theme-select" is="theme-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
         <img src="/image/copyright.png" alt="Copyright in code-128" class="hide-dark"
             style="image-rendering: pixelated; width: 4rem; height: 20rem;">
         <img src="/image/copyright-dark.png" alt="Copyright in code-128" class="hide-light"
