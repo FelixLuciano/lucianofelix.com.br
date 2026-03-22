@@ -4,12 +4,7 @@
   "scripts": {
     "build": "jampack ./public"
   },
-  "dependencies": {
-    "googleapis": "^171.4.0",
-    "hcaptcha": "^0.2.0"
-  },
   "devDependencies": {
-    "@divriots/jampack": "^0.34.0",
-    "@vercel/node": "^3.0.1"
+    "@divriots/jampack": "^0.34.0"
   }
 }
