@@ -8,7 +8,6 @@ My personal website. On this page you can know more about me and my work. [See i
 - No complex frameworks requiring setup or build processes, making it easy to understand and modify.
 - Prioritizes a type-first approach, resulting in a responsive and adaptable UI design.
 - Fluid layout that dynamically adjusts and scales to accommodate varying screen sizes.
-- Asynchronous contact form that automatically populates a Google Docs spreadsheet.
 - Follows accessible and semantic templating practices, minimizing the use of classes and relying primarily on Custom Elements for interactivity.
 - Printable HTML resume page for easy sharing and offline reference.
 - Incorporates engaging animations to enhance the overall user experience.
