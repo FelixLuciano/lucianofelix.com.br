@@ -95,7 +95,7 @@ header > p > span.marker:after {
 }
 
 :is(aside, section) > :is(h2, h3) {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -.05em;
 }
@@ -105,8 +105,9 @@ body {
 }
 
 :is(aside, section) > h2 {
-    font-size: clamp(2rem, calc(56 / 1366 * 100vw), 3.5rem);
-    line-height: 0.85em;
+    font-size: clamp(2rem, calc(56 / 1366 * 100vw), 3rem);
+    line-height: 1.1em;
+    letter-spacing: -0.2rem;
     counter-increment: heading;
     counter-reset: heading-2;
 }
@@ -129,7 +130,8 @@ body {
 
 :is(aside, section) > h3 {
     font-size: clamp(1.5rem, calc(40 / 1366 * 100vw), 2.5rem);
-    line-height: 0.8em;
+    line-height: 1.1em;
+    letter-spacing: -0.2rem;
     counter-increment: heading-2;
 }
 :is(aside, section) > h3:before {

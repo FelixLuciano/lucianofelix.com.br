@@ -165,7 +165,8 @@ footer > h2 {
     line-height: 0.85em;
     letter-spacing: -.05em;
 }
-footer > p {
+footer > p,
+footer > div {
     padding-bottom: 1rem;
     hyphens: auto;
 }
@@ -202,5 +203,6 @@ select[is="theme-select"] > option {
     top: 0px;
     left: 0px;
     font-weight: 900;
+    line-height: 1em;
     color: var(--primary);
 }
