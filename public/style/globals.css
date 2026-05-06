@@ -98,6 +98,48 @@
     }
 }
 
+/* Simplified `Pixelate Dissolve`
+ * From https://ui.shadcnlanding.com/transition/pixelate-dissolve
+ */
+html.color-scheme-transition::view-transition-old(root),
+html.color-scheme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html.color-scheme-transition::view-transition-old(root) {
+  z-index: 1;
+  animation: view-transition-out 0.2s ease-out forwards;
+}
+
+html.color-scheme-transition::view-transition-new(root) {
+  z-index: 2;
+  animation: view-transition-in 0.3s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+@keyframes view-transition-out {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+}
+
+@keyframes view-transition-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -183,13 +225,13 @@ footer > ol > li > label {
     line-height: 2em;
 }
 
-label[for="page-theme-select"] {
+label[for="page-color-scheme-select"] {
     color: var(--primary);
 }
-select[is="theme-select"] {
+select[is="color-scheme-select"] {
     background: none;
 }
-select[is="theme-select"] > option {
+select[is="color-scheme-select"] > option {
     background-color: var(--background-d1);
 }
 

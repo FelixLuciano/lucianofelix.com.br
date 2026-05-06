@@ -1,20 +1,38 @@
-class ThemeSelectElement extends HTMLSelectElement {
+class ColorSchemeSelectElement extends HTMLSelectElement {
   static #LOCAL_STORAGE_KEY = 'theme'
+  static #TRANSITION_CLASS = 'color-scheme-transition'
 
   connectedCallback() {
-    let theme = localStorage.getItem(ThemeSelectElement.#LOCAL_STORAGE_KEY)
-    this.value = theme !== null ? theme : this.#detectTheme()
+    let colorScheme = localStorage.getItem(ColorSchemeSelectElement.#LOCAL_STORAGE_KEY)
+    this.value = colorScheme !== null ? colorScheme : this.#detectColorScheme()
 
-    this.addEventListener('input', this.handleSelect)
-    this.handleSelect()
+    this.addEventListener('input', this.#handleSelect)
+    this.#updateColorScheme()
   }
 
   disconnectedCallback() {
-    this.removeEventListener('input', this.handleSelect)
+    this.removeEventListener('input', this.#handleSelect)
   }
 
-  handleSelect() {
-    localStorage.setItem(ThemeSelectElement.#LOCAL_STORAGE_KEY, this.value)
+  async #handleSelect() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!document.startViewTransition || prefersReducedMotion) {
+      this.#updateColorScheme()
+      return
+    }
+
+    document.documentElement.classList.add(ColorSchemeSelectElement.#TRANSITION_CLASS)
+
+    const transition = document.startViewTransition(() => this.#updateColorScheme())
+    try {
+      await transition.finished;
+    } finally {
+      document.documentElement.classList.remove(ColorSchemeSelectElement.#TRANSITION_CLASS);
+    }
+  }
+
+  #updateColorScheme() {
+    localStorage.setItem(ColorSchemeSelectElement.#LOCAL_STORAGE_KEY, this.value)
 
     for (const option of this)
       document.documentElement.classList.remove(option.value)
@@ -22,7 +40,7 @@ class ThemeSelectElement extends HTMLSelectElement {
     document.documentElement.classList.add(this.value)
   }
 
-  #detectTheme() {
+  #detectColorScheme() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches)
       return this.options[1].value
     else
@@ -183,6 +201,6 @@ class PrintPageElement extends HTMLAnchorElement {
   }
 }
 
-customElements.define('theme-select', ThemeSelectElement, { extends: 'select' })
+customElements.define('color-scheme-select', ColorSchemeSelectElement, { extends: 'select' })
 customElements.define('self-typing', SelfTypingElement, { extends: 'span' })
 customElements.define('print-page', PrintPageElement, { extends: 'a' })
